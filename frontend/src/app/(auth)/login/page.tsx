@@ -46,6 +46,7 @@ const Page = () => {
                 dispatch(setToken(res?.data?.token));
                 dispatch(setUser(res?.data?.user))
                 Cookies.set("userToken", res?.data?.token);
+                Cookies.set("userRole", res?.data?.user?.role, { expires: 1 });
                 localStorage.setItem("user", JSON.stringify(res?.data?.user));
 
                 toast.success(res.message);
@@ -64,8 +65,8 @@ const Page = () => {
     }
 
     return (
-        <div className='w-full relative h-full flex items-center justify-center md:pb-16 pb-8 pt-32 md:pt-32'>
-            <div className='lg:w-[65%] relative md:w-[70%] w-[88%] flex md:flex-row flex-col justify-center items-center rounded-md h-full shadow-xl bg-white'>
+        <div className='w-full relative min-h-screen bg-white md:h-full flex items-center justify-center md:pb-16 pb-8 pt-20 md:pt-32'>
+            <div className='lg:w-[65%] relative md:w-[70%] w-[88%] flex md:flex-row flex-col justify-center items-center rounded-md md:h-full h-auto shadow-xl bg-white'>
                 <div className="md:flex hidden w-[45%] overflow-hidden flex-col md:h-[32rem] lg:h-[35rem] rounded-l-md justify-center items-center bg-primary text-white px-6 text-center">
                     <button
                         type="button"

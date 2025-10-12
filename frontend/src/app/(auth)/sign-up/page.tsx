@@ -64,10 +64,13 @@ const Page = () => {
         console.log("Form Values:", values);
         try {
             const res = await getRegister(values).unwrap();
+
             console.log('resss', res)
             if (res?.success) {
                 toast.success(res.message);
-                router.push("/email-verification");
+                const email = values.email;
+                localStorage.setItem("emailForOtp", email);
+                router.push("/verify-email");
 
             }
         } catch (err: any) {
@@ -80,8 +83,8 @@ const Page = () => {
     }
 
     return (
-        <div className='w-full relative h-full flex items-center justify-center md:pb-16 pb-10 pt-24 md:pt-32'>
-            <div className='lg:w-[65%] relative md:w-[70%] w-[88%] flex md:flex-row flex-col justify-center items-center rounded-md h-full shadow-xl bg-white'>
+        <div className='w-full relative min-h-screen md:h-full flex items-center bg-white justify-center md:pb-16 pb-10 pt-16 md:pt-32'>
+            <div className='lg:w-[65%] relative md:w-[70%] w-[88%] flex md:flex-row flex-col justify-center items-center rounded-md h-auto md:h-full shadow-xl bg-white'>
                 <div className='md:flex flex-col hidden w-[45%] overflow-hidden md:h-[33.5rem] lg:h-[35.5rem] rounded-l-md justify-center items-center relative bg-primary text-white px-6 text-center'>
                     <button
                         type="button"

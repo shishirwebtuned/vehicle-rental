@@ -7,7 +7,7 @@ import Footer from "@/components/shared/Footer";
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
 
-    const hideFooterRoutes = ["/login", "/sign-up", "/dashboard", "/admin-dash"];
+    const hideFooterRoutes = ["/login", "/sign-up", "/dashboard", "/admin-dash", "/verify-email"];
 
     const hideFooter = hideFooterRoutes.some((route) =>
         pathname.startsWith(route)

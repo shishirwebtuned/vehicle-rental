@@ -7,7 +7,7 @@ import Navbar from "./Navbar";
 const Header = () => {
     const pathname = usePathname();
 
-    const hideNavbarRoutes = ["/login", "/sign-up"];
+    const hideNavbarRoutes = ["/login", "/sign-up", "/verify-email"];
     const hideHeaderRoutes = ["/dashboard", "/admin-dash"];
 
     const hideHeader = hideHeaderRoutes.some(route => pathname.startsWith(route));

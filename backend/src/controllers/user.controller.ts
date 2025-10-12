@@ -5,6 +5,8 @@ import { generateToken } from "../utils/generateToken.js";
 import { sendResponse } from "../utils/sendResponse.js";
 import { catchAsync } from "../utils/catchAsync.js";
 import { AppError } from "../utils/AppError.js";
+import { sendEmail } from "../utils/sendEmail.js";
+import crypto from "crypto";
 
 export const loginUser = catchAsync(async (req, res) => {
   const { email, password } = req.body;
@@ -46,6 +48,15 @@ export const registerUser = catchAsync(async (req, res) => {
   if (existingUser)
     throw new AppError("User with this email already exists", 401);
 
+  const otp = Math.floor(100000 + Math.random() * 900000);
+
+  const hashedOtp = crypto
+    .createHash("sha256")
+    .update(String(otp))
+    .digest("hex");
+
+  const otpExpires = Date.now() + 10 * 60 * 1000;
+
   const user = new User({
     name,
     email,
@@ -53,13 +64,28 @@ export const registerUser = catchAsync(async (req, res) => {
     role: "customer",
     phoneNumber,
     address,
+    otp: hashedOtp,
+    otpExpiry: otpExpires,
   });
   await user.save();
+
+  const subject = "Your Vehicle Rental OTP Verification Code";
+  const html = `
+    <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+      <h2>Welcome to Vehicle Rental, ${name}!</h2>
+      <p>Your One-Time Password (OTP) is:</p>
+      <h1 style="color: #007bff;">${otp}</h1>
+      <p>This code will expire in <strong>10 minutes</strong>.</p>
+      <p>If you didn’t request this, you can ignore this email.</p>
+    </div>
+  `;
+
+  await sendEmail({ to: email, subject, html });
 
   sendResponse(res, {
     success: true,
     statusCode: 200,
-    message: "Signup Successful",
+    message: "Signup Successful! OTP has been sent to your email.",
     data: {
       user: {
         id: user._id,
@@ -105,5 +131,30 @@ export const createAdmin = catchAsync(async (req, res) => {
         email: user.email,
       },
     },
+  });
+});
+
+export const verifyOtp = catchAsync(async (req, res) => {
+  const { email, otp } = req.body;
+  if (!email || !otp) throw new AppError("Email and OTP are required", 400);
+
+  const user = await User.findOne({ email });
+  if (!user) throw new AppError("User not found", 404);
+
+  const hashedOtp = crypto.createHash("sha256").update(otp).digest("hex");
+
+  if (user.otp !== hashedOtp) throw new AppError("Invalid OTP", 400);
+  if (user.otpExpiry && user.otpExpiry.getTime() < Date.now())
+    throw new AppError("OTP expired", 400);
+
+  user.status = "verified";
+  user.otp = null;
+  user.otpExpiry = null;
+  await user.save();
+
+  sendResponse(res, {
+    success: true,
+    statusCode: 200,
+    message: "Email verified successfully!",
   });
 });
