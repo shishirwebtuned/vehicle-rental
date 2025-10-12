@@ -1,0 +1,46 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+@import "tailwindcss";
+
+
+:root {
+  --background: #eeefbc;
+  --foreground: #171717;
+  --primary: #5c9cbc;
+}
+
+@theme inline {
+  --color-background: #eeefbc;
+  --color-foreground: #171717;
+  --color-primary: #5c9cbc;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-merriweather: var(--font-geist-merriw);
+  --font-nunito: var(--font-geist-nunito);
+  --shadow-service: box-shadow: 0px 0px 10px 0px rgba(92.00000000000003, 156.00000000000003, 188.00000000000006, 0.26);
+}
+
+.serviceCard-shadow{
+      box-shadow: 0px 0px 10px 0px rgba(92.00000000000003, 156.00000000000003, 188.00000000000006, 0.26);
+}
+
+.blogCard-shadow{
+    box-shadow: 9.899px 9.899px 30px 0 rgba(0, 0, 0, .1);
+
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+}
