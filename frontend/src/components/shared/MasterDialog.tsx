@@ -26,7 +26,7 @@ const MasterDialog: React.FC<MasterDialogProps> = ({
 }) => {
     return (
         <Dialog open={open} onOpenChange={onClose}>
-            <DialogContent className="max-w-md sm:max-w-lg rounded-2xl p-6">
+            <DialogContent className="max-w-md sm:max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl p-6">
                 {(title || description) && (
                     <DialogHeader>
                         {title && <DialogTitle>{title}</DialogTitle>}

@@ -158,3 +158,34 @@ export const verifyOtp = catchAsync(async (req, res) => {
     message: "Email verified successfully!",
   });
 });
+
+export const getUsers = catchAsync(async (req, res) => {
+  const users =
+    (await User.find({ role: "customer" })
+      .select("-password")
+      .sort({ createdAt: -1 })
+      .lean()) || [];
+  sendResponse(res, {
+    success: true,
+    statusCode: 200,
+    message: users.length ? "Users Fetched Successfully" : "No Users found",
+    data: {
+      users,
+    },
+  });
+});
+
+export const getUserById = catchAsync(async (req, res) => {
+  const { id } = req.params;
+  const user = await User.findById(id).select("-password");
+  if (!user) throw new AppError("User not found", 404);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: 200,
+    message: "User Fetched Successfully",
+    data: {
+      user,
+    },
+  });
+});

@@ -28,6 +28,32 @@ const authApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["Categories"],
     }),
+
+    createVehicle: builder.mutation({
+      query: (formData: any) => ({
+        url: "/vehicles",
+        method: "POST",
+        body: formData,
+      }),
+      invalidatesTags: ["Vehicles"],
+    }),
+
+    updateVehicle: builder.mutation({
+      query: ({ id, formData }: { id: string; formData: any }) => ({
+        url: `/vehicles/${id}`,
+        method: "PUT",
+        body: formData,
+      }),
+      invalidatesTags: ["Vehicles"],
+    }),
+
+    deleteVehicle: builder.mutation({
+      query: (id: string) => ({
+        url: `/vehicles/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Vehicles"],
+    }),
   }),
 });
 
@@ -35,4 +61,7 @@ export const {
   useCreateCategoryMutation,
   useUpdateCategoryMutation,
   useDeleteCategoryMutation,
+  useCreateVehicleMutation,
+  useUpdateVehicleMutation,
+  useDeleteVehicleMutation,
 } = authApi;

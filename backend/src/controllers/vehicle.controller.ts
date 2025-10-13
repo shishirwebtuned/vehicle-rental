@@ -79,6 +79,8 @@ export const addVehicle = catchAsync(async (req, res) => {
   });
   await vehicle.save();
 
+  await vehicle.populate("category", "name description");
+
   sendResponse(res, {
     success: true,
     statusCode: 201,
@@ -102,7 +104,11 @@ export const addVehicle = catchAsync(async (req, res) => {
 });
 
 export const getVehicles = catchAsync(async (req, res) => {
-  const vehicles = (await Vehicle.find().sort({ createdAt: -1 }).lean()) || [];
+  const vehicles =
+    (await Vehicle.find()
+      .sort({ createdAt: -1 })
+      .populate("category", "name description")
+      .lean()) || [];
   sendResponse(res, {
     success: true,
     statusCode: 200,
@@ -118,7 +124,9 @@ export const getVehicles = catchAsync(async (req, res) => {
 export const getVehicleById = catchAsync(async (req, res) => {
   const { id } = req.params;
 
-  const vehicle = await Vehicle.findById(id).lean();
+  const vehicle = await Vehicle.findById(id)
+    .populate("category", "name description")
+    .lean();
   if (!vehicle) throw new AppError("Vehicle not found", 404);
 
   sendResponse(res, {

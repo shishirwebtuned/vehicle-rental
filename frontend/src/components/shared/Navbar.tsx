@@ -9,6 +9,7 @@ import { IoMenu } from "react-icons/io5";
 import Drawer from "./Drawer";
 import MobileNavbar from "./MobileNavbar";
 import { usePathname, useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -16,6 +17,13 @@ const Navbar = () => {
 
     const pathname = usePathname();
     const router = useRouter();
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        const token = Cookies.get("userToken");
+        setIsLoggedIn(!!token);
+    }, []);
 
     useEffect(() => {
         if (pathname === "/") {
@@ -25,10 +33,22 @@ const Navbar = () => {
             window.addEventListener("scroll", handleScroll);
             return () => window.removeEventListener("scroll", handleScroll);
         } else {
-            // always scrolled on other pages
             setScrolled(true);
         }
     }, [pathname]);
+
+    const handleClick = () => {
+        const userRole = Cookies.get("userRole");
+
+        if (userRole === "customer") {
+            router.push("/dashboard");
+        } else if (userRole === "admin") {
+            router.push("/admin-dash");
+        } else {
+            router.push("/login");
+        }
+    };
+
 
     return (
         <div
@@ -60,16 +80,27 @@ const Navbar = () => {
                         </Link>
                     ))}
                 </nav>
+                {isLoggedIn ?
+                    <button
+                        onClick={handleClick}
+                        className={`px-5 hidden md:flex py-2 rounded-sm border-2 font-semibold cursor-pointer transition-all ease-in-out duration-300 ${scrolled
+                            ? "border-primary text-primary hover:bg-primary hover:text-white"
+                            : "border-white text-white hover:bg-primary hover:border-primary"
+                            }`}
+                    >
+                        Profile
+                    </button> :
+                    <button
+                        onClick={() => router.push("/login")}
+                        className={`px-5 hidden md:flex py-2 rounded-sm border-2 font-semibold cursor-pointer transition-all ease-in-out duration-300 ${scrolled
+                            ? "border-primary text-primary hover:bg-primary hover:text-white"
+                            : "border-white text-white hover:bg-primary hover:border-primary"
+                            }`}
+                    >
+                        Sign In
+                    </button>
+                }
 
-                <button
-                    onClick={() => router.push("/login")}
-                    className={`px-5 hidden md:flex py-2 rounded-sm border-2 font-semibold cursor-pointer transition-all ease-in-out duration-300 ${scrolled
-                        ? "border-primary text-primary hover:bg-primary hover:text-white"
-                        : "border-white text-white hover:bg-primary hover:border-primary"
-                        }`}
-                >
-                    Sign In
-                </button>
 
                 <div className="flex md:hidden items-center justify-center">
                     <button onClick={() => setIsOpen(!isOpen)} className="cursor-pointer">

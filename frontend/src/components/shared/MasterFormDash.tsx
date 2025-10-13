@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { Field, FormikProvider, useFormik } from "formik";
-import { RiArrowRightLine } from "react-icons/ri";
 import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 import DotSpinner from "./Spinner/DotSpinner";
 
@@ -53,19 +52,19 @@ const MasterFormDash: React.FC<MasterFormProps> = ({
         initialValues: initialValues || fields.reduce((acc, field) => {
             acc[field.name] = "";
             return acc;
-        }, {} as Record<string, string>),
+        }, {} as Record<string, any>),
         validationSchema,
         onSubmit,
     });
 
-    const { errors, touched, getFieldProps, isSubmitting, handleSubmit } = formik;
+    const { errors, touched, getFieldProps, setFieldValue, isSubmitting, handleSubmit } = formik;
 
     return (
         <FormikProvider value={formik}>
             <form onSubmit={handleSubmit} autoComplete="off">
                 {fields.map(({ name, label, type, placeholder, icon, options }, index) => (
                     <div className="mb-3" key={index}>
-                        <label htmlFor={name} className="block mb-1 text-sm text-gray-600 font-nunito">
+                        <label htmlFor={name} className="block mb-1 text-sm text-gray-900 font-nunito">
                             {label}
                         </label>
                         <div className="relative flex flex-col gap-0">
@@ -74,8 +73,18 @@ const MasterFormDash: React.FC<MasterFormProps> = ({
                                     {icon}
                                 </div>
                             )}
-
-                            {type === 'select' ? (
+                            {type === "file" ? (
+                                <input
+                                    id={name}
+                                    type="file"
+                                    accept="image/*"
+                                    onChange={(event) => {
+                                        const file = event.currentTarget.files?.[0] || null;
+                                        setFieldValue(name, file);
+                                    }}
+                                    className={`w-full ${fieldStyle} py-3 text-sm font-nunito`}
+                                />
+                            ) : type === 'select' ? (
                                 <Field
                                     as="select"
                                     id={name}
@@ -98,7 +107,7 @@ const MasterFormDash: React.FC<MasterFormProps> = ({
                                         type={type === "password" && passwordVisibility[name] ? "text" : type}
                                         placeholder={placeholder}
                                         {...getFieldProps(name)}
-                                        className={`w-full ${fieldStyle} py-3 ${icon ? "pl-12" : "pl-1"} text-sm font-nunito`}
+                                        className={`w-full ${fieldStyle} py-2 ${icon ? "pl-12" : "pl-1"} text-sm font-nunito`}
                                     />
                                     {type === "password" && (
                                         <button

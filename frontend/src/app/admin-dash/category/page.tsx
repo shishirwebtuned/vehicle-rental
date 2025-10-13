@@ -54,11 +54,14 @@ const page = () => {
             name: "name",
             type: "text",
             placeholder: "Name",
+            label: "Name",
         },
         {
             name: "description",
             type: "text",
-            placeholder: "description",
+            placeholder: "Description",
+            label: "Description",
+
 
         },
     ]

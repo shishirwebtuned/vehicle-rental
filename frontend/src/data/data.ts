@@ -1,6 +1,13 @@
 import { Vehicle } from "@/types/type";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaViber,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
+import { MdOutlineAddIcCall } from "react-icons/md";
 
 export const socialLinks = [
   {
@@ -275,18 +282,19 @@ export const footerData = {
     socials: [
       { icon: FaFacebook, link: "#" },
       { icon: FaInstagram, link: "#" },
-      { icon: FaLinkedin, link: "#" },
+      { icon: FaWhatsapp, link: "#" },
+      { icon: FaViber, link: "#" },
     ],
   },
   quickLinks: {
     title: "Quick Links",
     links: [
-      { label: "About", href: "#" },
-      { label: "Services", href: "#" },
-      { label: "Our Cars", href: "#" },
-      { label: "Gallery", href: "#" },
-      { label: "Blogs", href: "#" },
-      { label: "Contact Us", href: "#" },
+      { label: "About", href: "/about" },
+      { label: "Services", href: "/services" },
+      { label: "Our Cars", href: "/cars" },
+      { label: "Gallery", href: "/gallery" },
+      { label: "Blogs", href: "/blogs" },
+      { label: "Contact Us", href: "/contact-us" },
     ],
   },
   contact: {
@@ -295,7 +303,7 @@ export const footerData = {
       {
         icon: FiMapPin,
         text: "Gairidhara, Kathmandu, Nepal",
-        link: "https://www.google.com/maps?q=Gairidhara,+Kathmandu,+Nepal",
+        link: "https://share.google/aOhhenrPC6nOsouVm",
       },
       {
         icon: FiPhone,
@@ -303,9 +311,14 @@ export const footerData = {
         link: "tel:014004541",
       },
       {
+        icon: MdOutlineAddIcCall,
+        text: "9801170674 / 9851070674",
+        link: "tel:9801170674",
+      },
+      {
         icon: FiMail,
-        text: "info@gratefulvehicleservices.com",
-        link: "mailto:info@gratefulvehicleservices.com",
+        text: "gratefultour@gmail.com",
+        link: "mailto:gratefultour@gmail.com",
       },
     ],
   },

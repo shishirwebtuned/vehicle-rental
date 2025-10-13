@@ -13,16 +13,24 @@ const Topbar = () => {
                 <div className="flex flex-wrap items-center gap-y-1 gap-x-3 md:gap-x-4 md:text-sm text-[10px] sm:text-xs lg:text-base">
                     <div className="hover:text-primary cursor-pointer transition-colors flex flex-row items-center gap-1">
                         <MdCall className="text-sm sm:text-base md:text-lg lg:text-xl text-[#5C9CBC]" />
-                        <span className="hover:text-[#5C9CBC] hover:underline transition-all duration-300 ease-in-out">
-                            +977-01-4004541
-                        </span>
+                        <a
+                            href="tel:+9779801170674"
+                            className="hover:text-[#5C9CBC] hover:underline transition-all duration-300 ease-in-out"
+                        >
+                            +977 9801170674
+                        </a>
                     </div>
+
                     <div className="hover:text-primary cursor-pointer transition-colors flex flex-row items-center gap-1">
                         <IoMdMail className="text-sm sm:text-base md:text-lg lg:text-xl text-[#5C9CBC]" />
-                        <span className="hover:text-[#5C9CBC] hover:underline transition-all duration-300 ease-in-out">
-                            info@gratefulvehicleservices.com
-                        </span>
+                        <a
+                            href="mailto:gratefultour@gmail.com"
+                            className="hover:text-[#5C9CBC] hover:underline transition-all duration-300 ease-in-out"
+                        >
+                            gratefultour@gmail.com
+                        </a>
                     </div>
+
                 </div>
 
                 <div className="flex items-center gap-2 md:gap-3">

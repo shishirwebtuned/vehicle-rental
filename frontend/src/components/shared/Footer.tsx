@@ -73,7 +73,9 @@ const Footer = () => {
                 <p>
                     <span>Developed By </span>
                     <a
-                        href="#"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="https://webtunedstudio.com.np"
                         className="font-semibold text-primary hover:underline"
                     >
                         Web Tuned Studio
