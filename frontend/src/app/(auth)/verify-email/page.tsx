@@ -2,7 +2,7 @@
 
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useVerifyOtpMutation } from "@/redux/api/rest/mutation/authApi";
@@ -18,7 +18,12 @@ const EmailVerification = () => {
     // const [isOtpRequestAllowed, setIsOtpRequestAllowed] = useState(true);
     // const [timeRemaining, setTimeRemaining] = useState(0);
     const router = useRouter();
-    const email = localStorage.getItem("emailForOtp");
+    const [email, setEmail] = useState<string | null>(null);
+
+    useEffect(() => {
+        const storedEmail = localStorage.getItem("emailForOtp");
+        setEmail(storedEmail);
+    }, []);
 
 
     const fields = [
