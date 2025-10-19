@@ -1,20 +1,38 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { SidebarProvider, Sidebar, SidebarContent, SidebarHeader, SidebarFooter, SidebarGroup, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarInset, SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
-import { Home, Tag, Truck, Users, CalendarCheck } from "lucide-react";
-
-
-const menuItems = [
-    { icon: <Home />, label: "Home", route: "/admin-dash" },
-    { icon: <Tag />, label: "Categories", route: "/admin-dash/category" },
-    { icon: <Truck />, label: "Vehicles", route: "/admin-dash/vehicle" },
-    { icon: <Users />, label: "Users", route: "/admin-dash/users" },
-    { icon: <CalendarCheck />, label: "Bookings", route: "/admin-dash/booking" },
-];
+import { Home, Tag, Truck, Users, CalendarCheck, LogOut } from "lucide-react";
+import { useRouter } from "next/navigation";
+import MasterDialog from "@/components/shared/MasterDialog";
+import LogoutDialog from "@/components/shared/LogoutDialog";
+import Cookies from "js-cookie";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+
+    const [logoutOpen, setLogoutOpen] = useState<boolean>(false);
+    const router = useRouter();
+    const menuItems = [
+        { id: 1, icon: <Home />, label: "Home", route: "/admin-dash" },
+        { id: 2, icon: <Tag />, label: "Categories", route: "/admin-dash/category" },
+        { id: 3, icon: <Truck />, label: "Vehicles", route: "/admin-dash/vehicle" },
+        { id: 4, icon: <Users />, label: "Users", route: "/admin-dash/users" },
+        { id: 5, icon: <CalendarCheck />, label: "Bookings", route: "/admin-dash/booking" },
+        {
+            id: 6, icon: <LogOut />, label: "Logout", onClick: () => setLogoutOpen(true)
+        },
+    ];
+
+    const handleLogout = () => {
+        Cookies.remove("userToken");
+        Cookies.remove("userRole");
+
+        localStorage.removeItem("user");
+
+        setLogoutOpen(false);
+        router.push("/login");
+    }
     return (
         <SidebarProvider>
             <div className="flex min-h-screen w-full text-black">
@@ -27,13 +45,22 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         <SidebarGroup>
                             <SidebarMenu>
                                 {menuItems.map((item) => (
-                                    <SidebarMenuItem key={item.route}>
-                                        <SidebarMenuButton asChild>
-                                            <Link href={item.route} className="flex items-center gap-2">
+                                    <SidebarMenuItem key={item.id}>
+                                        {item.route ? (
+                                            <SidebarMenuButton asChild>
+                                                <Link href={item.route} className="flex items-center gap-2">
+                                                    {item.icon}
+                                                    <span className="truncate sidebar-label">{item.label}</span>
+                                                </Link>
+                                            </SidebarMenuButton>
+                                        ) : (
+                                            <SidebarMenuButton className="flex items-center gap-2 cursor-pointer"
+                                                onClick={item.onClick}>
                                                 {item.icon}
                                                 <span className="truncate sidebar-label">{item.label}</span>
-                                            </Link>
-                                        </SidebarMenuButton>
+                                            </SidebarMenuButton>
+                                        )}
+
                                     </SidebarMenuItem>
                                 ))}
                             </SidebarMenu>
@@ -48,6 +75,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <SidebarInset className="flex-1 bg-gray-50 p-6">
                     {children}
                 </SidebarInset>
+
+                <LogoutDialog open={logoutOpen}
+                    onClose={() => setLogoutOpen(false)}
+                    onConfirm={handleLogout}
+                    title="Logout"
+                    description="Are you sure you want to Logout?"
+                />
             </div>
         </SidebarProvider>
     );

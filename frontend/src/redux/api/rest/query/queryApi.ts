@@ -59,6 +59,22 @@ const queryApi = baseApi.injectEndpoints({
       }),
       providesTags: ["UserById"],
     }),
+
+    getBookings: builder.query<any, void>({
+      query: () => ({
+        url: "booking",
+        method: "GET",
+      }),
+      providesTags: ["Bookings"],
+    }),
+
+    getBookingById: builder.query<any, { id: string }>({
+      query: ({ id }) => ({
+        url: `booking/${id}`,
+        method: "GET",
+      }),
+      providesTags: ["BookingById"],
+    }),
   }),
   overrideExisting: false,
 });
@@ -71,4 +87,6 @@ export const {
   useGetAllUsersQuery,
   useGetUserByIdQuery,
   useGetVehiclesByCategoryQuery,
+  useGetBookingsQuery,
+  useGetBookingByIdQuery,
 } = queryApi;

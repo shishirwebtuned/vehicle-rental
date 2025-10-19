@@ -16,6 +16,10 @@ export interface IUser extends Document {
 export interface ICategory extends Document {
   name: string;
   description: string;
+  image: {
+    url: string;
+    public_id: string;
+  };
 }
 
 export interface IVehicle extends Document {
@@ -36,11 +40,27 @@ export interface IVehicle extends Document {
 }
 
 export interface IBooking extends Document {
-  user: Types.ObjectId;
   vehicle: Types.ObjectId;
-  startDate: Date;
-  endDate: Date;
-  totalAmount: number;
+
+  // Customer info
+  name: string;
+  email: string;
+  phone: string;
+  message?: string;
+
+  // Pickup & dropoff details
+  pickupLocation: string;
+  pickupDate: Date;
+  pickupTime: string;
+
+  dropoffLocation: string;
+  dropoffDate: Date;
+  dropoffTime: string;
+
+  // Booking status
   status: "pending" | "confirmed" | "cancelled" | "completed";
   paymentStatus: "pending" | "paid" | "failed" | "refunded";
+
+  createdAt: Date;
+  updatedAt: Date;
 }

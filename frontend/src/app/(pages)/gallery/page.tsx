@@ -9,9 +9,9 @@ const page = () => {
     return (
         <div className="bg-white">
             <div
-                className={`flex flex-col min-h-screen items-center pt-40 md:pt-44 justify-center pb-20 sm:pb-24 md:pb-28 ${paddingX}`}
+                className={`flex flex-col min-h-screen items-center pt-36 md:pt-44 justify-center pb-12 sm:pb-20 md:pb-28 ${paddingX}`}
             >
-                <h1 className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold mb-12">
+                <h1 className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold mb-8 md:mb-12">
                     <span className="text-primary">Our </span> Gallery
                 </h1>
 

@@ -6,7 +6,8 @@ import dotenv from "dotenv";
 import userRoutes from "./routes/user.routes.js";
 import categoryRoutes from "./routes/category.routes.js";
 import vehicleRoutes from "./routes/vehicle.routes.js";
-
+import bookingRoutes from "./routes/booking.routes.js";
+import contactRoutes from "./routes/contact.routes.js";
 // import paymentRoutes from "./routes/payment.routes";
 // import orderRoutes from "./routes/order.routes";
 // import shippingRoutes from "./routes/shipping.routes";
@@ -30,6 +31,8 @@ const baseApi = "/api/v1/en";
 app.use(`${baseApi}/users`, userRoutes);
 app.use(`${baseApi}/categories`, categoryRoutes);
 app.use(`${baseApi}/vehicles`, vehicleRoutes);
+app.use(`${baseApi}/booking`, bookingRoutes);
+app.use(`${baseApi}/contact`, contactRoutes);
 
 // app.use(`${baseApi}/payments`, paymentRoutes);
 // app.use(`${baseApi}/order`, orderRoutes);

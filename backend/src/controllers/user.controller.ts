@@ -38,67 +38,67 @@ export const loginUser = catchAsync(async (req, res) => {
   });
 });
 
-export const registerUser = catchAsync(async (req, res) => {
-  const { name, email, password, phoneNumber, address } = req.body;
+// export const registerUser = catchAsync(async (req, res) => {
+//   const { name, email, password, phoneNumber, address } = req.body;
 
-  if (!name || !email || !password || !phoneNumber || !address)
-    throw new AppError("All fields are required", 400);
+//   if (!name || !email || !password || !phoneNumber || !address)
+//     throw new AppError("All fields are required", 400);
 
-  const existingUser = await User.findOne({ email });
-  if (existingUser)
-    throw new AppError("User with this email already exists", 401);
+//   const existingUser = await User.findOne({ email });
+//   if (existingUser)
+//     throw new AppError("User with this email already exists", 401);
 
-  const otp = Math.floor(100000 + Math.random() * 900000);
+//   const otp = Math.floor(100000 + Math.random() * 900000);
 
-  const hashedOtp = crypto
-    .createHash("sha256")
-    .update(String(otp))
-    .digest("hex");
+//   const hashedOtp = crypto
+//     .createHash("sha256")
+//     .update(String(otp))
+//     .digest("hex");
 
-  const otpExpires = Date.now() + 10 * 60 * 1000;
+//   const otpExpires = Date.now() + 10 * 60 * 1000;
 
-  const user = new User({
-    name,
-    email,
-    password,
-    role: "customer",
-    phoneNumber,
-    address,
-    otp: hashedOtp,
-    otpExpiry: otpExpires,
-  });
-  await user.save();
+//   const user = new User({
+//     name,
+//     email,
+//     password,
+//     role: "customer",
+//     phoneNumber,
+//     address,
+//     otp: hashedOtp,
+//     otpExpiry: otpExpires,
+//   });
+//   await user.save();
 
-  const subject = "Your Vehicle Rental OTP Verification Code";
-  const html = `
-    <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-      <h2>Welcome to Vehicle Rental, ${name}!</h2>
-      <p>Your One-Time Password (OTP) is:</p>
-      <h1 style="color: #007bff;">${otp}</h1>
-      <p>This code will expire in <strong>10 minutes</strong>.</p>
-      <p>If you didn’t request this, you can ignore this email.</p>
-    </div>
-  `;
+//   const subject = "Your Vehicle Rental OTP Verification Code";
+//   const html = `
+//     <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+//       <h2>Welcome to Vehicle Rental, ${name}!</h2>
+//       <p>Your One-Time Password (OTP) is:</p>
+//       <h1 style="color: #007bff;">${otp}</h1>
+//       <p>This code will expire in <strong>10 minutes</strong>.</p>
+//       <p>If you didn’t request this, you can ignore this email.</p>
+//     </div>
+//   `;
 
-  await sendEmail({ to: email, subject, html });
+//   await sendEmail({ to: email, subject, html });
 
-  sendResponse(res, {
-    success: true,
-    statusCode: 200,
-    message: "Signup Successful! OTP has been sent to your email.",
-    data: {
-      user: {
-        id: user._id,
-        name: user.name,
-        email: user.email,
-        role: user.role,
-        phoneNumber: user.phoneNumber,
-        address: user.address,
-        status: user.status,
-      },
-    },
-  });
-});
+//   sendResponse(res, {
+//     success: true,
+//     statusCode: 200,
+//     message: "Signup Successful! OTP has been sent to your email.",
+//     data: {
+//       user: {
+//         id: user._id,
+//         name: user.name,
+//         email: user.email,
+//         role: user.role,
+//         phoneNumber: user.phoneNumber,
+//         address: user.address,
+//         status: user.status,
+//       },
+//     },
+//   });
+// });
 
 export const createAdmin = catchAsync(async (req, res) => {
   const { name, email, password, phoneNumber, address } = req.body;
@@ -134,30 +134,30 @@ export const createAdmin = catchAsync(async (req, res) => {
   });
 });
 
-export const verifyOtp = catchAsync(async (req, res) => {
-  const { email, otp } = req.body;
-  if (!email || !otp) throw new AppError("Email and OTP are required", 400);
+// export const verifyOtp = catchAsync(async (req, res) => {
+//   const { email, otp } = req.body;
+//   if (!email || !otp) throw new AppError("Email and OTP are required", 400);
 
-  const user = await User.findOne({ email });
-  if (!user) throw new AppError("User not found", 404);
+//   const user = await User.findOne({ email });
+//   if (!user) throw new AppError("User not found", 404);
 
-  const hashedOtp = crypto.createHash("sha256").update(otp).digest("hex");
+//   const hashedOtp = crypto.createHash("sha256").update(otp).digest("hex");
 
-  if (user.otp !== hashedOtp) throw new AppError("Invalid OTP", 400);
-  if (user.otpExpiry && user.otpExpiry.getTime() < Date.now())
-    throw new AppError("OTP expired", 400);
+//   if (user.otp !== hashedOtp) throw new AppError("Invalid OTP", 400);
+//   if (user.otpExpiry && user.otpExpiry.getTime() < Date.now())
+//     throw new AppError("OTP expired", 400);
 
-  user.status = "verified";
-  user.otp = null;
-  user.otpExpiry = null;
-  await user.save();
+//   user.status = "verified";
+//   user.otp = null;
+//   user.otpExpiry = null;
+//   await user.save();
 
-  sendResponse(res, {
-    success: true,
-    statusCode: 200,
-    message: "Email verified successfully!",
-  });
-});
+//   sendResponse(res, {
+//     success: true,
+//     statusCode: 200,
+//     message: "Email verified successfully!",
+//   });
+// });
 
 export const getUsers = catchAsync(async (req, res) => {
   const users =

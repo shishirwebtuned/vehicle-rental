@@ -3,7 +3,7 @@ import HomePage from "./(pages)/Home/Home";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <HomePage />
     </div>
   );

@@ -120,9 +120,9 @@ const page = () => {
     ];
     return (
         <div className='bg-white'>
-            <div className={`flex flex-col min-h-screen items-center pt-40 md:pt-44 justify-center bg-background pb-20 sm:pb-24 md:pb-28 ${paddingX}`}>
+            <div className={`flex flex-col min-h-screen items-center pt-40 md:pt-44 justify-center bg-background pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
 
-                <div className="text-black pt-12 pb-8 justify-center space-y-8 w-full flex flex-col items-center">
+                <div className="text-black pb-8 justify-center space-y-4 md:space-y-8 w-full flex flex-col items-center">
                     <h1 className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold">
                         <span className="text-primary">Our </span> Services
                     </h1>
@@ -131,7 +131,7 @@ const page = () => {
                         in Nepal
 
                     </p>
-                    <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full h-full md:gap-6 gap-4 lg:gap-8 mt-8">
+                    <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full h-full md:gap-6 gap-4 lg:gap-8 mt-4 md:mt-8">
                         {services.map((item) => (
                             <div key={item.id} className="flex border border-[#5C9CBC24] rounded-md serviceCard-shadow flex-col font-nunito items-center text-center py-5 px-4">
                                 <item.icon className='md:text-3xl text-2xl lg:text-4xl text-primary mb-4' />

@@ -43,6 +43,12 @@ const Page = () => {
             const res = await getLogin(values).unwrap();
             console.log('resss', res)
             if (res?.success) {
+
+                if (res?.data?.user?.role !== "admin") {
+                    toast.error("Access denied. Only admin can log in.");
+                    return;
+                }
+
                 dispatch(setToken(res?.data?.token));
                 dispatch(setUser(res?.data?.user))
                 Cookies.set("userToken", res?.data?.token);
@@ -50,13 +56,15 @@ const Page = () => {
                 localStorage.setItem("user", JSON.stringify(res?.data?.user));
 
                 toast.success(res.message);
-                if (res?.data?.user?.role === "admin") {
-                    router.push("/admin-dash");
+                router.push("/admin-dash");
 
-                } else if (res?.data?.user?.role === "customer") {
-                    router.push("/dashboard");
+                // if (res?.data?.user?.role === "admin") {
+                //     router.push("/admin-dash");
 
-                }
+                // } else if (res?.data?.user?.role === "customer") {
+                //     router.push("/dashboard");
+
+                // }
             }
         } catch (err: any) {
             console.log(err);
@@ -108,7 +116,7 @@ const Page = () => {
                         fieldStyle='border-b-2 border-gray-300 ring-0 focus:outline-0'
                         additionalContent={
                             <>
-                                <div className="flex items-center justify-end mb-4">
+                                {/* <div className="flex items-center justify-end mb-4">
 
                                     <Link
                                         href="/reset-password"
@@ -116,7 +124,7 @@ const Page = () => {
                                     >
                                         Forgot password?
                                     </Link>
-                                </div>
+                                </div> */}
                                 <p className="mb-4 text-xs text-center text-gray-500">
                                     By continuing you agree to our{" "}
                                     <Link
@@ -137,7 +145,7 @@ const Page = () => {
                             </>
                         }
                     />
-                    <h2 className='w-full flex gap-2 items-center justify-center'>Don't have an Account ? <Link href='/sign-up' className='text-btnHover font-semibold'>Sign Up</Link></h2>
+                    {/* <h2 className='w-full flex gap-2 items-center justify-center'>Don't have an Account ? <Link href='/sign-up' className='text-btnHover font-semibold'>Sign Up</Link></h2> */}
 
                 </div>
             </div>

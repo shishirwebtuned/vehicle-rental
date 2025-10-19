@@ -1,28 +1,27 @@
+import { string } from "yup";
 import { baseApi } from "../../restBaseApi";
+import { create } from "domain";
 
 const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     createCategory: builder.mutation({
-      query: (body: { name: string; description: string }) => ({
+      query: (formData: any) => ({
         url: "/categories",
-        body,
+        body: formData,
         method: "POST",
       }),
       invalidatesTags: ["Categories"],
     }),
-    updateCategory: builder.mutation<
-      any,
-      { id: string; name: string; description: string }
-    >({
-      query: ({ id, ...body }) => ({
+    updateCategory: builder.mutation({
+      query: ({ id, formData }: { id: string; formData: any }) => ({
         url: `/categories/${id}`,
-        body,
+        body: formData,
         method: "PUT",
       }),
       invalidatesTags: ["Categories"],
     }),
     deleteCategory: builder.mutation({
-      query: (id) => ({
+      query: (id: string) => ({
         url: `categories/${id}`,
         method: "DELETE",
       }),
@@ -54,6 +53,49 @@ const authApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["Vehicles"],
     }),
+
+    createBooking: builder.mutation({
+      query: (body: {
+        vehicle: string;
+        name: string;
+        email: string;
+        phone: string;
+        message: string;
+        pickupLocation: string;
+        pickupDate: Date;
+        pickupTime: string;
+        dropoffLocation: string;
+        dropoffDate: Date;
+        dropoffTime: string;
+      }) => ({
+        url: `/booking`,
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Vehicles", "Bookings", "VehicleById"],
+    }),
+
+    updateBooking: builder.mutation({
+      query: ({ id, status }: { id: string; status: string }) => ({
+        url: `/booking/${id}`,
+        method: "PATCH",
+        body: { status },
+      }),
+      invalidatesTags: ["Vehicles", "Bookings", "VehicleById", "BookingById"],
+    }),
+
+    createContact: builder.mutation({
+      query: (body: {
+        name: string;
+        email: string;
+        phone: string;
+        message: string;
+      }) => ({
+        url: `/contact`,
+        method: "POST",
+        body,
+      }),
+    }),
   }),
 });
 
@@ -64,4 +106,7 @@ export const {
   useCreateVehicleMutation,
   useUpdateVehicleMutation,
   useDeleteVehicleMutation,
+  useCreateBookingMutation,
+  useUpdateBookingMutation,
+  useCreateContactMutation,
 } = authApi;

@@ -22,7 +22,7 @@ export const addVehicle = catchAsync(async (req, res) => {
     numberPlate,
     seats,
     fuelType,
-    pricePerDay,
+    // pricePerDay,
     description,
   } = req.body;
 
@@ -34,7 +34,7 @@ export const addVehicle = catchAsync(async (req, res) => {
     !category ||
     !seats ||
     !fuelType ||
-    !pricePerDay ||
+    // !pricePerDay ||
     !req.file ||
     !description
   )
@@ -71,7 +71,7 @@ export const addVehicle = catchAsync(async (req, res) => {
     seats,
     fuelType,
     description,
-    pricePerDay,
+    // pricePerDay,
     image: {
       url: result?.secure_url,
       public_id: result?.public_id,
@@ -95,7 +95,7 @@ export const addVehicle = catchAsync(async (req, res) => {
         category: vehicle.category,
         seats: vehicle.seats,
         fuelType: vehicle.fuelType,
-        pricePerDay: vehicle.pricePerDay,
+        // pricePerDay: vehicle.pricePerDay,
         image: vehicle.image,
         description: vehicle.description,
       },

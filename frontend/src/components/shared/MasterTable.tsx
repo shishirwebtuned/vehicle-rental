@@ -39,11 +39,21 @@ export function MasterTable<T extends { id: string | number }>({
                 <tbody className="divide-y divide-gray-100">
                     {rows.map((row) => (
                         <tr key={row.id}>
-                            {columns.map((col) => (
-                                <td key={String(col.key)} className="px-4 py-2 max-w-[200px] truncate overflow-hidden whitespace-nowrap">
-                                    {col.render ? col.render(row[col.key], row) : String(row[col.key]) ?? "-"}
-                                </td>
-                            ))}
+                            {columns.map((col) => {
+                                const value = row[col.key];
+                                const content =
+                                    col.render?.(value, row) ??
+                                    (React.isValidElement(value) ? value : String(value ?? "-"));
+
+                                return (
+                                    <td
+                                        key={String(col.key)}
+                                        className="px-4 py-2 max-w-[200px] truncate overflow-hidden whitespace-nowrap"
+                                    >
+                                        {content}
+                                    </td>
+                                );
+                            })}
                             {(onEdit || onDelete || onView) && (
                                 <td className="px-4 py-2 space-x-2 font-semibold lg:text-sm md:text-xs text-[10px]">
                                     {onView && (

@@ -13,11 +13,13 @@ import { Flag } from 'lucide-react';
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import * as Yup from 'yup';
+import ViewCategory from './Components/ViewCategory';
 
 
 const page = () => {
 
     const [open, setOpen] = useState<boolean>(false);
+    const [viewCategory, setViewCategory] = useState<boolean>(false);
     const [editMode, setEditMode] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState<any>(null);
     const [selectedCategoryId, setSelectedCategoryId] = useState<string | null>(null);
@@ -46,6 +48,8 @@ const page = () => {
         _id: cat?._id ?? "N/A",
         description: cat?.description ?? "N/A",
         name: cat?.name ?? "N/A",
+        image: cat?.image ?? "N/A",
+
 
     })) || [];
 
@@ -62,7 +66,12 @@ const page = () => {
             placeholder: "Description",
             label: "Description",
 
-
+        },
+        {
+            name: "image",
+            label: "Image",
+            type: "file",
+            placeholder: "Upload Vehicle Image",
         },
     ]
 
@@ -70,18 +79,29 @@ const page = () => {
     const CategorySchema = Yup.object().shape({
         name: Yup.string().required("Name is required"),
         description: Yup.string().required("Description is required"),
+        image: Yup.mixed().when([], {
+            is: () => !editMode,
+            then: (schema) => schema.required("Category image is required"),
+            otherwise: (schema) => schema.notRequired(),
+        }),
     });
 
 
     const handleSubmit = async (values: any) => {
         try {
-            console.log("Form Values:", values);
+            const formData = new FormData();
+            formData.append("name", values.name);
+            formData.append("description", values.description);
+
+            if (values.image instanceof File) {
+                formData.append("image", values.image);
+            }
 
             let res;
             if (editMode && selectedCategory?._id) {
-                res = await updateCategory({ id: selectedCategory._id, ...values }).unwrap();
+                res = await updateCategory({ id: selectedCategory._id, formData }).unwrap();
             } else {
-                res = await createCategory(values).unwrap();
+                res = await createCategory(formData).unwrap();
             }
 
             if (res?.success) {
@@ -114,7 +134,7 @@ const page = () => {
     };
 
     return (
-        <div className='flex flex-col gap-6'>
+        <div className='flex flex-col gap-6' >
             <div className='flex flex-row items-center justify-between'>
                 <h2 className='font-nunito lg:text-xl md:text-lg text-base font-semibold'>
                     Categories List
@@ -124,6 +144,10 @@ const page = () => {
             <MasterTable
                 columns={columns}
                 rows={rows}
+                onView={(row) => {
+                    setViewCategory(true);
+                    setSelectedCategoryId(row._id);
+                }}
                 onEdit={(row) => {
                     setSelectedCategory(row);
                     setEditMode(true);
@@ -155,8 +179,14 @@ const page = () => {
                     onClose={() => setOpen(false)}
                     initialValues={
                         editMode
-                            ? { name: selectedCategory.name, description: selectedCategory.description }
-                            : { name: '', description: '' }
+                            ? {
+                                name: selectedCategory.name, description: selectedCategory.description,
+                                image: null,
+
+                            }
+                            : {
+                                name: '', description: '', image: null,
+                            }
                     }
                 />
             </MasterDialog>
@@ -166,8 +196,18 @@ const page = () => {
                 title="Delete Category"
                 description="Are you sure you want to delete this category? This action cannot be undone."
             />
-
-        </div>
+            <MasterDialog
+                open={viewCategory}
+                onClose={() => {
+                    setViewCategory(false);
+                    setSelectedCategoryId(null);
+                }}
+                title="Category Details"
+                description="View the Category details"
+            >
+                <ViewCategory categoryId={selectedCategoryId} />
+            </MasterDialog>
+        </div >
     )
 }
 

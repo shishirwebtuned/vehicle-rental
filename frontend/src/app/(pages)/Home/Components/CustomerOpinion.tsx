@@ -6,6 +6,7 @@ import OurCars from './OurCars'
 import { FaQuoteRight, FaRegStar, FaStar } from 'react-icons/fa';
 import dynamic from 'next/dynamic'
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
+import { motion } from "framer-motion";
 
 
 const CustomerOpinion = () => {
@@ -53,21 +54,37 @@ const CustomerOpinion = () => {
 
             <section className={`flex items-center justify-center w-full bg-black/60 py-12 sm:py-16 md:py-20 ${paddingX}`}>
                 <div className="text-white text-center w-full space-y-20">
-                    <h2 className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold">
+                    <motion.h2
+                        className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold"
+                        initial={{ y: 50, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
                         <span className="text-primary">Drive </span> by Experience, <span className="text-primary">Backed</span> by a Fleet
-                    </h2>
+                    </motion.h2>
                     <div className='sm:grid-cols-2 grid-cols-1 grid lg:grid-cols-4 w-full justify-between px-16 gap-x-2 gap-y-5'>
                         {numberData.map((item, index) => (
-                            <div key={index} className='flex flex-col items-center justify-center'>
-                                <h2 className='text-primary font-merriweather font-bold lg:text-6xl whitespace-nowrap md:text-5xl sm:text-4xl text-3xl'>{item.number}{" "}
+                            <motion.div
+                                key={index}
+                                className="flex flex-col items-center justify-center"
+                                initial={{ opacity: 0 }}           // fade in from own position
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: index * 0.15 }} // stagger
+                            >
+                                <h2 className="text-primary font-merriweather font-bold lg:text-6xl whitespace-nowrap md:text-5xl sm:text-4xl text-3xl">
+                                    {item.number}{" "}
                                     {item.suffix && (
                                         <span className="lg:text-lg md:text-base text-sm align-baseline font-medium -ml-2 text-white">
                                             {item.suffix}
                                         </span>
                                     )}
                                 </h2>
-                                <span className='text-white font-nunito md:text-lg sm:text-base text-sm lg:text-xl'>{item.text}</span>
-                            </div>
+                                <span className="text-white font-nunito md:text-lg sm:text-base text-sm lg:text-xl">
+                                    {item.text}
+                                </span>
+                            </motion.div>
 
                         ))}
                     </div>
@@ -75,12 +92,17 @@ const CustomerOpinion = () => {
             </section>
 
             <section className={`bg-background h-full py-14 sm:py-16 md:py-20 flex flex-col gap-8 items-center justify-center ${paddingX}`}>
-                <div className="text-center">
+                <motion.div
+                    initial={{ y: 50, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-center">
                     <h2 className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold">
                         What Our <span className="text-primary">Customers</span> Say
                     </h2>
-                </div>
-                <div className="w-full px-4 mt-4">
+                </motion.div>
+                <div className="w-full h-full px-4 mt-4">
                     <Slider {...settings}>
                         {testimonialsData.map((t) => (
                             <div key={t.id} className="px-3">

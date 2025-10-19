@@ -50,7 +50,7 @@ const page = () => {
     { key: "seats", label: "Seats" },
     { key: "fuelType", label: "Fuel Type" },
 
-    { key: "pricePerDay", label: "Price Per Day" },
+        // { key: "pricePerDay", label: "Price Per Day" },
     ]
 
     const rows = vehiclesData?.map((vehicle: any, index: number) => ({
@@ -63,7 +63,7 @@ const page = () => {
         numberPlate: vehicle?.numberPlate ?? "N/A",
         seats: vehicle?.seats ?? "N/A",
         fuelType: vehicle.fuelType ?? "N/A",
-        pricePerDay: vehicle.pricePerDay ?? "N/A",
+        // pricePerDay: vehicle.pricePerDay ?? "N/A",
         image: vehicle.image ?? "N/A",
         description: vehicle?.description ?? "N/A",
 
@@ -87,8 +87,8 @@ const page = () => {
         {
             name: "vehicleModel",
             type: "text",
-            placeholder: "Model (e.g. 2022)",
-            label: "Vehicle Model",
+            placeholder: "e.g. 2022",
+            label: "Vehicle Model/Year",
 
         },
         {
@@ -125,12 +125,12 @@ const page = () => {
                 { value: "Hybrid", label: "Hybrid" },
             ],
         },
-        {
-            name: "pricePerDay",
-            label: "Price Per Day",
-            type: "number",
-            placeholder: "Price Per Day (in NPR)",
-        },
+        // {
+        //     name: "pricePerDay",
+        //     label: "Price Per Day",
+        //     type: "number",
+        //     placeholder: "Price Per Day (in NPR)",
+        // },
         {
             name: "description",
             label: "Description",
@@ -150,10 +150,13 @@ const page = () => {
     const VehicleSchema = Yup.object().shape({
         name: Yup.string().required("Vehicle name is required"),
         brand: Yup.string().required("Brand is required"),
-        vehicleModel: Yup.string().required("Vehicle model is required"),
+        vehicleModel: Yup.string()
+            .matches(/^(19|20)\d{2}$/, "Enter a valid year (e.g., 2022)")
+            .required("Vehicle model is required"),
+
         category: Yup.string().required("Category is required"),
         numberPlate: Yup.string()
-            .matches(/^[A-Z]+\s[A-K]\s\d{2}\s\d{1,4}$/, "Invalid number plate format (e.g., BAGMATI B 03 1234)")
+            .matches(/^[A-Z][A-Z0-9\s]*$/, "Invalid number plate format (e.g., BA 3CHB 1234)")
             .required("Number plate is required"),
 
         seats: Yup.number()
@@ -163,10 +166,10 @@ const page = () => {
         fuelType: Yup.string()
             .oneOf(["Petrol", "Diesel", "Electric", "Hybrid"], "Invalid fuel type")
             .required("Fuel type is required"),
-        pricePerDay: Yup.number()
-            .typeError("Price must be a number")
-            .min(100, "Price must be at least 100 NPR")
-            .required("Price per day is required"),
+        // pricePerDay: Yup.number()
+        //     .typeError("Price must be a number")
+        //     .min(100, "Price must be at least 100 NPR")
+        //     .required("Price per day is required"),
         description: Yup.string()
             .min(10, "Description must be at least 10 characters long")
             .required("Description is required"),
@@ -189,7 +192,7 @@ const page = () => {
             formData.append("numberPlate", values.numberPlate);
             formData.append("seats", values.seats.toString());
             formData.append("fuelType", values.fuelType);
-            formData.append("pricePerDay", values.pricePerDay.toString());
+            // formData.append("pricePerDay", values.pricePerDay.toString());
             formData.append("description", values.description);
 
             if (values.image instanceof File) {
@@ -288,7 +291,7 @@ const page = () => {
                                 numberPlate: selectedVehicle.numberPlate,
                                 seats: selectedVehicle.seats,
                                 fuelType: selectedVehicle.fuelType,
-                                pricePerDay: selectedVehicle.pricePerDay,
+                                // pricePerDay: selectedVehicle.pricePerDay,
                                 description: selectedVehicle.description,
                                 image: null,
                             }
@@ -300,7 +303,7 @@ const page = () => {
                                 numberPlate: '',
                                 seats: '',
                                 fuelType: '',
-                                pricePerDay: '',
+                                // pricePerDay: '',
                                 description: '',
                                 image: null,
                             }

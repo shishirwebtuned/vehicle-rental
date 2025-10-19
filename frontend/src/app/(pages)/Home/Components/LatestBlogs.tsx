@@ -1,20 +1,31 @@
+"use client";
+
 import { paddingX } from '@/constant/constant'
 import { blogData } from '@/data/data'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from "framer-motion";
 
 const LatestBlogs = () => {
     return (
-        <div className={`flex flex-col gap-8 md:gap-10 lg:gap-12 items-center justify-center bg-background ${paddingX} py-12`}>
-            <div className='w-full text-center'>
+        <div className={`flex flex-col gap-8 md:gap-10 lg:gap-12 items-center justify-center bg-background ${paddingX} py-12 overflow-hidden`}>
+            <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className='w-full text-center'>
                 <h3 className="w-full text-black font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold leading-snug">
                     Our Latest{" "}
                     <span className="text-primary font-bold">Blogs</span>
                 </h3>
-            </div>
+            </motion.div>
             <div className='grid sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 lg:gap-8 sm:gap-6 gap-4'>
                 {blogData.map((item, index) => (
-                    <div key={item.id || index} className="w-full rounded-xl border border-gray-200 bg-white px-5 py-5 blogCard-shadow hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between transition-all duration-300 ease-in-out text-start">
+                    <motion.div initial={{ y: 50, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }} key={item.id || index} className="w-full rounded-xl border border-gray-200 bg-white px-5 py-5 blogCard-shadow hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between transition-all duration-300 ease-in-out text-start">
                         <div className="flex justify-center h-32 sm:h-52 md:h-60 lg:h-64">
                             <Image
                                 src={item.image}
@@ -35,7 +46,7 @@ const LatestBlogs = () => {
                                 Read More
                             </button>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
 
             </div>

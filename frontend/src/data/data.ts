@@ -1,34 +1,35 @@
-import { Vehicle } from "@/types/type";
 import {
+  FaClock,
   FaFacebook,
   FaInstagram,
-  FaLinkedin,
+  FaShieldAlt,
   FaViber,
   FaWhatsapp,
 } from "react-icons/fa";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import { MdOutlineAddIcCall } from "react-icons/md";
+import { FaExpand, FaUserCheck } from "react-icons/fa";
 
 export const socialLinks = [
   {
     id: 1,
     src: "/icons/social.png",
     alt: "WhatsApp",
-    href: "https://wa.me/977014004541",
+    href: "https://wa.me/9779801170674",
     hover: "hover:opacity-80",
   },
   {
     id: 2,
     src: "/icons/viber.png",
     alt: "Viber",
-    href: "viber://chat?number=%2B977014004541",
+    href: "viber://chat?number=%2B9779801170674",
     hover: "hover:opacity-80",
   },
   {
     id: 3,
     src: "/icons/facebook.png",
     alt: "Facebook",
-    href: "https://facebook.com/yourpage",
+    href: "https://www.facebook.com/gratefultours/",
     hover: "hover:opacity-80",
   },
   {
@@ -41,9 +42,10 @@ export const socialLinks = [
 ];
 
 export const navItems = [
+  { label: "Overview", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Our Cars", href: "/cars" },
+  { label: "Our Cars", href: "/our-cars" },
   { label: "Gallery", href: "/gallery" },
   { label: "Blogs", href: "/blogs" },
   { label: "Contact Us", href: "/contact-us" },
@@ -72,6 +74,69 @@ export const howitworksData = [
     title: "Sit, Relax and Start Your Trip",
     description:
       "Start your trip the right way—comfortable, safe, and on time with us.",
+  },
+];
+
+export const categoriesStaticData = [
+  {
+    _id: "68eb90cfa373b13794266561",
+    name: "Sedan",
+    description: "Sedan",
+    createdAt: "2025-10-12T11:28:15.858Z",
+    updatedAt: "2025-10-19T09:54:26.381Z",
+    __v: 0,
+    image: {
+      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760867666/category/tsot8l9q5rdckfso3xbe.png",
+      public_id: "category/tsot8l9q5rdckfso3xbe",
+    },
+  },
+  {
+    _id: "68eb8da9a373b13794266559",
+    name: "Jeep",
+    description: "Jeep",
+    createdAt: "2025-10-12T11:14:49.041Z",
+    updatedAt: "2025-10-19T09:54:39.015Z",
+    __v: 0,
+    image: {
+      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760867678/category/ej3xqoip9ufmm0vuqyf4.png",
+      public_id: "category/ej3xqoip9ufmm0vuqyf4",
+    },
+  },
+  {
+    _id: "68eb7eefa373b13794266544",
+    name: "SUV",
+    description: "a suv",
+    createdAt: "2025-10-12T10:11:59.442Z",
+    updatedAt: "2025-10-19T09:58:45.594Z",
+    __v: 0,
+    image: {
+      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760867925/category/jzbdbwdj78d4kzdujkog.png",
+      public_id: "category/jzbdbwdj78d4kzdujkog",
+    },
+  },
+  {
+    _id: "68eb7ecba373b13794266541",
+    name: "Hiace",
+    description: "Hiace",
+    createdAt: "2025-10-12T10:11:23.559Z",
+    updatedAt: "2025-10-19T09:59:01.056Z",
+    __v: 0,
+    image: {
+      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760867940/category/dszdmqxij7ouaynvpnj1.png",
+      public_id: "category/dszdmqxij7ouaynvpnj1",
+    },
+  },
+  {
+    _id: "68d678147662369ce92d9bf7",
+    name: "Bus",
+    description: "Bus",
+    createdAt: "2025-09-26T11:25:08.629Z",
+    updatedAt: "2025-10-19T09:59:11.441Z",
+    __v: 0,
+    image: {
+      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760867951/category/hmazgbtwboetkbwn5zjn.png",
+      public_id: "category/hmazgbtwboetkbwn5zjn",
+    },
   },
 ];
 
@@ -145,54 +210,150 @@ export const servicesData = [
   },
 ];
 
-export const vehiclesData: Vehicle[] = [
+export const vehiclesStaticData = [
   {
+    _id: "68ede879c881ebbb89601caf",
+    name: "Jumbo Hiace",
+    brand: "Toyota",
+    vehicleModel: "2016",
+    category: {
+      _id: "68eb7ecba373b13794266541",
+      name: "Hiace",
+      description: "Hiace",
+    },
+    numberPlate: "BA1PA 1453",
+    seats: 14,
+    fuelType: "Diesel",
+    availabilityStatus: true,
+    image: {
+      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760422009/vehicles/ja2ql0v9x1o2afihufix.png",
+      public_id: "vehicles/ja2ql0v9x1o2afihufix",
+    },
+    description:
+      "BYD offers a range of vehicles, including electric SUVs like the ATTO 3, plug-in hybrid SUVs like the Song Plus, and other models such as the Dolphin hatchback and the Seal electric sedan. Key features often include modern tech, safety systems, and eco-friendly materials, with model-specific characteristics such as the ATTO 3's battery capacity and the Song Plus's long hybrid range.  ",
+    createdAt: "2025-10-14T06:06:49.522Z",
+    updatedAt: "2025-10-16T04:53:51.875Z",
+    __v: 0,
+  },
+  {
+    _id: "68ede780c881ebbb89601ca5",
     name: "Skoda Rapid",
-    licensePlate: "BA16CHA 2244",
-    type: "Sedan",
-    passengers: 5,
-    fuel: "Diesel",
-    image: "/images/mgWhite.png",
+    brand: "Skoda",
+    vehicleModel: "2017",
+    category: {
+      _id: "68eb90cfa373b13794266561",
+      name: "Sedan",
+      description: "Sedan",
+    },
+    numberPlate: "BA 16CHA 2244",
+    seats: 4,
+    fuelType: "Hybrid",
+    availabilityStatus: false,
+    image: {
+      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760421760/vehicles/voqkajjufdhxg6z3uoos.png",
+      public_id: "vehicles/voqkajjufdhxg6z3uoos",
+    },
+    description:
+      "BYD offers a range of vehicles, including electric SUVs like the ATTO 3, plug-in hybrid SUVs like the Song Plus, and other models such as the Dolphin hatchback and the Seal electric sedan. Key features often include modern tech, safety systems, and eco-friendly materials, with model-specific characteristics such as the ATTO 3's battery capacity and the Song Plus's long hybrid range.  ",
+    createdAt: "2025-10-14T06:02:40.547Z",
+    updatedAt: "2025-10-15T12:12:05.497Z",
+    __v: 0,
   },
   {
-    name: "M6 SUV",
-    licensePlate: "BA16CHA 2244",
-    type: "SUV",
-    passengers: 5,
-    fuel: "EV",
-    image: "/images/mgBlack.png",
+    _id: "68ede640c881ebbb89601c9f",
+    name: "Creta",
+    brand: "Hyundai",
+    vehicleModel: "2014",
+    category: {
+      _id: "68eb7eefa373b13794266544",
+      name: "SUV",
+      description: "a suv",
+    },
+    numberPlate: "CAR 914",
+    seats: 4,
+    fuelType: "Petrol",
+    availabilityStatus: true,
+    image: {
+      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760421440/vehicles/odyjk9hvhdaeqfngb73w.png",
+      public_id: "vehicles/odyjk9hvhdaeqfngb73w",
+    },
+    description:
+      "BYD offers a range of vehicles, including electric SUVs like the ATTO 3, plug-in hybrid SUVs like the Song Plus, and other models such as the Dolphin hatchback and the Seal electric sedan. Key features often include modern tech, safety systems, and eco-friendly materials, with model-specific characteristics such as the ATTO 3's battery capacity and the Song Plus's long hybrid range.  ",
+    createdAt: "2025-10-14T05:57:20.886Z",
+    updatedAt: "2025-10-16T05:30:35.480Z",
+    __v: 0,
   },
   {
-    name: "Nissan",
-    licensePlate: "BA1CHA 1214",
-    type: "Sedan",
-    passengers: 5,
-    fuel: "Petrol",
-    image: "/images/mgWhite.webp",
+    _id: "68ede50fc881ebbb89601c93",
+    name: "BYD",
+    brand: "BYD",
+    vehicleModel: "2024",
+    category: {
+      _id: "68eb7eefa373b13794266544",
+      name: "SUV",
+      description: "a suv",
+    },
+    numberPlate: "BA 30CHA 4686",
+    seats: 4,
+    fuelType: "Electric",
+    image: {
+      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760421135/vehicles/uk5vm4nsk0zunicuqmje.png",
+      public_id: "vehicles/uk5vm4nsk0zunicuqmje",
+    },
+    description:
+      "BYD offers a range of vehicles, including electric SUVs like the ATTO 3, plug-in hybrid SUVs like the Song Plus, and other models such as the Dolphin hatchback and the Seal electric sedan. Key features often include modern tech, safety systems, and eco-friendly materials, with model-specific characteristics such as the ATTO 3's battery capacity and the Song Plus's long hybrid range. ",
+    createdAt: "2025-10-14T05:52:15.244Z",
+    updatedAt: "2025-10-15T07:30:28.111Z",
+    __v: 0,
+    availabilityStatus: false,
   },
   {
-    name: "Skoda Rapid",
-    licensePlate: "BA16CHA 2244",
-    type: "Sedan",
-    passengers: 5,
-    fuel: "Diesel",
-    image: "/images/mgWhite.png",
+    _id: "68ede40fc881ebbb89601c8d",
+    name: "MG SUV",
+    brand: "MG",
+    vehicleModel: "2024",
+    category: {
+      _id: "68eb7eefa373b13794266544",
+      name: "SUV",
+      description: "a suv",
+    },
+    numberPlate: "BA1YA 1810",
+    seats: 4,
+    fuelType: "Electric",
+    image: {
+      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760441928/vehicles/d5k3u7n0urseyo1kmaro.png",
+      public_id: "vehicles/d5k3u7n0urseyo1kmaro",
+    },
+    description:
+      "Yes, MG offers a range of electric cars, including models like the MG4 EV, MGS5 EV, and ZS EV, and they also produce hybrid and petrol vehicles. Examples of MG's electric models include the MG4 EV, a fully electric hatchback, and the MGS5 EV, a sophisticated and technologically advanced electric car available in different battery capacities.  ",
+    createdAt: "2025-10-14T05:47:59.990Z",
+    updatedAt: "2025-10-15T07:28:27.596Z",
+    __v: 0,
+    availabilityStatus: true,
   },
   {
-    name: "M6 SUV",
-    licensePlate: "BA16CHA 2244",
-    type: "SUV",
-    passengers: 5,
-    fuel: "EV",
-    image: "/images/mgBlack.png",
-  },
-  {
-    name: "Nissan",
-    licensePlate: "BA1CHA 1214",
-    type: "Sedan",
-    passengers: 5,
-    fuel: "Petrol",
-    image: "/images/mgWhite.webp",
+    _id: "68ede223c881ebbb89601c81",
+    name: "MG SUV",
+    brand: "MG",
+    vehicleModel: "2024",
+    category: {
+      _id: "68eb7eefa373b13794266544",
+      name: "SUV",
+      description: "a suv",
+    },
+    numberPlate: "BA1YA 1809",
+    seats: 4,
+    fuelType: "Electric",
+    availabilityStatus: true,
+    image: {
+      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760420387/vehicles/y0mq6q4kapn7gkv6ohvg.png",
+      public_id: "vehicles/y0mq6q4kapn7gkv6ohvg",
+    },
+    description:
+      "Yes, MG offers a range of electric cars, including models like the MG4 EV, MGS5 EV, and ZS EV, and they also produce hybrid and petrol vehicles. Examples of MG's electric models include the MG4 EV, a fully electric hatchback, and the MGS5 EV, a sophisticated and technologically advanced electric car available in different battery capacities.  ",
+    createdAt: "2025-10-14T05:39:47.339Z",
+    updatedAt: "2025-10-14T05:39:47.339Z",
+    __v: 0,
   },
 ];
 
@@ -227,15 +388,6 @@ export const testimonialsData = [
   },
 ];
 
-export const vehicleTypeData = [
-  { id: 1, type: "SUV", image: "/images/mgWhite.png" },
-  { id: 2, type: "SUV", image: "/images/mgBlack.png" },
-  { id: 3, type: "SUV", image: "/images/mgWhite.png" },
-  { id: 4, type: "SUV", image: "/images/mgWhite.png" },
-  { id: 5, type: "SUV", image: "/images/mgBlack.png" },
-  { id: 6, type: "SUV", image: "/images/mgWhite.png" },
-];
-
 export const blogData = [
   {
     id: 1,
@@ -258,19 +410,46 @@ export const blogData = [
       "Plan your next adventure with our list of must-visit European destinations and scenic routes for unforgettable road trips.",
     image: "/images/mgBlack.png",
   },
+  // {
+  //   id: 4,
+  //   title: "The Future of Autonomous Vehicles",
+  //   description:
+  //     "Learn how self-driving cars are transforming transportation, safety, and the way we think about mobility.",
+  //   image: "/images/mgWhite.webp",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Top Car Accessories for 2025",
+  //   description:
+  //     "Upgrade your ride with the latest car accessories that combine functionality, style, and innovation.",
+  //   image: "/images/mgBlack.png",
+  // },
+];
+
+export const makesDifferentData = [
   {
-    id: 4,
-    title: "The Future of Autonomous Vehicles",
+    icon: FaExpand,
+    title: "Comfortable Journey",
     description:
-      "Learn how self-driving cars are transforming transportation, safety, and the way we think about mobility.",
-    image: "/images/mgWhite.webp",
+      "We care for your comfort so we offer you with comfortable and luxury vehicles. All of our vehicles are new and in very good condition.",
   },
   {
-    id: 5,
-    title: "Top Car Accessories for 2025",
+    icon: FaShieldAlt,
+    title: "Assured Safety",
     description:
-      "Upgrade your ride with the latest car accessories that combine functionality, style, and innovation.",
-    image: "/images/mgBlack.png",
+      "Your safety is our concern. We do not just take you to your destination; but also make sure you have a safe journey. We assure you a stress-free and relaxing travel as much as possible.",
+  },
+  {
+    icon: FaClock,
+    title: "Timely Service",
+    description:
+      "We value your time and are always ready at your service. Our drivers are ready to go as per your need.",
+  },
+  {
+    icon: FaUserCheck,
+    title: "Professional Drivers",
+    description:
+      "Our well-trained and experienced drivers and staff are friendly and are eager to assist you as per your requirement.",
   },
 ];
 
@@ -280,10 +459,10 @@ export const footerData = {
     description:
       "Est. in 2010, we have been providing great services. Your trusted partner for safe, reliable, and comfortable journeys across Nepal, bringing you closer to the beauty and culture of every destination.",
     socials: [
-      { icon: FaFacebook, link: "#" },
+      { icon: FaFacebook, link: "https://www.facebook.com/gratefultours/" },
       { icon: FaInstagram, link: "#" },
-      { icon: FaWhatsapp, link: "#" },
-      { icon: FaViber, link: "#" },
+      { icon: FaWhatsapp, link: "https://wa.me/9779801170674" },
+      { icon: FaViber, link: "viber://chat?number=%2B9779801170674" },
     ],
   },
   quickLinks: {
@@ -291,10 +470,17 @@ export const footerData = {
     links: [
       { label: "About", href: "/about" },
       { label: "Services", href: "/services" },
-      { label: "Our Cars", href: "/cars" },
+      { label: "Our Cars", href: "/our-cars" },
       { label: "Gallery", href: "/gallery" },
-      { label: "Blogs", href: "/blogs" },
       { label: "Contact Us", href: "/contact-us" },
+    ],
+  },
+  explore: {
+    title: "Explore More",
+    links: [
+      { label: "Blogs", href: "/blogs" },
+      { label: "Careers", href: "/careers" },
+      { label: "Partner With Us", href: "/partner" },
     ],
   },
   contact: {
@@ -323,3 +509,33 @@ export const footerData = {
     ],
   },
 };
+
+export const careersData = [
+  {
+    id: 1,
+    title: "Frontend Developer",
+    department: "Engineering",
+    location: "Kathmandu, Nepal",
+    type: "Full-time",
+    description:
+      "We are looking for a creative and passionate Frontend Developer with experience in React and Tailwind CSS.",
+  },
+  {
+    id: 2,
+    title: "UI/UX Designer",
+    department: "Design",
+    location: "Remote",
+    type: "Part-time",
+    description:
+      "Join our design team to craft user-friendly and visually stunning interfaces for our products.",
+  },
+  {
+    id: 3,
+    title: "Digital Marketing Executive",
+    department: "Marketing",
+    location: "Pokhara, Nepal",
+    type: "Full-time",
+    description:
+      "We’re seeking a data-driven marketer to plan and execute online campaigns that drive engagement and growth.",
+  },
+];

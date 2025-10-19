@@ -17,38 +17,38 @@ import * as Yup from 'yup';
 
 const page = () => {
 
-    const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
+    // const [selectedUserId, setSelectedUserId] = useState<string | null>(null);
 
-    const { data: users, isLoading, isError } = useGetAllUsersQuery();
+    // const { data: users, isLoading, isError } = useGetAllUsersQuery();
 
-    console.log("users", users);
-    const usersData = users?.data?.users || [];
+    // console.log("users", users);
+    // const usersData = users?.data?.users || [];
 
-    const columns: Column<{ id: string, name: string, description: string }>[] = [{ key: "id", label: "id" },
-    { key: "name", label: "Name" },
-    { key: "email", label: "Email" },
-    { key: "phoneNumber", label: "Phone Number" },
-    { key: "address", label: "Address" },
-    { key: "status", label: "status" },
+    // const columns: Column<{ id: string, name: string, description: string }>[] = [{ key: "id", label: "id" },
+    // { key: "name", label: "Name" },
+    // { key: "email", label: "Email" },
+    // { key: "phoneNumber", label: "Phone Number" },
+    // { key: "address", label: "Address" },
+    // { key: "status", label: "status" },
 
-    ]
+    // ]
 
-    const rows = usersData?.map((user: any, index: number) => ({
-        id: index + 1,
-        _id: user?._id ?? "N/A",
-        name: user?.name ?? "N/A",
-        email: user?.email ?? "N/A",
-        phoneNumber: user?.phoneNumber ?? "N/A",
-        address: user?.address ?? "N/A",
-        status: user?.status ?? "N/A",
+    // const rows = usersData?.map((user: any, index: number) => ({
+    //     id: index + 1,
+    //     _id: user?._id ?? "N/A",
+    //     name: user?.name ?? "N/A",
+    //     email: user?.email ?? "N/A",
+    //     phoneNumber: user?.phoneNumber ?? "N/A",
+    //     address: user?.address ?? "N/A",
+    //     status: user?.status ?? "N/A",
 
-    })) || [];
+    // })) || [];
 
 
 
     return (
         <div className='flex flex-col gap-6'>
-            <div className='flex flex-row items-center justify-start'>
+            {/* <div className='flex flex-row items-center justify-start'>
                 <h2 className='font-nunito lg:text-xl md:text-lg text-base font-semibold'>
                     Users List
                 </h2>
@@ -58,7 +58,7 @@ const page = () => {
                 columns={columns}
                 rows={rows}
 
-            />
+            /> */}
 
 
         </div>

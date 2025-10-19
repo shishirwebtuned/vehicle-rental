@@ -21,7 +21,7 @@ const Viewvehicle: React.FC<ViewVehicleProps> = ({ vehicleId }) => {
     return (
         <div className="bg-white dark:bg-gray-800">
 
-            <div className="flex flex-col gap-3 text-gray-700 dark:text-gray-200 text-sm md:text-base">
+            <div className="flex flex-col gap-3 text-gray-700 dark:text-gray-200 text-xs md:text-sm lg:text-base">
                 <p className="flex justify-between bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-lg shadow-sm">
                     <span className="font-semibold text-gray-800 dark:text-gray-100">Name:</span>
                     <span className="text-gray-600 dark:text-gray-300">{vehicle.name}</span>
@@ -68,7 +68,7 @@ const Viewvehicle: React.FC<ViewVehicleProps> = ({ vehicleId }) => {
                     <img
                         src={vehicle.image.url}
                         alt={vehicle.name}
-                        className="rounded-lg object-cover max-h-64 w-full md:w-auto shadow-md border border-gray-200 dark:border-gray-700"
+                        className="rounded-lg object-contain max-h-64 w-full md:w-auto shadow-md border border-gray-200 dark:border-gray-700"
                     />
                 </div>
             )}

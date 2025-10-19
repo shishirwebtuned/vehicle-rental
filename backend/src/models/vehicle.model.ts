@@ -14,7 +14,7 @@ const vehicleSchema = new Schema<IVehicle>(
       enum: ["Petrol", "Diesel", "Electric", "Hybrid"],
       required: true,
     },
-    pricePerDay: { type: Number, required: true },
+    // pricePerDay: { type: Number, required: true },
     availabilityStatus: { type: Boolean, default: true },
     image: {
       url: { type: String, required: true },
