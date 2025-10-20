@@ -1,15 +1,19 @@
 import { CustomButton } from '@/components/shared/CustomButton';
 import { paddingX } from '@/constant/constant';
-import { makesDifferentData } from '@/data/data';
+import { faqData, makesDifferentData } from '@/data/data';
 import React from 'react'
 import { BsPlus } from 'react-icons/bs'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { GiWorld } from "react-icons/gi";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import Banner from '@/components/shared/Banner';
 
 const page = () => {
     return (
         <div className='bg-white'>
+
             <div className={`flex flex-col min-h-screen items-center pt-20 md:pt-44 justify-center bg-background pb-10 sm:pb-20 md:pb-28 ${paddingX}`}>
+
                 <div className='flex md:flex-row flex-col-reverse w-full items-center justify-center'>
                     <div className="md:w-1/2 w-full flex relative  justify-center items-center mt-6 md:mt-0">
                         <div className="absolute w-[75%] h-[75%] bg-gradient-to-tr from-orange-400/60 via-yellow-300/40 to-transparent blur-3xl rounded-full -z-0"></div>
@@ -124,6 +128,39 @@ const page = () => {
                     </div>
                 </div>
             </div>
+            <div className={`bg-white py-16 ${paddingX}`}>
+                <h2 className="text-center font-merriweather text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-10 ">
+                    Frequently Asked <span className="text-primary">Questions</span>
+                </h2>
+
+                <div className="max-w-3xl mx-auto">
+                    <Accordion type="single" collapsible className="w-full space-y-4">
+                        {faqData.map((faq, index) => (
+                            <AccordionItem
+                                key={index}
+                                value={`item-${index}`}
+                                className="border border-gray-100 rounded-md shadow-sm hover:shadow-sm transition-shadow duration-300 bg-white"
+                            >
+                                <AccordionTrigger
+                                    className="text-left text-sm md:text-base lg:text-lg font-semibold text-gray-800 px-5 py-4 rounded-xl
+                     hover:bg-gray-50 transition-colors duration-300"
+                                >
+                                    {faq.question}
+                                </AccordionTrigger>
+
+                                <AccordionContent
+                                    className="text-gray-700 font-nunito lg:text-base md:text-sm text-xs leading-relaxed px-5 pb-3 pt-3
+                     border-t border-gray-100 bg-gray-50 rounded-b-xl"
+                                >
+                                    {faq.answer}
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </div>
+
+            </div>
+
             <div className={`py-16 ${paddingX} bg-primary/60`}>
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 font-nunito">
                     {/* Location */}

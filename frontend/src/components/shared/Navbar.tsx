@@ -55,14 +55,14 @@ const Navbar = () => {
             className={`w-full z-40 transition-all ${paddingX} duration-300 ease-linear ${scrolled ? "bg-white shadow-sm" : "bg-transparent"
                 }`}
         >
-            <div className="flex items-center justify-between py-1">
+            <div className="flex items-center justify-between py-0">
                 <Link href="/" className="flex items-center">
                     <Image
                         src="/images/logo.png"
                         alt="Grateful Logo"
                         width={500}
                         height={500}
-                        className="lg:w-18 lg:h-18 md:w-16 md:h-16 sm:w-14 sm:h-14 w-10 h-10 object-contain"
+                        className="lg:w-16 lg:h-16 md:w-16 md:h-16 sm:w-14 sm:h-14 w-10 h-10 object-contain"
                     />
                 </Link>
 
@@ -83,7 +83,7 @@ const Navbar = () => {
                 {isLoggedIn ?
                     <button
                         onClick={handleClick}
-                        className={`px-5 hidden md:flex py-2 rounded-sm border-2 font-semibold cursor-pointer transition-all ease-in-out duration-300 ${scrolled
+                        className={`px-5 hidden md:flex py-[6px] rounded-sm border-2 font-semibold cursor-pointer transition-all ease-in-out duration-300 ${scrolled
                             ? "border-primary text-primary hover:bg-primary hover:text-white"
                             : "border-white text-white hover:bg-primary hover:border-primary"
                             }`}
@@ -92,7 +92,7 @@ const Navbar = () => {
                     </button> :
                     <button
                         onClick={() => router.push("/login")}
-                        className={`px-5 hidden md:flex py-2 rounded-sm border-2 font-semibold cursor-pointer transition-all ease-in-out duration-300 ${scrolled
+                        className={`px-5 hidden md:flex py-[6px] rounded-sm border-2 font-semibold cursor-pointer transition-all ease-in-out duration-300 ${scrolled
                             ? "border-primary text-primary hover:bg-primary hover:text-white"
                             : "border-white text-white hover:bg-primary hover:border-primary"
                             }`}

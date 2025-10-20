@@ -1,14 +1,28 @@
 import {
+  FaCarSide,
   FaClock,
   FaFacebook,
   FaInstagram,
+  FaMapMarkedAlt,
+  FaPlaneDeparture,
+  FaRegBuilding,
   FaShieldAlt,
   FaViber,
   FaWhatsapp,
 } from "react-icons/fa";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
-import { MdOutlineAddIcCall } from "react-icons/md";
+import {
+  MdEventAvailable,
+  MdLuggage,
+  MdOutlineAddIcCall,
+  MdTour,
+} from "react-icons/md";
 import { FaExpand, FaUserCheck } from "react-icons/fa";
+import { TbBus, TbTrekking } from "react-icons/tb";
+import { IoFastFood } from "react-icons/io5";
+import { IoIosBoat } from "react-icons/io";
+import { LiaMountainSolid } from "react-icons/lia";
+import { GiJungle, GiPathDistance } from "react-icons/gi";
 
 export const socialLinks = [
   {
@@ -453,6 +467,39 @@ export const makesDifferentData = [
   },
 ];
 
+export const faqData = [
+  {
+    question: "How can I book a car online through your website?",
+    answer:
+      "Booking a car is simple! Navigate to the 'Our Cars' section, browse through the available vehicles, and select the one that suits your needs. Fill out the booking form with your personal details, pickup and drop-off locations, dates, and times. Once submitted, you will receive a confirmation email with all the booking details.",
+  },
+  {
+    question: "What are your operating hours and availability?",
+    answer:
+      "We operate every day of the week from 8 AM to 8 PM. You can place bookings online at any time, and our team is available to assist with any queries during operating hours. For special requests outside these hours, please contact our support team in advance.",
+  },
+  {
+    question: "Do you provide airport pickup and drop-off services?",
+    answer:
+      "Yes, we offer both airport pickup and drop-off services. You can select this option while booking your car. Please provide your flight details and arrival time to ensure a smooth pickup experience. Our drivers are trained to assist you with luggage and ensure a comfortable journey to your destination.",
+  },
+  {
+    question: "Can I modify or cancel my booking?",
+    answer:
+      "Absolutely! You can modify your booking details or cancel your reservation through our website or by contacting our support team. Please note that cancellation policies may apply depending on the timing of the cancellation relative to your pickup date.",
+  },
+  {
+    question: "Are your vehicles insured and safe?",
+    answer:
+      "Yes, all our vehicles come with up-to-date insurance from licensed insurance providers. Each car undergoes regular safety checks and maintenance to ensure it is in excellent condition for your journey. We prioritize your safety above all.",
+  },
+  {
+    question: "What documents do I need to rent a car?",
+    answer:
+      "To rent a car, you will need a valid government-issued ID, a valid driver's license, and a payment method for the booking. For international travelers, an additional passport or international driving permit may be required.",
+  },
+];
+
 export const footerData = {
   about: {
     title: "About Us",
@@ -481,6 +528,7 @@ export const footerData = {
       { label: "Blogs", href: "/blogs" },
       { label: "Careers", href: "/careers" },
       { label: "Partner With Us", href: "/partner" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
     ],
   },
   contact: {
@@ -489,7 +537,7 @@ export const footerData = {
       {
         icon: FiMapPin,
         text: "Gairidhara, Kathmandu, Nepal",
-        link: "https://share.google/aOhhenrPC6nOsouVm",
+        link: "https://maps.app.goo.gl/Yz9cWWLQSkV8RYNy9",
       },
       {
         icon: FiPhone,
@@ -537,5 +585,143 @@ export const careersData = [
     type: "Full-time",
     description:
       "We’re seeking a data-driven marketer to plan and execute online campaigns that drive engagement and growth.",
+  },
+];
+
+export const services = [
+  {
+    id: 1,
+    title: "Airport Transfer",
+    description:
+      "Fast and reliable airport pickup and drop services with professional drivers ensuring a smooth journey.",
+    content:
+      "Our Airport Transfer service is designed to provide a completely stress-free experience for travelers arriving or departing from Nepal’s airports. We offer door-to-door pick-up and drop-off for individuals, families, and groups, ensuring that your journey starts and ends on a smooth note. Our professional drivers are experienced, punctual, and familiar with all major routes, airport traffic patterns, and local conditions. We monitor flight schedules in real-time to adjust for delays or early arrivals, ensuring you are never left waiting. Each vehicle is meticulously maintained for comfort, cleanliness, and safety, with ample space for luggage. Our service also includes assistance with baggage handling, guidance for airport procedures, and optional extras like in-vehicle refreshments. Whether you’re traveling for business, leisure, or connecting flights, our Airport Transfer ensures that your journey is seamless, reliable, and enjoyable. By choosing our service, you can focus entirely on your travel plans while we handle the logistics, providing a professional, personalized, and safe experience that enhances your overall travel experience in Nepal.",
+    icon: "FaPlaneDeparture",
+  },
+  {
+    id: 2,
+    title: "Valley Sightseeing Tour (Half/Full Day)",
+    description:
+      "Explore the cultural and historical landmarks around the valley with customizable half or full-day tours.",
+    content:
+      "Our Valley Sightseeing Tours are carefully curated to provide an immersive experience of the Kathmandu Valley’s rich cultural heritage, history, and natural beauty. These tours can be customized for either half-day or full-day experiences, depending on your schedule and interests. We cover not only the famous landmarks such as Pashupatinath Temple, Boudhanath Stupa, Patan Durbar Square, and Bhaktapur Durbar Square, but also hidden gems and lesser-known local spots that offer authentic cultural experiences. Accompanied by experienced guides, you will gain insights into local traditions, architecture, festivals, and culinary delights. Our comfortable vehicles ensure smooth travel between locations, and our flexible itinerary allows for impromptu photo stops, shopping for handicrafts, or enjoying local cuisine at traditional eateries. The tour also provides context about Nepalese culture, history, and religion, giving travelers a deeper understanding of the valley beyond mere sightseeing. This is perfect for tourists who want an enriching experience, combining sightseeing with cultural immersion, all while traveling safely and comfortably.",
+    icon: "MdTour",
+  },
+  {
+    id: 3,
+    title: "All Over Nepal Tours",
+    description:
+      "Experience the beauty of Nepal with our countrywide tours covering major destinations and hidden gems.",
+    content:
+      "Our All Over Nepal Tours are designed to offer a comprehensive exploration of Nepal’s diverse landscapes, rich culture, and historic landmarks. Travelers can experience everything from the towering Himalayan peaks to serene lakes, bustling city streets, wildlife sanctuaries, and remote villages. Each tour is fully customizable, allowing travelers to choose destinations, travel pace, and activities according to their preferences. We provide safe, comfortable vehicles, knowledgeable local guides, and support with accommodations and logistics, ensuring a hassle-free experience throughout the journey. These tours include cultural visits to temples, monasteries, and heritage sites, scenic drives along mountain passes, wildlife safaris in Chitwan or Bardiya, and visits to trekking trailheads. By joining our All Over Nepal Tours, travelers gain not only the opportunity to witness breathtaking landscapes but also to engage with local communities, learn about traditions, and capture memorable experiences. Our focus on safety, comfort, and personalized service ensures that each journey is enjoyable, educational, and unforgettable, offering a deep connection with the country’s natural beauty and cultural richness.",
+    icon: "FaMapMarkedAlt",
+  },
+  {
+    id: 4,
+    title: "Disposal (Office) Use (Short-term)",
+    description:
+      "Convenient short-term vehicle rentals for corporate and personal use within the city.",
+    content:
+      "Our short-term vehicle rental service is tailored for businesses, offices, and personal needs requiring temporary transportation solutions. Whether it’s for corporate meetings, client visits, business errands, short-term projects, or city-based events, our service offers flexible and convenient options. Vehicles are modern, well-maintained, and equipped for comfort and safety, ensuring a professional appearance for any business engagement. We provide experienced drivers familiar with local traffic patterns and corporate etiquette, guaranteeing timely arrivals and departures. Booking is easy and adaptable to different time frames, from a few hours to several days. Our service also offers logistical support, route planning, and assistance with navigating city traffic, making it ideal for companies seeking reliable short-term transportation or individuals needing temporary, high-quality vehicle access. By choosing our service, clients benefit from convenience, reliability, and a professional approach to short-term urban transportation.",
+    icon: "FaRegBuilding",
+  },
+  {
+    id: 5,
+    title: "Monthly/Quarterly/Yearly Use (Long-term)",
+    description:
+      "Flexible long-term vehicle rental options for companies, embassies, and individuals.",
+    content:
+      "For organizations, embassies, and individuals requiring long-term transportation solutions, we offer flexible rental options on a monthly, quarterly, or yearly basis. Our vehicles are well-maintained, reliable, and suitable for corporate, diplomatic, or personal use, with the option of professional drivers for long-term convenience. These rentals are ideal for employee transportation, extended projects, or personal mobility needs, providing cost-effective and hassle-free solutions. We handle regular vehicle maintenance, provide 24/7 support, and assist with route planning and scheduling. Long-term clients benefit from predictable pricing, professional service, and consistent vehicle availability. Our approach prioritizes safety, comfort, and reliability, ensuring that every client enjoys uninterrupted, high-quality transportation over an extended period. Whether for corporate continuity, embassy operations, or personal requirements, our long-term rental service combines flexibility, professional support, and premium service standards.",
+    icon: "GiPathDistance",
+  },
+  {
+    id: 6,
+    title: "India/Bhutan Tours",
+    description:
+      "Enjoy cross-border travel packages to India and Bhutan with complete logistics and travel support.",
+    content:
+      "Our India and Bhutan Tours provide comprehensive travel packages that cover transportation, accommodation, and itinerary planning. These cross-border trips allow travelers to experience cultural landmarks, heritage sites, scenic landscapes, and local traditions in neighboring countries. We assist with visa documentation, provide safe and comfortable vehicles, and offer knowledgeable guides who can enrich the travel experience with insights about local history, customs, and cuisine. Each tour is fully customizable, allowing travelers to plan the duration, destinations, and activities according to personal preferences. By using our services, travelers can explore India and Bhutan safely, efficiently, and in comfort, enjoying every moment without the stress of organizing logistics or worrying about transportation challenges.",
+    icon: "MdTour",
+  },
+  {
+    id: 7,
+    title: "Jungle Safari Drive",
+    description:
+      "Embark on an exciting jungle safari in Chitwan or Bardiya with our experienced drivers and guides.",
+    content:
+      "Our Jungle Safari Drive service ensures a thrilling yet safe adventure into Nepal’s most famous wildlife sanctuaries, including Chitwan and Bardiya National Parks. We provide reliable transportation from hotels or cities to safari starting points, where expert guides help you navigate the wilderness. Experience the thrill of spotting tigers, rhinos, elephants, deer, and exotic birds in their natural habitats. We also provide information about local flora, fauna, and conservation efforts to enrich the safari experience. Vehicles are comfortable and equipped to handle rugged terrain, and our drivers are trained to ensure a smooth and safe ride. Whether for families, solo travelers, or groups, our Jungle Safari Drives offer an unforgettable opportunity to connect with nature and witness wildlife up close while enjoying the utmost convenience and safety.",
+    icon: "GiJungle",
+  },
+  {
+    id: 8,
+    title: "Mountain Flight Transfer",
+    description:
+      "Comfortable transport to and from the airport for scenic mountain flights around Everest and Annapurna.",
+    content:
+      "Our Mountain Flight Transfer service guarantees timely and comfortable transport for flights over Nepal’s majestic Himalayan ranges, including Everest, Annapurna, and other iconic peaks. We provide door-to-door pick-up and drop-off, assisting with luggage and providing guidance about flight schedules. Vehicles are well-maintained and comfortable, ensuring a relaxed start and end to your mountain flight experience. Our professional drivers understand local routes and road conditions, guaranteeing a safe journey. Travelers can enjoy stunning aerial views of snow-capped peaks and glaciers without worrying about ground transportation logistics. This service ensures a seamless combination of ground and air travel for one of the most breathtaking sightseeing experiences in the world.",
+    icon: "LiaMountainSolid",
+  },
+  {
+    id: 9,
+    title: "Rafting Point Drive",
+    description:
+      "Safe and timely transfers to popular rafting spots like Trishuli and Bhotekoshi rivers.",
+    content:
+      "Our Rafting Point Drive ensures safe, punctual, and comfortable transportation to the most popular white-water rafting destinations in Nepal, such as the Trishuli and Bhotekoshi rivers. We provide vehicles suited for group travel and rugged roads, ensuring that adventurers arrive ready for the thrill of the rapids. Drivers are experienced, familiar with routes and seasonal conditions, and prioritize safety throughout the journey. This service is ideal for day trips, extended rafting excursions, or adventure packages. By choosing our Rafting Point Drive, travelers can focus entirely on the rafting experience, confident that their transportation is fully managed, safe, and reliable, enhancing the overall enjoyment of their adventure.",
+    icon: "IoIosBoat",
+  },
+  {
+    id: 10,
+    title: "Trekking Point Drive",
+    description:
+      "Reliable vehicle service to and from trekking trailheads such as Pokhara, Lukla, or Syabrubesi.",
+    content:
+      "Our Trekking Point Drive service provides dependable transportation to the starting points of some of Nepal’s most famous trekking trails, including Pokhara, Lukla, Syabrubesi, and other remote regions. Vehicles are well-maintained, safe, and comfortable, ensuring a smooth start and finish to your trekking adventure. Our drivers are experienced with local terrain and understand the importance of timely arrivals to coordinate with trekking schedules. This service is suitable for solo trekkers, groups, and organized trekking tours. By using our service, trekkers can avoid the stress of navigating unfamiliar roads, ensure luggage transport if required, and focus entirely on the trekking experience, enjoying the scenic journey with convenience and safety guaranteed.",
+    icon: "TbTrekking",
+  },
+  {
+    id: 11,
+    title: "Cultural Program Drive",
+    description:
+      "Transport service to cultural events, dance shows, and evening programs around the valley.",
+    content:
+      "Our Cultural Program Drive service offers reliable and convenient transportation to concerts, dance performances, theater shows, and other cultural events throughout the valley. We provide timely pick-ups and drop-offs, comfortable vehicles, and professional drivers who ensure you arrive on time and safely. Whether attending solo, with friends, or as part of a group, travelers can enjoy Nepal’s vibrant cultural scene without worrying about transport logistics. The service is flexible and can accommodate schedules for short evening events or multi-day cultural tours. This ensures that visitors can focus on the performances and experiences while we handle the transportation efficiently and professionally.",
+    icon: "MdEventAvailable",
+  },
+  {
+    id: 12,
+    title: "Luggage Transfer",
+    description:
+      "Secure and timely luggage transfer between hotels, airports, and other destinations.",
+    content:
+      "Our Luggage Transfer service offers safe and reliable transportation of your belongings between hotels, airports, bus stations, and other key destinations. Ideal for travelers, tour groups, and long-distance trips, this service ensures that heavy luggage or large amounts of baggage are handled professionally and delivered on time. We provide flexible scheduling, assistance with loading and unloading, and dedicated vehicles for large or delicate items. This service allows travelers to move freely and comfortably without worrying about carrying luggage themselves. By using our Luggage Transfer service, clients can enjoy a seamless travel experience, focusing on sightseeing, meetings, or events, while we handle all aspects of luggage logistics safely and efficiently.",
+    icon: "MdLuggage",
+  },
+  {
+    id: 13,
+    title: "Dinner Transfer",
+    description:
+      "Convenient evening transfers to and from restaurants and dining events in and around the valley.",
+    content:
+      "Our Dinner Transfer service provides safe, comfortable, and punctual transportation to dining venues, evening events, or social gatherings around the valley. Vehicles are modern and well-maintained, ensuring a pleasant travel experience. Professional drivers are familiar with local roads and traffic patterns, guaranteeing timely arrivals and departures. This service is suitable for individuals, families, and groups, allowing clients to enjoy dinner or evening entertainment without worrying about navigation or parking. Flexible scheduling and personalized pick-up/drop-off options make this service ideal for a stress-free, enjoyable dining experience in Kathmandu and surrounding areas.",
+    icon: "IoFastFood",
+  },
+  {
+    id: 14,
+    title: "Tourist Bus Ticketing",
+    description:
+      "Book tourist bus tickets for major routes such as Kathmandu–Pokhara, Chitwan, or Lumbini with ease.",
+    content:
+      "Our Tourist Bus Ticketing service makes travel planning across Nepal seamless and convenient. We provide real-time seat availability, secure booking, and assistance with schedules for major routes such as Kathmandu–Pokhara, Chitwan, Lumbini, and beyond. Travelers can select preferred seats, departure times, and bus types according to their needs. This service is ideal for both individual travelers and groups, ensuring a smooth, hassle-free travel experience. Our team provides guidance on bus amenities, boarding procedures, and route details, allowing travelers to focus on enjoying the journey rather than logistics. Reliability, convenience, and security are the core pillars of our ticketing service, enhancing the overall travel experience across Nepal.",
+    icon: "TbBus",
+  },
+  {
+    id: 15,
+    title: "Vehicle Rental at Pokhara",
+    description:
+      "Rent cars, jeeps, or vans for sightseeing, tours, and airport transfers in Pokhara.",
+    content:
+      "Our Vehicle Rental service in Pokhara offers a wide selection of cars, jeeps, and vans to meet all sightseeing, touring, trekking, and airport transfer needs. Vehicles are well-maintained, comfortable, and safe, with the option of professional drivers for those who prefer guided transport. Flexible rental durations allow travelers to plan day trips, multi-day excursions, or extended tours at their own pace. Our service includes assistance with route planning, luggage handling, and local travel tips, ensuring a smooth and enjoyable experience. Whether exploring Pokhara city, nearby lakes, trekking starting points, or other attractions, our vehicle rental service provides freedom, convenience, and peace of mind for all travelers seeking a personalized travel experience.",
+    icon: "FaCarSide",
   },
 ];

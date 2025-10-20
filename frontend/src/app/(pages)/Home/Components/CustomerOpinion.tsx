@@ -1,139 +1,91 @@
 "use client";
-import { paddingX } from '@/constant/constant'
-import { testimonialsData } from '@/data/data'
-import React from 'react'
-import OurCars from './OurCars'
-import { FaQuoteRight, FaRegStar, FaStar } from 'react-icons/fa';
-import dynamic from 'next/dynamic'
-const Slider = dynamic(() => import("react-slick"), { ssr: false });
+import React, { useEffect, useState } from "react";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import { FaStar, FaRegStar, FaQuoteRight } from "react-icons/fa";
 import { motion } from "framer-motion";
-
+import { testimonialsData } from "@/data/data";
+import { paddingX } from "@/constant/constant";
 
 const CustomerOpinion = () => {
-
-    const numberData = [
-        { text: "No. of Vehicles", number: "27" },
-        { text: "Years of Experience", number: "15" },
-        { text: "Happy Customers", number: "10K+", suffix: "/month" },
-        { text: "No. of Staffs", number: "37" },
-    ]
-
-    const settings = {
-        dots: true,
-        arrows: false,
-        infinite: true,
-        speed: 400,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                },
+    const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
+        loop: true,
+        mode: "free-snap",
+        renderMode: "performance",
+        slides: {
+            perView: 3,
+            spacing: 20,
+        },
+        breakpoints: {
+            "(max-width: 900px)": {
+                slides: { perView: 2, spacing: 15 },
             },
-            {
-                breakpoint: 640,
-                settings: {
-                    slidesToShow: 1,
-                },
+            "(max-width: 640px)": {
+                slides: { perView: 1, spacing: 10 },
             },
-        ],
-    };
+        },
+    });
+
+    // autoplay
+    useEffect(() => {
+        if (!slider) return;
+        let timer: any;
+        const autoPlay = () => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                slider.current?.next();
+                autoPlay();
+            }, 2500);
+        };
+        autoPlay();
+        return () => clearTimeout(timer);
+    }, [slider]);
 
     return (
-        <div
-            className="relative bg-fixed bg-center bg-cover"
-            style={{ backgroundImage: "url('/images/mgInterior.jpg')" }}
+        <section
+            className={`bg-background py-16 flex flex-col gap-8 items-center justify-center ${paddingX}`}
         >
-            <OurCars />
+            <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="text-center"
+            >
+                <h2 className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold">
+                    What Our <span className="text-primary">Customers</span> Say
+                </h2>
+            </motion.div>
 
-
-            <section className={`flex items-center justify-center w-full bg-black/60 py-12 sm:py-16 md:py-20 ${paddingX}`}>
-                <div className="text-white text-center w-full space-y-20">
-                    <motion.h2
-                        className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold"
-                        initial={{ y: 50, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                    >
-                        <span className="text-primary">Drive </span> by Experience, <span className="text-primary">Backed</span> by a Fleet
-                    </motion.h2>
-                    <div className='sm:grid-cols-2 grid-cols-1 grid lg:grid-cols-4 w-full justify-between px-16 gap-x-2 gap-y-5'>
-                        {numberData.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                className="flex flex-col items-center justify-center"
-                                initial={{ opacity: 0 }}           // fade in from own position
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.8, delay: index * 0.15 }} // stagger
-                            >
-                                <h2 className="text-primary font-merriweather font-bold lg:text-6xl whitespace-nowrap md:text-5xl sm:text-4xl text-3xl">
-                                    {item.number}{" "}
-                                    {item.suffix && (
-                                        <span className="lg:text-lg md:text-base text-sm align-baseline font-medium -ml-2 text-white">
-                                            {item.suffix}
-                                        </span>
-                                    )}
-                                </h2>
-                                <span className="text-white font-nunito md:text-lg sm:text-base text-sm lg:text-xl">
-                                    {item.text}
-                                </span>
-                            </motion.div>
-
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            <section className={`bg-background h-full py-14 sm:py-16 md:py-20 flex flex-col gap-8 items-center justify-center ${paddingX}`}>
-                <motion.div
-                    initial={{ y: 50, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-center">
-                    <h2 className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold">
-                        What Our <span className="text-primary">Customers</span> Say
-                    </h2>
-                </motion.div>
-                <div className="w-full h-full px-4 mt-4">
-                    <Slider {...settings}>
-                        {testimonialsData.map((t) => (
-                            <div key={t.id} className="px-3">
-                                <div className="bg-white p-6 rounded-lg shadow-[0px_0px_10px_rgba(92,156,188,0.26)] flex flex-col justify-between h-full">
-                                    <div className="flex mb-4">
-                                        {[...Array(5)].map((_, i) =>
-                                            i < t.rating ? (
-                                                <FaStar key={i} className="text-yellow-400" />
-                                            ) : (
-                                                <FaRegStar key={i} className="text-yellow-400" />
-                                            )
-                                        )}
-                                    </div>
-
-                                    {/* Review */}
-                                    <p className="text-gray-600 mb-6 font-nunito md:text-sm text-xs lg:text-base leading-relaxed">{t.review}</p>
-
-                                    {/* Name + Quote */}
-                                    <div className="flex items-center justify-between">
-                                        <span className="font-semibold font-nunito md:text-base text-sm lg:text-lg text-black">{t.name}</span>
-                                        <FaQuoteRight className="text-blue-200 md:text-3xl text-2xl lg:text-4xl" />
-                                    </div>
-                                </div>
+            {/* Keen slider wrapper */}
+            <div ref={sliderRef} className="keen-slider w-full mt-6">
+                {testimonialsData.map((t) => (
+                    <div key={t.id} className="keen-slider__slide flex justify-center">
+                        <div className="bg-white p-6 rounded-lg shadow-md w-[95%] sm:w-[95%] md:w-[95%] lg:w-[95%]">
+                            <div className="flex mb-3">
+                                {[...Array(5)].map((_, i) =>
+                                    i < t.rating ? (
+                                        <FaStar key={i} className="text-yellow-400 lg:text-base md:text-sm text-xs" />
+                                    ) : (
+                                        <FaRegStar key={i} className="text-yellow-400 lg:text-base md:text-sm text-xs" />
+                                    )
+                                )}
                             </div>
-                        ))}
-                    </Slider>
-                </div>
-            </section>
-        </div>
-
-    )
-}
+                            <p className="text-gray-700 mb-5 font-nunito text-xs md:text-sm lg:text-base leading-relaxed">
+                                {t.review}
+                            </p>
+                            <div className="flex items-center justify-between">
+                                <span className="font-semibold font-nunito text-sm md:text-base lg:text-lg text-black">
+                                    {t.name}
+                                </span>
+                                <FaQuoteRight className="text-blue-200 text-xl md:text-2xl lg:text-3xl" />
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
+};
 
 export default CustomerOpinion;
