@@ -25,17 +25,17 @@ const page = () => {
     return (
         <div className="p-6 bg-gray-50 flex flex-col items-center justify-center h-full">
             {/* Welcome Header */}
-            <div className="mb-8 text-center">
+            <div className="mb-8 font-nunito text-center">
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
                     Welcome to Admin Dashboard
                 </h1>
                 <p className="text-gray-600 mt-8 text-sm md:text-base">
-                    Manage your vehicles, categories, users and booking settings here
+                    Manage your vehicles, categories and booking settings here
                 </p>
             </div>
 
             {/* User Info Card */}
-            <div className="w-full max-w-4xl p-6 border border-gray-200 rounded-md shadow-sm">
+            <div className="w-full max-w-4xl p-6 border font-nunito border-gray-200 rounded-md shadow-sm">
                 <h2 className="text-2xl font-semibold mb-4 text-center text-gray-800">
                     Your Profile
                 </h2>
