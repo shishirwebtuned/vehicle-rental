@@ -6,7 +6,7 @@ import React from 'react'
 const page = () => {
     return (
         <div className='bg-white'>
-            <div className={`flex flex-col min-h-screen items-center pt-20 md:pt-44 justify-center bg-background pb-10 sm:pb-20 md:pb-28 ${paddingX}`}>
+            <div className={`flex flex-col h-full items-center pt-14 md:pt-20 justify-center bg-background pb-10 sm:pb-20 md:pb-28 ${paddingX}`}>
                 <div className='w-full text-center'>
                     <h1 className="w-full text-black font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold leading-snug">
                         Our Latest{" "}

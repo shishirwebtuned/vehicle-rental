@@ -27,7 +27,7 @@ const Page = () => {
             name: Yup.string().required("Name is required"),
             email: Yup.string().email("Invalid email").required("Email is required"),
             phone: Yup.string().required("Phone number is required"),
-            message: Yup.string(),
+            message: Yup.string().required("Message is required"),
         }),
         onSubmit: async (values, { resetForm }) => {
             try {
@@ -49,7 +49,7 @@ const Page = () => {
     return (
         <div className="bg-background">
             <section
-                className={`flex flex-col md:flex-row items-start md:items-center justify-between bg-black/10 pt-36 md:pt-40 pb-20 sm:pb-24 md:pb-28 min-h-screen w-full ${paddingX} gap-10 md:gap-16`}
+                className={`flex flex-col md:flex-row items-start md:items-center justify-between bg-black/10 pt-12 md:pt-8 pb-20 sm:pb-24 md:pb-28 h-full w-full ${paddingX} gap-10 md:gap-16`}
             >
                 {/* Left: Heading + Description */}
                 <div className="md:w-1/2 text-black text-center md:text-left ">
@@ -88,7 +88,7 @@ const Page = () => {
                 </div>
 
                 {/* Right: Form */}
-                <div className="md:w-1/2 w-full md:pt-10">
+                <div className="md:w-1/2 w-full md:pt-4">
                     <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4 w-full md:w-[90%]">
                         {/* Name */}
                         <div className="flex flex-col text-sm md:text-base">

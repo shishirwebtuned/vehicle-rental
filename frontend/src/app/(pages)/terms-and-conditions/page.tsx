@@ -30,7 +30,7 @@ const page = () => {
     return (
         <div className="bg-white">
             <div
-                className={`flex flex-col min-h-screen items-center pt-32 md:pt-40 justify-start font-nunito bg-white gap-8 md:gap-10 pb-20 ${paddingX}`}
+                className={`flex flex-col min-h-screen items-center pt-12 md:pt-20 justify-start font-nunito bg-white gap-8 md:gap-10 pb-20 ${paddingX}`}
             >
                 {/* Header */}
                 <div className="text-center space-y-2">

@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Topbar from "./Topbar";
 import Navbar from "./Navbar";
+import Banner from "./Banner";
 
 const Header = () => {
     const pathname = usePathname();

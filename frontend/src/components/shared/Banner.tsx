@@ -27,7 +27,7 @@ const Banner = () => {
             .join(" ");
 
     return (
-        <section className="relative w-full h-28 md:h-28 bg-gradient-to-r from-primary to-blue-400 flex items-center justify-center text-white">
+        <section className="relative w- bg-gradient-to-r from-primary to-blue-400 flex items-center justify-center text-white pt-28 sm:pt-28 md:pt-28 md:pb-8 pb-8">
             {/* Subtle overlay */}
             <div className="absolute inset-0 bg-black/20"></div>
 

@@ -55,7 +55,7 @@ const Navbar = () => {
             className={`w-full z-40 transition-all ${paddingX} duration-300 ease-linear ${scrolled ? "bg-white shadow-sm" : "bg-transparent"
                 }`}
         >
-            <div className="flex items-center justify-between py-0">
+            <div className="flex items-center justify-between py-1">
                 <Link href="/" className="flex items-center">
                     <Image
                         src="/images/logo.png"

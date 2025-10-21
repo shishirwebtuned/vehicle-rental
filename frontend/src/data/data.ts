@@ -23,6 +23,7 @@ import { IoFastFood } from "react-icons/io5";
 import { IoIosBoat } from "react-icons/io";
 import { LiaMountainSolid } from "react-icons/lia";
 import { GiJungle, GiPathDistance } from "react-icons/gi";
+import { s } from "framer-motion/client";
 
 export const socialLinks = [
   {
@@ -592,6 +593,7 @@ export const services = [
   {
     id: 1,
     title: "Airport Transfer",
+    slug: "airport-transfer",
     description:
       "Fast and reliable airport pickup and drop services with professional drivers ensuring a smooth journey.",
     content:
@@ -601,6 +603,7 @@ export const services = [
   {
     id: 2,
     title: "Valley Sightseeing Tour (Half/Full Day)",
+    slug: "valley-sightseeing-tour",
     description:
       "Explore the cultural and historical landmarks around the valley with customizable half or full-day tours.",
     content:
@@ -610,6 +613,7 @@ export const services = [
   {
     id: 3,
     title: "All Over Nepal Tours",
+    slug: "all-over-nepal-tours",
     description:
       "Experience the beauty of Nepal with our countrywide tours covering major destinations and hidden gems.",
     content:
@@ -619,6 +623,7 @@ export const services = [
   {
     id: 4,
     title: "Disposal (Office) Use (Short-term)",
+    slug: "disposal-use",
     description:
       "Convenient short-term vehicle rentals for corporate and personal use within the city.",
     content:
@@ -628,6 +633,7 @@ export const services = [
   {
     id: 5,
     title: "Monthly/Quarterly/Yearly Use (Long-term)",
+    slug: "long-term-use",
     description:
       "Flexible long-term vehicle rental options for companies, embassies, and individuals.",
     content:
@@ -637,6 +643,7 @@ export const services = [
   {
     id: 6,
     title: "India/Bhutan Tours",
+    slug: "india-bhutan-tours",
     description:
       "Enjoy cross-border travel packages to India and Bhutan with complete logistics and travel support.",
     content:
@@ -646,6 +653,7 @@ export const services = [
   {
     id: 7,
     title: "Jungle Safari Drive",
+    slug: "jungle-safari-drive",
     description:
       "Embark on an exciting jungle safari in Chitwan or Bardiya with our experienced drivers and guides.",
     content:
@@ -655,6 +663,7 @@ export const services = [
   {
     id: 8,
     title: "Mountain Flight Transfer",
+    slug: "mountain-flight-transfer",
     description:
       "Comfortable transport to and from the airport for scenic mountain flights around Everest and Annapurna.",
     content:
@@ -664,6 +673,7 @@ export const services = [
   {
     id: 9,
     title: "Rafting Point Drive",
+    slug: "rafting-point-drive",
     description:
       "Safe and timely transfers to popular rafting spots like Trishuli and Bhotekoshi rivers.",
     content:
@@ -673,6 +683,7 @@ export const services = [
   {
     id: 10,
     title: "Trekking Point Drive",
+    slug: "trekking-point-drive",
     description:
       "Reliable vehicle service to and from trekking trailheads such as Pokhara, Lukla, or Syabrubesi.",
     content:
@@ -682,6 +693,7 @@ export const services = [
   {
     id: 11,
     title: "Cultural Program Drive",
+    slug: "cultural-program-drive",
     description:
       "Transport service to cultural events, dance shows, and evening programs around the valley.",
     content:
@@ -691,6 +703,7 @@ export const services = [
   {
     id: 12,
     title: "Luggage Transfer",
+    slug: "luggage-transfer",
     description:
       "Secure and timely luggage transfer between hotels, airports, and other destinations.",
     content:
@@ -700,6 +713,7 @@ export const services = [
   {
     id: 13,
     title: "Dinner Transfer",
+    slug: "dinner-transfer",
     description:
       "Convenient evening transfers to and from restaurants and dining events in and around the valley.",
     content:
@@ -709,6 +723,7 @@ export const services = [
   {
     id: 14,
     title: "Tourist Bus Ticketing",
+    slug: "tourist-bus-ticketing",
     description:
       "Book tourist bus tickets for major routes such as Kathmandu–Pokhara, Chitwan, or Lumbini with ease.",
     content:
@@ -718,6 +733,7 @@ export const services = [
   {
     id: 15,
     title: "Vehicle Rental at Pokhara",
+    slug: "vehicle-rental-pokhara",
     description:
       "Rent cars, jeeps, or vans for sightseeing, tours, and airport transfers in Pokhara.",
     content:

@@ -28,7 +28,7 @@ const OurCarsPage = () => {
 
     return (
         <div className='bg-white'>
-            <div className={`flex flex-col min-h-screen items-center pt-40 md:pt-44 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
+            <div className={`flex flex-col min-h-screen items-center pt-16 md:pt-20 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
                 <div className="text-center">
                     <h2 className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold">
                         Our <span className="text-primary">Cars</span>

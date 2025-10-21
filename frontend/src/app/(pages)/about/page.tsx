@@ -1,21 +1,27 @@
-import { CustomButton } from '@/components/shared/CustomButton';
+"use client";
 import { paddingX } from '@/constant/constant';
 import { faqData, makesDifferentData } from '@/data/data';
 import React from 'react'
 import { BsPlus } from 'react-icons/bs'
-import { FaMapMarkerAlt } from 'react-icons/fa'
+import { FaMapMarkerAlt } from 'react-icons/fa';
 import { GiWorld } from "react-icons/gi";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import Banner from '@/components/shared/Banner';
+import { motion } from "framer-motion";
+
 
 const page = () => {
     return (
         <div className='bg-white'>
 
-            <div className={`flex flex-col min-h-screen items-center pt-20 md:pt-44 justify-center bg-background pb-10 sm:pb-20 md:pb-28 ${paddingX}`}>
+            <div className={`flex flex-col h-full items-center pt-0 md:pt-8 justify-center bg-background pb-10 sm:pb-20 md:pb-28 ${paddingX}`}>
 
                 <div className='flex md:flex-row flex-col-reverse w-full items-center justify-center'>
-                    <div className="md:w-1/2 w-full flex relative  justify-center items-center mt-6 md:mt-0">
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        className="md:w-1/2 w-full flex relative  justify-center items-center mt-6 md:mt-0">
                         <div className="absolute w-[75%] h-[75%] bg-gradient-to-tr from-orange-400/60 via-yellow-300/40 to-transparent blur-3xl rounded-full -z-0"></div>
 
                         <div className="absolute inset-0 flex justify-center items-center -z-0">
@@ -54,13 +60,15 @@ const page = () => {
                             </div>
                         </div>
 
-                    </div>
+                    </motion.div>
 
-                    <div className="text-black pt-20 md:pt-12 text-left justify-start px-6 md:space-y-5 space-y-4 lg:space-y-6 md:w-1/2 w-full flex flex-col items-start">
-                        {/* Small Subtitle */}
-                        {/* <p className="uppercase tracking-wider text-sm text-primary font-semibold">
-                            Who We Are
-                        </p> */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        className="text-black pt-16 md:pt-12 text-left justify-start px-6 md:space-y-5 space-y-4 lg:space-y-6 md:w-1/2 w-full flex flex-col items-start">
+
 
                         {/* Main Title */}
                         <h1 className="font-merriweather md:text-3xl text-2xl lg:text-4xl font-bold">
@@ -98,7 +106,7 @@ const page = () => {
                             Learn More
                         </button> */}
 
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>

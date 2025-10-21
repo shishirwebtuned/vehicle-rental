@@ -6,7 +6,7 @@ const page = () => {
     return (
         <div className="bg-white">
             <div
-                className={`flex flex-col min-h-screen items-center pt-20 md:pt-44 justify-center bg-background pb-10 sm:pb-20 md:pb-28 ${paddingX}`}
+                className={`flex flex-col h-full items-center pt-12 md:pt-16 justify-center bg-background pb-10 sm:pb-20 md:pb-28 ${paddingX}`}
             >
                 <div className="w-full text-center">
                     <h1 className="w-full text-black font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold leading-snug">
@@ -18,7 +18,7 @@ const page = () => {
                     </p>
                 </div>
 
-                <div className="grid sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 lg:gap-8 sm:gap-6 gap-4 mt-10">
+                <div className="grid sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 lg:gap-8 sm:gap-6 gap-4 mt-8 md:mt-10">
                     {careersData.map((job, index) => (
                         <div
                             key={job.id || index}
