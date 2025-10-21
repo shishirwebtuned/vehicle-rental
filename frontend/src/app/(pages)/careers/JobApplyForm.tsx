@@ -8,12 +8,12 @@ import { useCreateBookingMutation } from "@/redux/api/rest/mutation/otherApi";
 import toast from "react-hot-toast";
 import PhoneInput from "react-phone-input-2";
 
-interface EnquiryFormProps {
-    vehicleId: string | number;
+interface JobApplyFormProps {
+    jobId: string | number;
     onSubmitSuccess?: () => void;
 }
 
-const EnquiryForm: React.FC<EnquiryFormProps> = ({ vehicleId, onSubmitSuccess }) => {
+const JobApplyForm: React.FC<JobApplyFormProps> = ({ jobId, onSubmitSuccess }) => {
 
     const [createBooking] = useCreateBookingMutation();
 
@@ -23,30 +23,32 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ vehicleId, onSubmitSuccess })
             email: "",
             phone: "",
             message: "",
+            resume: "",
         },
         validationSchema: Yup.object({
             name: Yup.string().required("Name is required"),
             email: Yup.string().email("Invalid email").required("Email is required"),
             phone: Yup.string().required("Phone number is required"),
             message: Yup.string().required("Message is required"),
+            resume: Yup.mixed().required("Resume or CV is required"),
         }),
         onSubmit: async (values, { resetForm }) => {
             try {
-                const carSearchData = localStorage.getItem("carSearchData");
-                const searchData = carSearchData ? JSON.parse(carSearchData) : {};
+                // const carSearchData = localStorage.getItem("carSearchData");
+                // const searchData = carSearchData ? JSON.parse(carSearchData) : {};
 
-                const bookingData = {
-                    vehicle: vehicleId,
-                    ...searchData,
-                    ...values,
-                };
+                // const bookingData = {
+                //     vehicle: jobId,
+                //     ...searchData,
+                //     ...values,
+                // };
 
-                console.log("Combined Booking Data:", bookingData);
+                console.log("Job Application Data:", values);
 
-                await createBooking(bookingData).unwrap();
+                // await createBooking(bookingData).unwrap();
 
                 resetForm();
-                toast.success("Booking enquiry sent successfully.");
+                toast.success("Job application sent successfully.");
                 if (onSubmitSuccess) onSubmitSuccess();
             } catch (error) {
                 console.error("Booking failed:", error);
@@ -113,6 +115,43 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ vehicleId, onSubmitSuccess })
                 )}
             </div>
 
+            <div className="flex flex-col">
+                <label htmlFor="resume" className="mb-1 font-medium text-gray-700">Resume or CV</label>
+                <input
+                    id="resume"
+                    name="resume"
+                    type="file"
+                    accept=".pdf,.doc,.docx"
+                    onChange={(event) => {
+                        const file = event.currentTarget.files?.[0];
+                        formik.setFieldValue("resume", file);
+                    }}
+                    onBlur={formik.handleBlur}
+                    className="
+    bg-gray-100 
+    px-3 py-2 
+    rounded-lg 
+    border border-transparent
+    focus:outline-none 
+    focus:ring-2 focus:ring-yellow-400 
+    hover:border-yellow-400 
+    hover:bg-gray-50
+    transition-all duration-200 ease-in-out
+    cursor-pointer
+    text-sm font-nunito text-gray-700
+    file:mr-4 file:py-2 file:px-4 
+    file:rounded-md file:border-0 
+    file:text-sm file:font-semibold 
+    file:bg-yellow-400 file:text-white 
+    file:hover:bg-yellow-500
+  "
+
+                />
+                {formik.touched.resume && formik.errors.resume && (
+                    <p className="text-red-500 text-sm mt-1">{formik.errors.resume}</p>
+                )}
+            </div>
+
             {/* Message */}
             <div className="flex flex-col">
                 <label htmlFor="message" className="mb-1 font-medium text-gray-700">Message</label>
@@ -135,4 +174,4 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ vehicleId, onSubmitSuccess })
     );
 };
 
-export default EnquiryForm;
+export default JobApplyForm;

@@ -38,29 +38,30 @@ const ServiceDetail = ({ service }: ServiceClientProps) => {
     return (
         <div className='bg-white'>
             <div className={`relative flex flex-col h-full items-center pt-14 md:pt-16 justify-center bg-background pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
-                <div className="absolute top-12 md:top-16 bg-primary/10 rounded-full w-36 h-36 md:w-44 md:h-44 -z-10 animate-pulse-slow" />
+                <div className='flex flex-col h-full items-center justify-center'>
 
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="mb-6"
-                >
-                    {Icon && <Icon className="text-primary text-5xl sm:text-5xl md:text-6xl lg:text-7xl mb-4" />}
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
-                    className="font-nunito">
-                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-primary mb-4">{service.title}</h1>
-                    <p className="text-gray-800 text-base lg:text-xl md:text-lg mb-6 text-center">{service.description}</p>
-                    <div className="text-gray-700 text-sm lg:text-lg md:text-base text-justify leading-relaxed whitespace-pre-line">
-                        {service.content}
-                    </div>
-                </motion.div>
-
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="mb-6"
+                    >
+                        {Icon && <Icon className="text-primary text-5xl sm:text-5xl md:text-6xl lg:text-7xl mb-4" />}
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.5 }}
+                        className="font-nunito">
+                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-primary mb-4">{service.title}</h1>
+                        <p className="text-gray-800 text-base lg:text-xl md:text-lg mb-6 text-center">{service.description}</p>
+                        <div className="text-gray-700 text-sm lg:text-lg md:text-base text-justify leading-relaxed whitespace-pre-line">
+                            {service.content}
+                        </div>
+                    </motion.div>
+                </div>
             </div>
+
         </div>
     );
 };

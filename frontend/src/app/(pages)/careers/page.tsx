@@ -1,8 +1,20 @@
+"use client";
+
+import MasterDialog from "@/components/shared/MasterDialog";
 import { paddingX } from "@/constant/constant";
 import { careersData } from "@/data/data";
-import React from "react";
+import { useState } from "react";
+import JobApplyForm from "./JobApplyForm";
 
 const page = () => {
+    const [selectedJob, setSelectedJob] = useState<number | null>(null);
+    const [dialogOpen, setDialogOpen] = useState<boolean>(false);
+
+    const handleClick = (jobId: number) => {
+        setSelectedJob(jobId);
+        setDialogOpen(true);
+    }
+
     return (
         <div className="bg-white">
             <div
@@ -49,7 +61,7 @@ const page = () => {
                             </div>
 
                             <div className="w-full text-center mt-6">
-                                <button className="cursor-pointer rounded-lg border-2 border-primary px-5 py-2 md:text-base text-sm lg:text-lg font-nunito font-medium text-black hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">
+                                <button onClick={() => handleClick(job.id)} className="cursor-pointer rounded-lg border-2 border-primary px-5 py-2 md:text-base text-sm lg:text-lg font-nunito font-medium text-black hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">
                                     Apply Now
                                 </button>
                             </div>
@@ -57,6 +69,13 @@ const page = () => {
                     ))}
                 </div>
             </div>
+            <MasterDialog open={dialogOpen} title='Apply Now' onClose={() => setDialogOpen(false)}
+            >
+                <JobApplyForm
+                    jobId={selectedJob || ""}
+                    onSubmitSuccess={() => setDialogOpen(false)}
+                />
+            </MasterDialog>
         </div>
     );
 };
