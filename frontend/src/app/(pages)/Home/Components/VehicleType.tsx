@@ -3,11 +3,13 @@
 import { paddingX } from '@/constant/constant'
 import { categoriesStaticData } from '@/data/data'
 import { useGetAllCategoriesQuery } from '@/redux/api/rest/query/queryApi';
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from "framer-motion";
 
 const VehicleType = () => {
     const { data: categories, isLoading, isError, isSuccess } = useGetAllCategoriesQuery();
+
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const categoriesData =
         isError || !isSuccess
@@ -29,7 +31,9 @@ const VehicleType = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4 md:gap-3 gap-3 px-4 md:px-0">
                     {categoriesData.map((item: any, index: number) => (
-                        <div key={item._id || index} className="flex border relative border-[#5C9CBC24] group rounded-md serviceCard-shadow flex-col font-nunito items-center cursor-pointer text-center py-5 px-5 overflow-hidden">
+                        <div key={item._id || index}
+                            onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                            className="flex border relative border-[#5C9CBC24] group rounded-md serviceCard-shadow flex-col font-nunito items-center cursor-pointer text-center py-5 px-5 overflow-hidden">
                             <div className="w-full h-48 md:h-56 lg:h-64 flex items-center justify-center">
                                 <img
                                     src={item?.image?.url}
@@ -37,8 +41,8 @@ const VehicleType = () => {
                                     alt={item?.name}
                                 />
                             </div>
-                            <div className="absolute bottom-0 left-0 w-full text-center
-                  translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out p-4">
+                            <div className={`absolute bottom-0 left-0 w-full text-center
+                  ${openIndex === index ? "translate-y-0" : "translate-y-full"} group-hover:translate-y-0 transition-transform duration-500 ease-in-out p-4`}>
                                 <div className='bg-[#EEEFBC8C] shadow-xs rounded-md backdrop-blur-[10px] px-2 py-6 font-bold font-merriweather lg:text-xl md:text-lg text-base'>
                                     {item?.name}
                                 </div>
