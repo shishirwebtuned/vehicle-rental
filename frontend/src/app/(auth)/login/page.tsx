@@ -78,7 +78,10 @@ const Page = () => {
                 <div className="md:flex hidden w-[45%] overflow-hidden flex-col md:h-[32rem] lg:h-[35rem] rounded-l-md justify-center items-center bg-primary text-white px-6 text-center">
                     <button
                         type="button"
-                        onClick={() => router.back()}
+                        onClick={() => {
+                            if (window.history.length > 1) router.back();
+                            else router.push("/");
+                        }}
                         className="hidden md:flex items-center gap-2 text-white cursor-pointer transition-all ease-in-out duration-300 absolute top-4 left-4 hover:text-gray-300 text-base lg:text-lg font-medium mb-4"
                     >
                         ← Go Back
