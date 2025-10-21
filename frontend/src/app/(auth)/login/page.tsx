@@ -128,14 +128,14 @@ const Page = () => {
                                 <p className="mb-4 text-xs text-center text-gray-500">
                                     By continuing you agree to our{" "}
                                     <Link
-                                        href=""
+                                        href="/terms-and-conditions"
                                         className="text-blue-500 hover:underline"
                                     >
                                         Terms of Services
                                     </Link>
                                     <span> &</span>
                                     <Link
-                                        href=""
+                                        href="/privacy-policy"
                                         className="pl-1 text-blue-500 hover:underline"
                                     >
                                         Privacy Policy

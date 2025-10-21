@@ -21,9 +21,11 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     return (
         <>
             <TopWrapper />
-            <div className="md:mt-8 mt-1">
-                {!hideBanner && <Banner />} {/* ✅ only show if not hidden */}
-            </div>
+            {!hideBanner &&
+                <div className="md:mt-8 mt-1">
+                    {!hideBanner && <Banner />}
+                </div>
+            }
 
             {children}
             {!hideFooter && <Footer />}

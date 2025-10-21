@@ -37,7 +37,9 @@ const ServiceDetail = ({ service }: ServiceClientProps) => {
 
     return (
         <div className='bg-white'>
-            <div className={`flex flex-col h-full items-center pt-14 md:pt-16 justify-center bg-background pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
+            <div className={`relative flex flex-col h-full items-center pt-14 md:pt-16 justify-center bg-background pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
+                <div className="absolute top-12 md:top-16 bg-primary/10 rounded-full w-36 h-36 md:w-44 md:h-44 -z-10 animate-pulse-slow" />
+
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8, y: 10 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
