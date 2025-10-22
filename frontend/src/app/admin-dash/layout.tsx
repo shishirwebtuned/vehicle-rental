@@ -72,7 +72,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     </SidebarContent>
 
                     <SidebarFooter>
-                        <p className="text-xs">© {new Date(Date.now()).getFullYear()} Grateful Tours & Transportation</p>
+                        <p className="text-xs break-words whitespace-normal text-center">© {new Date(Date.now()).getFullYear()} Grateful Tours & Transportation</p>
                     </SidebarFooter>
                 </Sidebar>
 

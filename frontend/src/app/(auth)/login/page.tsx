@@ -71,17 +71,21 @@ const Page = () => {
             toast.error(err?.data?.message || "Login failed, Try Again");
         }
     }
-
+    const handleBackClick = () => {
+        const userToken = Cookies.get("userToken");
+        if (userToken) {
+            router.back();
+        } else {
+            router.push("/");
+        }
+    }
     return (
         <div className='w-full relative min-h-screen bg-white md:h-full flex items-center justify-center md:pb-16 pb-8 pt-20 md:pt-32'>
             <div className='lg:w-[65%] relative md:w-[70%] w-[88%] flex md:flex-row flex-col justify-center items-center rounded-md md:h-full h-auto shadow-xl bg-white'>
                 <div className="md:flex hidden w-[45%] overflow-hidden flex-col md:h-[32rem] lg:h-[35rem] rounded-l-md justify-center items-center bg-primary text-white px-6 text-center">
                     <button
                         type="button"
-                        onClick={() => {
-                            if (window.history.length > 1) router.back();
-                            else router.push("/");
-                        }}
+                        onClick={handleBackClick}
                         className="hidden md:flex items-center gap-2 text-white cursor-pointer transition-all ease-in-out duration-300 absolute top-4 left-4 hover:text-gray-300 text-base lg:text-lg font-medium mb-4"
                     >
                         ← Go Back
@@ -104,7 +108,7 @@ const Page = () => {
                 <div className='md:w-[55%] w-full flex flex-col md:py-5 py-10 lg:px-12 md:px-8 px-4 gap-4 bg-white h-full'>
                     <button
                         type="button"
-                        onClick={() => router.back()}
+                        onClick={handleBackClick}
                         className="flex md:hidden items-center gap-2 text-primary cursor-pointer transition-all ease-in-out duration-300 hover:text-gray-800 text-base font-medium mb-4"
                     >
                         ← Go Back

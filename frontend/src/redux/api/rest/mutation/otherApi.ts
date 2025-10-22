@@ -96,6 +96,60 @@ const authApi = baseApi.injectEndpoints({
         body,
       }),
     }),
+
+    createCareer: builder.mutation({
+      query: (body: {
+        jobName: string;
+        jobField: string;
+        description: string;
+        requirements: string[];
+        location: string;
+        type: string;
+      }) => ({
+        url: "/careers",
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: ["Careers"],
+    }),
+
+    updateCareer: builder.mutation({
+      query: ({
+        id,
+        body,
+      }: {
+        id: string;
+        body: {
+          jobName: string;
+          jobField: string;
+          description: string;
+          requirements: string[];
+          location: string;
+          type: string;
+        };
+      }) => ({
+        url: `/careers/${id}`,
+        method: "PUT",
+        body,
+      }),
+      invalidatesTags: ["Careers"],
+    }),
+
+    deleteCareer: builder.mutation({
+      query: (id: string) => ({
+        url: `/careers/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Careers"],
+    }),
+
+    applytoJob: builder.mutation({
+      query: (formData: any) => ({
+        url: "/careers/apply",
+        method: "POST",
+        body: formData,
+      }),
+    }),
   }),
 });
 
@@ -109,4 +163,8 @@ export const {
   useCreateBookingMutation,
   useUpdateBookingMutation,
   useCreateContactMutation,
+  useCreateCareerMutation,
+  useUpdateCareerMutation,
+  useDeleteCareerMutation,
+  useApplytoJobMutation,
 } = authApi;

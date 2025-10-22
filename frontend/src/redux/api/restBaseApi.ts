@@ -28,6 +28,8 @@ export const baseApi = createApi({
     "VehiclesByCategory",
     "Bookings",
     "BookingById",
+    "Careers",
+    "CareerById",
   ],
   endpoints: () => ({}),
 });

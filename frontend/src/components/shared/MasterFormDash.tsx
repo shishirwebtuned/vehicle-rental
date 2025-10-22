@@ -100,6 +100,22 @@ const MasterFormDash: React.FC<MasterFormProps> = ({
                                         </option>
                                     ))}
                                 </Field>
+                            ) : type === 'textarea-array' ? (
+                                <textarea
+                                    id={name}
+                                    placeholder={placeholder}
+                                    {...getFieldProps(name)}
+                                    className={`w-full ${fieldStyle} py-2 text-sm font-nunito`}
+                                    rows={3}
+                                />
+                            ) : type === 'textarea' ? (
+                                <textarea
+                                    id={name}
+                                    placeholder={placeholder}
+                                    {...getFieldProps(name)}
+                                    className={`w-full ${fieldStyle} py-2 text-sm font-nunito`}
+                                    rows={2}
+                                />
                             ) : (
                                 <div className="">
                                     <Field

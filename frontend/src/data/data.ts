@@ -559,33 +559,51 @@ export const footerData = {
   },
 };
 
-export const careersData = [
+export const staticCareersData = [
   {
-    id: 1,
-    title: "Frontend Developer",
-    department: "Engineering",
-    location: "Kathmandu, Nepal",
-    type: "Full-time",
+    _id: "1",
+    jobName: "Frontend Developer",
+    jobField: "Engineering",
     description:
       "We are looking for a creative and passionate Frontend Developer with experience in React and Tailwind CSS.",
+    requirements: [
+      "Experience with React.js",
+      "Experience with Tailwind CSS",
+      "Good communication skills",
+      "Problem-solving mindset",
+    ],
+    location: "Kathmandu, Nepal",
+    type: "Full-time",
   },
   {
-    id: 2,
-    title: "UI/UX Designer",
-    department: "Design",
-    location: "Remote",
-    type: "Part-time",
+    _id: "2",
+    jobName: "UI/UX Designer",
+    jobField: "Design",
     description:
       "Join our design team to craft user-friendly and visually stunning interfaces for our products.",
+    requirements: [
+      "Experience in UI/UX design",
+      "Proficiency in Figma or Adobe XD",
+      "Creative and detail-oriented",
+      "Good teamwork skills",
+    ],
+    location: "Remote",
+    type: "Part-time",
   },
   {
-    id: 3,
-    title: "Digital Marketing Executive",
-    department: "Marketing",
-    location: "Pokhara, Nepal",
-    type: "Full-time",
+    _id: "3",
+    jobName: "Digital Marketing Executive",
+    jobField: "Marketing",
     description:
       "We’re seeking a data-driven marketer to plan and execute online campaigns that drive engagement and growth.",
+    requirements: [
+      "Experience with social media marketing",
+      "Knowledge of SEO and SEM",
+      "Analytical mindset",
+      "Good communication skills",
+    ],
+    location: "Pokhara, Nepal",
+    type: "Full-time",
   },
 ];
 

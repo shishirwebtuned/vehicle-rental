@@ -4,18 +4,18 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { CustomButton } from "@/components/shared/CustomButton";
-import { useCreateBookingMutation } from "@/redux/api/rest/mutation/otherApi";
+import { useApplytoJobMutation, useCreateBookingMutation } from "@/redux/api/rest/mutation/otherApi";
 import toast from "react-hot-toast";
 import PhoneInput from "react-phone-input-2";
 
 interface JobApplyFormProps {
-    jobId: string | number;
+    jobName: string | null;
     onSubmitSuccess?: () => void;
 }
 
-const JobApplyForm: React.FC<JobApplyFormProps> = ({ jobId, onSubmitSuccess }) => {
+const JobApplyForm: React.FC<JobApplyFormProps> = ({ jobName, onSubmitSuccess }) => {
 
-    const [createBooking] = useCreateBookingMutation();
+    const [applyToJob, { isLoading }] = useApplytoJobMutation();
 
     const formik = useFormik({
         initialValues: {
@@ -29,23 +29,26 @@ const JobApplyForm: React.FC<JobApplyFormProps> = ({ jobId, onSubmitSuccess }) =
             name: Yup.string().required("Name is required"),
             email: Yup.string().email("Invalid email").required("Email is required"),
             phone: Yup.string().required("Phone number is required"),
-            message: Yup.string().required("Message is required"),
+            message: Yup.string(),
             resume: Yup.mixed().required("Resume or CV is required"),
         }),
         onSubmit: async (values, { resetForm }) => {
             try {
-                // const carSearchData = localStorage.getItem("carSearchData");
-                // const searchData = carSearchData ? JSON.parse(carSearchData) : {};
+                const formData = new FormData();
+                formData.append("name", values.name);
+                formData.append("email", values.email);
+                formData.append("phone", values.phone);
+                if (values.message) {
+                    formData.append("message", values.message);
+                } formData.append("appliedPosition", jobName || "");
+                if (values.resume) {
+                    formData.append("resume", values.resume);
+                }
 
-                // const bookingData = {
-                //     vehicle: jobId,
-                //     ...searchData,
-                //     ...values,
-                // };
 
-                console.log("Job Application Data:", values);
+                console.log("Job Application Data:", formData);
 
-                // await createBooking(bookingData).unwrap();
+                // await applyToJob(formData).unwrap();
 
                 resetForm();
                 toast.success("Job application sent successfully.");
@@ -169,7 +172,7 @@ const JobApplyForm: React.FC<JobApplyFormProps> = ({ jobId, onSubmitSuccess }) =
                 )}
             </div>
 
-            <CustomButton type="submit" text="Submit Enquiry" />
+            <CustomButton type="submit" text={` ${isLoading ? "Submitting..." : "Submit Enquiry"}`} disabled={isLoading} />
         </form>
     );
 };

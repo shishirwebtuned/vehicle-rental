@@ -11,7 +11,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     const hideFooterRoutes = ["/login", "/sign-up", "/dashboard", "/admin-dash", "/verify-email"];
     const hideFooter = hideFooterRoutes.some(route => pathname.startsWith(route));
 
-    const hideBannerRoutes = ["/login", "/sign-up", "/dashboard", "/admin-dash", "/verify-email", "/admin-dash/vehicle", "/admin-dash/category", "/admin-dash/booking"];
+    const hideBannerRoutes = ["/login", "/sign-up", "/dashboard", "/admin-dash", "/verify-email", "/admin-dash/vehicle", "/admin-dash/category", "/admin-dash/booking", "/admin-dash/careers"];
 
     // Hide banner only on "/" or those routes
     const hideBanner =

@@ -2,16 +2,23 @@
 
 import MasterDialog from "@/components/shared/MasterDialog";
 import { paddingX } from "@/constant/constant";
-import { careersData } from "@/data/data";
+import { staticCareersData } from "@/data/data";
 import { useState } from "react";
 import JobApplyForm from "./JobApplyForm";
+import { useGetAllCareersQuery } from "@/redux/api/rest/query/queryApi";
 
 const page = () => {
-    const [selectedJob, setSelectedJob] = useState<number | null>(null);
+    const [selectedJob, setSelectedJob] = useState<string | null>(null);
     const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 
-    const handleClick = (jobId: number) => {
-        setSelectedJob(jobId);
+    const { data: careers, isLoading, isError, isSuccess } = useGetAllCareersQuery();
+
+    // const careersData = isError || !isSuccess ? staticCareersData : careers?.data?.careers || [];
+
+    const careersData = staticCareersData;
+
+    const handleClick = (jobName: string) => {
+        setSelectedJob(jobName);
         setDialogOpen(true);
     }
 
@@ -31,37 +38,51 @@ const page = () => {
                 </div>
 
                 <div className="grid sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 lg:gap-8 sm:gap-6 gap-4 mt-8 md:mt-10">
-                    {careersData.map((job, index) => (
+                    {careersData.map((job: any, index: number) => (
                         <div
-                            key={job.id || index}
+                            key={job._id || index}
                             className="w-full rounded-xl border border-gray-200 bg-white px-5 py-6 shadow-sm hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between transition-all duration-300 ease-in-out text-start"
                         >
                             <div>
-                                <h2 className="text-primary font-merriweather font-bold text-lg md:text-xl lg:text-2xl">
-                                    {job.title}
+                                <h2 className="text-primary font-merriweather font-bold text-base md:text-xl lg:text-2xl">
+                                    {job?.jobName}
                                 </h2>
                                 <p className="mt-2 text-gray-600 font-nunito md:text-sm text-xs lg:text-base">
-                                    {job.department}
+                                    {job?.jobField}
                                 </p>
 
                                 <p className="mt-3 text-black font-nunito md:text-sm text-xs lg:text-base line-clamp-4">
-                                    {job.description}
+                                    {job?.description}
                                 </p>
 
+                                {job?.requirements && job.requirements.length > 0 && (
+                                    <div className="mt-3">
+                                        <p className="font-semibold text-gray-800 dark:text-gray-100 md:text-sm text-xs lg:text-base">
+                                            Requirements:
+                                        </p>
+                                        <ul className="mt-2 list-disc list-inside text-gray-700 font-nunito md:text-[13px] text-[11px] lg:text-[15px] space-y-[1px] md:space-y-[3px]">
+                                            {job.requirements.map((req: string, idx: number) => (
+                                                <li key={idx}>{req}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+
+
                                 <div className="mt-4">
-                                    <p className="text-sm md:text-base font-medium text-gray-700">
+                                    <p className="text-xs md:text-sm lg:text-base font-medium text-gray-700">
                                         <span className="text-primary font-semibold">Location:</span>{" "}
-                                        {job.location}
+                                        {job?.location}
                                     </p>
-                                    <p className="text-sm md:text-base font-medium text-gray-700">
+                                    <p className="text-xs md:text-sm lg:text-base font-medium text-gray-700">
                                         <span className="text-primary font-semibold">Type:</span>{" "}
-                                        {job.type}
+                                        {job?.type}
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="w-full text-center mt-6">
-                                <button onClick={() => handleClick(job.id)} className="cursor-pointer rounded-lg border-2 border-primary px-5 py-2 md:text-base text-sm lg:text-lg font-nunito font-medium text-black hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">
+                            <div className="w-full text-center lg:mt-6 md:mt-5 mt-4">
+                                <button onClick={() => handleClick(job.jobName)} className="cursor-pointer rounded-lg border-2 border-primary md:px-5 px-4 py-[6px] md:py-2 md:text-base text-xs lg:text-lg font-nunito font-medium text-black hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">
                                     Apply Now
                                 </button>
                             </div>
@@ -72,7 +93,7 @@ const page = () => {
             <MasterDialog open={dialogOpen} title='Apply Now' onClose={() => setDialogOpen(false)}
             >
                 <JobApplyForm
-                    jobId={selectedJob || ""}
+                    jobName={selectedJob || ""}
                     onSubmitSuccess={() => setDialogOpen(false)}
                 />
             </MasterDialog>

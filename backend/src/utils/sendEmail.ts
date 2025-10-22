@@ -1,15 +1,21 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 dotenv.config();
-
 interface EmailOptions {
   to: string;
   subject: string;
   text?: string;
   html?: string;
+  attachments?: any[];
 }
 
-export const sendEmail = async ({ to, subject, text, html }: EmailOptions) => {
+export const sendEmail = async ({
+  to,
+  subject,
+  text,
+  html,
+  attachments,
+}: EmailOptions) => {
   try {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -29,6 +35,7 @@ export const sendEmail = async ({ to, subject, text, html }: EmailOptions) => {
       subject,
       text,
       html,
+      attachments,
     });
 
     console.log("Email sent: %s", info.messageId);

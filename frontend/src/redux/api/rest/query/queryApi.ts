@@ -75,6 +75,22 @@ const queryApi = baseApi.injectEndpoints({
       }),
       providesTags: ["BookingById"],
     }),
+
+    getAllCareers: builder.query<any, void>({
+      query: () => ({
+        url: "careers",
+        method: "GET",
+      }),
+      providesTags: ["Careers"],
+    }),
+
+    getCareerById: builder.query<any, { id: string }>({
+      query: ({ id }) => ({
+        url: `careers/${id}`,
+        method: "GET",
+      }),
+      providesTags: ["CareerById"],
+    }),
   }),
   overrideExisting: false,
 });
@@ -89,4 +105,6 @@ export const {
   useGetVehiclesByCategoryQuery,
   useGetBookingsQuery,
   useGetBookingByIdQuery,
+  useGetAllCareersQuery,
+  useGetCareerByIdQuery,
 } = queryApi;
