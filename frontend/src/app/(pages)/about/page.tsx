@@ -112,15 +112,40 @@ const page = () => {
             </div>
             <div className={`bg-white py-16 ${paddingX}`}>
                 <div className="text-center">
-                    <h2 className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold">What Makes Us
+                    <motion.h2
+                        initial={{ y: 50, opacity: 0 }}
+
+                        whileInView={{ y: 0, opacity: 1 }}
+
+                        viewport={{ once: true, amount: 0.3 }}
+
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+
+                        className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold">What Makes Us
                         <span className="text-primary ml-2">Different </span>
-                    </h2>
-                    <p className="text-gray-600 mb-16 mt-5 font-nunito lg:text-lg md:text-base text-sm">
+                    </motion.h2>
+                    <motion.p
+                        initial={{ y: 50, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+
+                        viewport={{ once: true, amount: 0.3 }}
+
+                        transition={{ duration: 0.9, ease: "easeOut" }}
+
+                        className="text-gray-600 mb-16 mt-5 font-nunito lg:text-lg md:text-base text-sm">
                         We ensure you with the best services to meet your satisfaction in
                         all of our services.
-                    </p>
+                    </motion.p>
 
-                    <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:grid-cols-4 font-nunito md:gap-6 sm:gap-5 gap-4 lg:gap-7">
+                    <motion.div
+                        initial={{ y: 50, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+
+                        transition={{ duration: 1, ease: "easeOut" }}
+
+                        viewport={{ once: true, amount: 0.3 }}
+
+                        className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:grid-cols-4 font-nunito md:gap-6 sm:gap-5 gap-4 lg:gap-7">
                         {makesDifferentData.map((feature, index) => (
                             <div
                                 key={index}
@@ -133,7 +158,7 @@ const page = () => {
                                 <p className="text-gray-600 text-center group-hover:text-white transition duration-300 ease-in-out lg:text-base md:text-sm text-xs">{feature.description}</p>
                             </div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             <div className={`bg-white py-16 ${paddingX}`}>

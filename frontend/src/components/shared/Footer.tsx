@@ -29,7 +29,7 @@ const Footer = () => {
 
                 <div className="flex flex-col items-center">
                     <h3 className="lg:text-xl md:text-lg text-base font-merriweather text-white font-bold sm:mb-3 mb-1">{footerData.quickLinks.title}</h3>
-                    <ul className="md:space-y-[6px] sm:space-y-[5px] space-y-[1px]">
+                    <ul className="md:space-y-[6px] sm:space-y-[2px] space-y-[1px]">
                         {footerData.quickLinks.links.map((link, index) => (
                             <li key={index}>
                                 <a
@@ -45,7 +45,7 @@ const Footer = () => {
 
                 <div className="flex flex-col items-center">
                     <h3 className="lg:text-xl md:text-lg text-base font-merriweather text-white font-bold sm:mb-3 mb-1">{footerData.explore.title}</h3>
-                    <ul className="md:space-y-[6px] sm:space-y-[5px] space-y-[1px]">
+                    <ul className="md:space-y-[6px] sm:space-y-[2px] space-y-[1px]">
                         {footerData.explore.links.map((link, index) => (
                             <li key={index}>
                                 <a

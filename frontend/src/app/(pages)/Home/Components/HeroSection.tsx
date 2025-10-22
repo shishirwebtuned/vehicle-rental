@@ -33,13 +33,38 @@ const HeroSection = () => {
         dropoffDate: Yup.date()
             .transform((value, originalValue) => (originalValue === "" ? null : value))
             .required("Drop-off date is required")
-            .min(
-                Yup.ref("pickupDate"),
-                "Drop-off date cannot be before pickup date"
-            ),
+            .min(Yup.ref("pickupDate"), "Drop-off date cannot be before pickup date"),
 
         dropoffTime: Yup.string().required("Drop-off time is required"),
-    });
+    }).test(
+        "dropoff-after-pickup",
+        "If pickup and drop-off are on the same day, drop-off time must be after pickup time",
+        function (values) {
+            const { pickupDate, dropoffDate, pickupTime, dropoffTime } = values;
+
+            if (!pickupDate || !dropoffDate || !pickupTime || !dropoffTime) return true;
+
+            if (
+                new Date(pickupDate).toDateString() === new Date(dropoffDate).toDateString()
+            ) {
+                const [pickupHour, pickupMinute] = pickupTime.split(":").map(Number);
+                const [dropoffHour, dropoffMinute] = dropoffTime.split(":").map(Number);
+
+                const pickupTotal = pickupHour * 60 + pickupMinute;
+                const dropoffTotal = dropoffHour * 60 + dropoffMinute;
+
+                if (dropoffTotal <= pickupTotal) {
+                    return this.createError({
+                        path: "dropoffTime",
+                        message:
+                            "If pickup and drop-off are the same day, drop-off time must be after pickup time",
+                    });
+                }
+            }
+
+            return true;
+        }
+    );
 
 
     const formFields: { id: keyof FormValues; label: string; type: string }[] = [
@@ -136,13 +161,8 @@ const HeroSection = () => {
                                             value={formik.values[field.id as keyof typeof formik.values]}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
-                                            min={
-                                                field.type === "date"
-                                                    ? field.id === "dropoffDate" && formik.values.pickupDate
-                                                        ? formik.values.pickupDate
-                                                        : new Date().toISOString().split("T")[0]
-                                                    : undefined
-                                            }
+                                            min={new Date().toISOString().split("T")[0]}
+
                                             className="w-full px-3 bg-white py-2 focus:outline-none focus:ring focus:ring-primary lg:text-base md:text-sm text-xs"
                                         />
 
