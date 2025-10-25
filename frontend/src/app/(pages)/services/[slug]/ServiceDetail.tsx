@@ -3,6 +3,8 @@
 import { paddingX } from '@/constant/constant';
 import React from 'react';
 import { motion } from 'framer-motion';
+import { CustomButton } from '@/components/shared/CustomButton';
+import { useRouter } from 'next/navigation';
 
 const iconMap: any = {
     FaMapMarkedAlt: require('react-icons/fa').FaMapMarkedAlt,
@@ -34,6 +36,7 @@ type ServiceClientProps = {
 
 const ServiceDetail = ({ service }: ServiceClientProps) => {
 
+    const router = useRouter();
     const Icon = iconMap[service.icon];
 
 
@@ -83,6 +86,8 @@ const ServiceDetail = ({ service }: ServiceClientProps) => {
                             <h3 className="font-semibold text-primary mb-2 text-lg">Why Choose Grateful Tours?</h3>
                             <p className="text-sm md:text-base leading-relaxed">{service.answer}</p>
                         </div>
+
+                        <CustomButton type='button' text="Book Now" className='mt-4 md:mt-6' onClick={() => router.push('/our-cars')} />
                     </motion.div>
                 </div>
             </div>
