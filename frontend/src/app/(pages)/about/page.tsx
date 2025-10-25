@@ -1,6 +1,6 @@
 "use client";
 import { paddingX } from '@/constant/constant';
-import { faqData, makesDifferentData } from '@/data/data';
+import { faqData, makesDifferentData, missionPoints, visionPoints } from '@/data/data';
 import React from 'react'
 import { BsPlus } from 'react-icons/bs'
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -161,6 +161,54 @@ const page = () => {
                     </motion.div>
                 </div>
             </div>
+            <div className={`bg-white py-16 ${paddingX}`}>
+                <h2 className="text-center font-merriweather text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-10">
+                    Our Mission and <span className="text-primary">Vision</span>
+                </h2>
+
+                <div className="max-w-6xl mx-auto text-gray-700 leading-relaxed grid md:grid-cols-2 gap-6 lg:gap-10 md:gap-8">
+                    {/* Mission Section */}
+                    <div className="bg-gray-50 hover:bg-gray-100 transition rounded-2xl shadow-sm lg:p-8 md:p-6 p-4">
+                        <h3 className=" font-nunito md:text-xl text-lg lg:text-2xl font-semibold text-primary mb-4 md:mb-6 flex items-center gap-2">
+                            <span className="w-[6px] md:w-2 h-6 md:h-8 bg-[#FDC700] rounded-sm font-nunito"></span> Our Mission
+                        </h3>
+                        <motion.ul initial={{ opacity: 0, x: -80 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            className="space-y-2 md:space-y-3">
+                            {missionPoints.map((point, index) => (
+                                <li key={index} className="flex items-start gap-2 lg:text-base md:text-sm text-xs font-nunito">
+                                    <span className="text-primary mt-1.5">•</span>
+                                    <span>{point}</span>
+                                </li>
+                            ))}
+                        </motion.ul>
+                    </div>
+
+                    {/* Vision Section */}
+                    <div className="bg-gray-50 hover:bg-gray-100 transition rounded-2xl shadow-sm lg:p-8 md:p-6 p-4">
+                        <h3 className="font-nunito md:text-xl text-lg lg:text-2xl font-semibold text-primary mb-4 md:mb-6 flex items-center gap-2">
+                            <span className="w-[6px] md:w-2 h-6 md:h-8 bg-[#FDC700] rounded-sm font-nunito"></span> Our Vision
+                        </h3>
+                        <motion.ul
+                            initial={{ opacity: 0, x: 80 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            className="space-y-2 md:space-y-3">
+                            {visionPoints.map((point, index) => (
+                                <li key={index} className="flex items-start gap-2 lg:text-base md:text-sm text-xs font-nunito">
+                                    <span className="text-primary mt-1.5">•</span>
+                                    <span>{point}</span>
+                                </li>
+                            ))}
+                        </motion.ul>
+                    </div>
+                </div>
+
+            </div>
+
             <div className={`bg-white py-16 ${paddingX}`}>
                 <h2 className="text-center font-merriweather text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-10 ">
                     Frequently Asked <span className="text-primary">Questions</span>

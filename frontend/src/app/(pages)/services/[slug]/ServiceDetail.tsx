@@ -23,10 +23,12 @@ const iconMap: any = {
 
 type ServiceClientProps = {
     service: {
+        id: number;
         title: string;
         description: string;
         content: string;
         icon: string;
+        answer: string;
     };
 };
 
@@ -36,33 +38,57 @@ const ServiceDetail = ({ service }: ServiceClientProps) => {
 
 
     return (
-        <div className='bg-white'>
-            <div className={`relative flex flex-col h-full items-center pt-14 md:pt-16 justify-center bg-background pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
-                <div className='flex flex-col h-full items-center justify-center'>
+        <div className="bg-white">
+            <div
+                className={`relative flex flex-col md:flex-row ${service.id % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
+                    } h-full items-center gap-8 md:gap-14 pt-14 md:pt-20 justify-center bg-background pb-16 sm:pb-24 md:pb-32 ${paddingX}`}
+            >
+                {/* Image */}
+                <motion.div
+                    initial={{ opacity: 0, x: service.id % 2 === 0 ? 50 : -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="w-full md:w-1/2"
+                >
+                    <div className="bg-gray-50 rounded-2xl shadow-md p-2 md:p-3">
+                        <img
+                            src="/images/services.jpg"
+                            alt={service.title}
+                            className="rounded-xl shadow-lg object-cover w-full h-auto md:h-[380px]"
+                        />
+                    </div>
+                </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8, y: 10 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="mb-6"
-                    >
-                        {Icon && <Icon className="text-primary text-5xl sm:text-5xl md:text-6xl lg:text-7xl mb-4" />}
-                    </motion.div>
+                {/* Text Content */}
+                <div className="flex flex-col h-full items-center md:items-start justify-center text-center md:text-left w-full md:w-1/2 space-y-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
-                        className="font-nunito">
-                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-primary mb-4">{service.title}</h1>
-                        <p className="text-gray-800 text-base lg:text-xl md:text-lg mb-6 text-center">{service.description}</p>
-                        <div className="text-gray-700 text-sm lg:text-lg md:text-base text-justify leading-relaxed whitespace-pre-line">
+                        className="font-nunito max-w-[650px]"
+                    >
+                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-4 md:mb-5">
+                            {service.title}
+                        </h1>
+                        <p className="text-gray-800 text-sm md:text-base lg:text-lg mb-6 md:mb-7 mt-1">
+                            {service.description}
+                        </p>
+
+                        <div className="text-gray-700 text-xs md:text-sm lg:text-base text-justify whitespace-pre-line mb-6 md:mb-7 max-w-[650px]">
                             {service.content}
+                        </div>
+
+                        {/* Why Choose Us */}
+                        <div className="bg-primary/5 border-l-4 border-primary p-5 rounded-lg text-gray-800 shadow-sm">
+                            <h3 className="font-semibold text-primary mb-2 text-lg">Why Choose Grateful Tours?</h3>
+                            <p className="text-sm md:text-base leading-relaxed">{service.answer}</p>
                         </div>
                     </motion.div>
                 </div>
             </div>
 
         </div>
+
     );
 };
 

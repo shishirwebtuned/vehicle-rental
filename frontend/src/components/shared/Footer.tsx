@@ -50,6 +50,7 @@ const Footer = () => {
                             <li key={index}>
                                 <a
                                     href={link.href}
+                                    target={link.target ? link.target : "_self"}
                                     className="md:text-sm text-xs lg:text-base text-white font-nunito font-semibold hover:text-primary transition"
                                 >
                                     {link.label}
