@@ -22,8 +22,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         { id: 3, icon: <Truck />, label: "Vehicles", route: "/admin-dash/vehicle" },
         // { id: 4, icon: <Users />, label: "Users", route: "/admin-dash/users" },
         { id: 4, icon: <CalendarCheck />, label: "Bookings", route: "/admin-dash/booking" },
+        { id: 5, icon: <Users />, label: "Careers", route: "/admin-dash/careers" },
         {
-            id: 5, icon: <LogOut />, label: "Logout", onClick: () => setLogoutOpen(true)
+            id: 6, icon: <LogOut />, label: "Logout", onClick: () => setLogoutOpen(true)
         },
     ];
 
