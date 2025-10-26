@@ -56,13 +56,13 @@ const ServiceDetail = ({ service }: ServiceClientProps) => {
                     <div className="bg-gray-50 rounded-2xl shadow-md p-2 md:p-3">
                         {service.id % 2 === 0 ? (
                             <img
-                                src="/images/services.jpg"
+                                src="/images/services2.jpg"
                                 alt={service.title}
                                 className="rounded-xl shadow-lg object-cover w-full h-auto md:h-[380px]"
                             />
                         ) : (
                             <img
-                                src="/images/services2.jpg"
+                                src="/images/services.jpg"
                                 alt={service.title}
                                 className="rounded-xl shadow-lg object-cover w-full h-auto md:h-[380px]"
                             />
