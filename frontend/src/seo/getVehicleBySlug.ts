@@ -6,16 +6,20 @@ export async function getVehicleBySlug(
   try {
     const id = slug.split("-").pop();
 
-    const res = await fetch(
-      `${
-        process.env.BACKEND_URI || process.env.NEXT_PUBLIC_BACKEND_URI
-      }/vehicles/${id}`,
-      {
-        next: { revalidate: 3600 },
-      }
-    );
+    const baseUrl =
+      process.env.BACKEND_URI || process.env.NEXT_PUBLIC_BACKEND_URI;
+    const apiUrl = `${baseUrl}/vehicles/${id}`;
 
-    if (!res.ok) return null;
+    console.log("Fetching from:", apiUrl);
+
+    const res = await fetch(apiUrl, {
+      next: { revalidate: 3600 },
+    });
+
+    if (!res.ok) {
+      console.error("Fetch failed:", res.status, res.statusText);
+      return null;
+    }
 
     const json = await res.json();
     return json?.data?.vehicle || null;
