@@ -7,7 +7,9 @@ export async function getVehicleBySlug(
     const id = slug.split("-").pop();
 
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URI}/vehicles/${id}`,
+      `${
+        process.env.BACKEND_URI || process.env.NEXT_PUBLIC_BACKEND_URI
+      }/vehicles/${id}`,
       {
         next: { revalidate: 3600 },
       }

@@ -19,7 +19,7 @@ export default function VehicleDetail({ slug }: { slug: string }) {
 
     const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 
-    const id = slug.split('-').pop();
+    const id = slug ? slug.split('-').pop() : "";
 
     const [initialData, setInitialData] = useState({
         pickupLocation: "",
@@ -96,9 +96,10 @@ export default function VehicleDetail({ slug }: { slug: string }) {
         },
     });
 
-    const locations = ["London Airport", "Manchester", "Birmingham"];
-    const { data, isLoading, isError } = useGetVehicleByIdQuery({ vehicleId: id as string });
-
+    const { data, isLoading, isError } = useGetVehicleByIdQuery(
+        { vehicleId: id as string },
+        { skip: !id }
+    );
 
     const vehicleData: VehicleType = data?.data?.vehicle || [];
 
