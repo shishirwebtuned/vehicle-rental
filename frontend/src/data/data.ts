@@ -407,23 +407,71 @@ export const blogData = [
   {
     id: 1,
     title: "Top 10 Electric Cars in 2025",
+    slug: "top-10-electric-cars-in-2025",
     description:
       "Discover the latest electric cars hitting the market this year, featuring cutting-edge technology and eco-friendly design.",
     image: "/images/mgBlack.png",
+    content: `
+      The electric vehicle (EV) market in 2025 is more exciting than ever. Automakers around the world are introducing advanced, high-performance EVs designed to meet the needs of both eco-conscious drivers and performance enthusiasts.
+
+      Here are the top 10 electric cars that are leading the charge:
+      1. Tesla Model 3 Refresh – Improved range, faster acceleration, and futuristic interiors.
+      2. Lucid Air Sapphire – Luxury meets innovation with record-breaking range and comfort.
+      3. Rivian R1S – Perfect for adventurous families who value sustainability.
+      4. Hyundai Ioniq 6 – Sleek design with top-tier efficiency.
+      5. BYD Seal – China’s rising EV powerhouse with great value.
+      6. Porsche Taycan GTS – For drivers who crave performance and precision.
+      7. BMW i4 – Blends luxury and power in a refined electric sedan.
+      8. Kia EV9 – Spacious, futuristic, and family-ready.
+      9. Ford Mustang Mach-E GT – American muscle reinvented for the EV era.
+      10. MG4 EV – Affordable yet stylish EV making waves in the global market.
+
+      With better battery technology, faster charging, and lower maintenance costs, 2025 marks a major step toward an all-electric future.
+    `,
   },
   {
     id: 2,
     title: "How to Maintain Your Car for Longevity",
+    slug: "how-to-maintain-your-car-for-longevity",
     description:
       "A complete guide to regular car maintenance tips that keep your vehicle running smoothly and efficiently.",
     image: "/images/mgWhite.png",
+    content: `
+      Keeping your car in top condition not only extends its lifespan but also ensures safety and better performance. Regular maintenance can save you from costly repairs in the long run.
+
+      Here are essential tips for maintaining your vehicle: 
+      - Check your oil regularly: Change it every 5,000–7,000 km or as recommended by your manufacturer.
+      - Inspect tire pressure and alignment: Proper inflation improves mileage and prevents uneven wear.
+      - Replace air filters: Dirty filters reduce engine efficiency.
+      - Keep your battery clean: Corrosion can cause starting issues.
+      - Wash and wax your car: Protects paint and prevents rusting.
+      - Brake inspections: Ensure safe stopping and avoid brake failures.
+      - Use quality fuel and fluids: Keeps the engine running smoothly.
+
+      With consistent care and timely servicing, your car can easily exceed its expected lifespan and retain great resale value.
+    `,
   },
   {
     id: 3,
     title: "Best Road Trips Across Europe",
+    slug: "best-road-trips-across-europe",
     description:
       "Plan your next adventure with our list of must-visit European destinations and scenic routes for unforgettable road trips.",
     image: "/images/mgBlack.png",
+    content: `
+      Europe offers some of the most breathtaking road trip routes in the world. Whether you’re exploring mountains, coastlines, or historic towns, these routes promise unforgettable experiences.
+
+      Here are our top picks:
+      1. Amalfi Coast, Italy: Winding coastal roads with views of turquoise seas and charming cliffside villages.
+      2. Ring Road, Iceland: A full-circle route that takes you past waterfalls, glaciers, and volcanic landscapes.
+      3. Romantic Road, Germany: Explore medieval towns like Rothenburg and Neuschwanstein Castle.
+      4. Transfăgărășan Highway, Romania: Known as one of the world’s most beautiful driving roads.
+      5. North Coast 500, Scotland: Rugged coastlines, castles, and remote Highland beauty.
+      6. French Riviera, France: Glamour, sunshine, and seaside towns like Nice and Cannes.
+      7. Basque Country, Spain: A mix of culture, food, and stunning natural landscapes.
+
+      Pack your essentials, set your playlist, and hit the open road — Europe is waiting for your next adventure.
+    `,
   },
   // {
   //   id: 4,

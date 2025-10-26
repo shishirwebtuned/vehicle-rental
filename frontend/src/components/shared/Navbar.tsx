@@ -83,7 +83,7 @@ const Navbar = () => {
                 {isLoggedIn ?
                     <button
                         onClick={handleClick}
-                        className={`px-5 hidden md:flex py-[6px] rounded-sm border-2 font-semibold cursor-pointer transition-all ease-in-out duration-300 ${scrolled
+                        className={`px-5 hidden md:flex py-[6px] rounded-sm border-2 font-semibold cursor-pointer transition-all ease-in-out invisible duration-300 ${scrolled
                             ? "border-primary text-primary hover:bg-primary hover:text-white"
                             : "border-white text-white hover:bg-primary hover:border-primary"
                             }`}
@@ -92,7 +92,7 @@ const Navbar = () => {
                     </button> :
                     <button
                         onClick={() => router.push("/login")}
-                        className={`px-5 hidden md:flex py-[6px] rounded-sm border-2 font-semibold cursor-pointer transition-all ease-in-out duration-300 ${scrolled
+                        className={`px-5 hidden md:flex py-[6px] rounded-sm border-2 font-semibold invisible cursor-pointer transition-all ease-in-out duration-300 ${scrolled
                             ? "border-primary text-primary hover:bg-primary hover:text-white"
                             : "border-white text-white hover:bg-primary hover:border-primary"
                             }`}

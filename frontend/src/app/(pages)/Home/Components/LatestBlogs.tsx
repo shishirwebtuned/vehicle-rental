@@ -5,6 +5,7 @@ import { blogData } from '@/data/data'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from "framer-motion";
+import Link from 'next/link';
 
 const LatestBlogs = () => {
     return (
@@ -42,9 +43,11 @@ const LatestBlogs = () => {
                             <p className="mt-2 font-nunito text-black md:text-sm text-xs lg:text-base line-clamp-4">{item.description}</p>
                         </div>
                         <div className='w-full text-center mb-1'>
-                            <button className="mt-3 cursor-pointer rounded-lg border-2 border-primary px-5 py-2 md:text-base text-sm lg:text-lg font-nunito font-medium text-black hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">
-                                Read More
-                            </button>
+                            <Link href={`/blogs/${item.slug}`}>
+                                <button className="mt-3 cursor-pointer rounded-lg border-2 border-primary px-5 py-2 md:text-base text-sm lg:text-lg font-nunito font-medium text-black hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">
+                                    Read More
+                                </button>
+                            </Link>
                         </div>
                     </motion.div>
                 ))}

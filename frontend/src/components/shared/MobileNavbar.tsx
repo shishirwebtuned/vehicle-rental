@@ -32,7 +32,7 @@ const MobileNavbar: React.FC<MobileNavProps> = ({ onClose }) => {
                 <Link
                     href="/login"
                     onClick={onClose}
-                    className="bg-primary text-white font-semibold px-6 py-2 rounded-lg hover:text-primary hover:bg-white border-2 border-primary transition-all ease-in-out duration-300 mt-8"
+                    className="bg-primary text-white font-semibold px-6 py-2 rounded-lg hover:text-primary hover:bg-white border-2 border-primary invisible transition-all ease-in-out duration-300 mt-8"
                 >
                     Sign in
                 </Link>
