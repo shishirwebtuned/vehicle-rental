@@ -52,8 +52,8 @@ const Page = () => {
                 className={`flex flex-col md:flex-row items-start md:items-center justify-between bg-black/10 pt-12 md:pt-8 pb-20 sm:pb-24 md:pb-28 h-full w-full ${paddingX} gap-10 md:gap-16`}
             >
                 {/* Left: Heading + Description */}
-                <div className="md:w-1/2 text-black text-center md:text-left ">
-                    <div className='space-y-5 w-full md:w-[90%]'>
+                <div className="md:w-1/2 text-black text-center md:text-right ">
+                    <div className='space-y-5 w-full md:w-[100%]'>
                         <h1 className="font-merriweather md:text-3xl text-2xl lg:text-4xl font-bold">
                             <span className="text-primary">Contact</span> Us.
                         </h1>
@@ -62,7 +62,7 @@ const Page = () => {
                         </p>
                     </div>
 
-                    <div className="flex flex-col md:items-start items-center mt-6">
+                    <div className="flex flex-col md:items-end items-center mt-6">
 
                         <ul className=" bg-primary px-4 py-6 rounded-md shadow-md grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 grid-cols-1 gap-x-4 gap-y-5 items-start justify-start overflow-hidden">
                             {footerData.contact.details.map((item, index) => (

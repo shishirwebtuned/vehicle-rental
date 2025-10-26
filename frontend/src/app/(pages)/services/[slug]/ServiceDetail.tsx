@@ -54,16 +54,25 @@ const ServiceDetail = ({ service }: ServiceClientProps) => {
                     className="w-full md:w-1/2"
                 >
                     <div className="bg-gray-50 rounded-2xl shadow-md p-2 md:p-3">
-                        <img
-                            src="/images/services.jpg"
-                            alt={service.title}
-                            className="rounded-xl shadow-lg object-cover w-full h-auto md:h-[380px]"
-                        />
+                        {service.id % 2 === 0 ? (
+                            <img
+                                src="/images/services.jpg"
+                                alt={service.title}
+                                className="rounded-xl shadow-lg object-cover w-full h-auto md:h-[380px]"
+                            />
+                        ) : (
+                            <img
+                                src="/images/services2.jpg"
+                                alt={service.title}
+                                className="rounded-xl shadow-lg object-cover w-full h-auto md:h-[380px]"
+                            />
+                        )}
+
                     </div>
                 </motion.div>
 
                 {/* Text Content */}
-                <div className="flex flex-col h-full items-center md:items-start justify-center text-center md:text-left w-full md:w-1/2 space-y-6">
+                <div className={`flex flex-col h-full items-center ${service.id % 2 === 0 ? "md:items-end" : "md:items-start"} justify-center text-center md:text-left w-full md:w-1/2 space-y-6`}>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
