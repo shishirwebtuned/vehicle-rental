@@ -27,7 +27,7 @@ app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 // Routes
-const baseApi = "/api/v1/en";
+const baseApi = "/v1/en";
 
 app.use(`${baseApi}/users`, userRoutes);
 app.use(`${baseApi}/categories`, categoryRoutes);
