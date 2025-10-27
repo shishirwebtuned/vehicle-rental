@@ -15,11 +15,25 @@ const page = () => {
 
     // const careersData = isError || !isSuccess ? staticCareersData : careers?.data?.careers || [];
 
-    const careersData = staticCareersData;
+    const careersData = careers?.data?.careers || [];
 
     const handleClick = (jobName: string) => {
         setSelectedJob(jobName);
         setDialogOpen(true);
+    }
+
+    if (isLoading) {
+        return (
+            <div className={`flex flex-col min-h-screen font-mono items-center pt-40 md:pt-44 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
+                <p>Loading Career Data...</p>
+            </div>);
+    }
+
+    if (isError) {
+        return (
+            <div className={`flex flex-col min-h-screen items-center font-mono pt-40 md:pt-44 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
+                <p>Failed to load career Data. Please try again later.</p>
+            </div>);
     }
 
     return (

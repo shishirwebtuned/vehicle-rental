@@ -103,19 +103,19 @@ export default function VehicleDetail({ slug }: { slug: string }) {
 
     const vehicleData: VehicleType = data?.data?.vehicle || [];
 
-    // if (isLoading) {
-    //     return (
-    //         <div className={`flex flex-col min-h-screen items-center pt-40 md:pt-44 justify-center bg-white gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
-    //             <p>Loading vehicle Data...</p>
-    //         </div>);
-    // }
+    if (isLoading) {
+        return (
+            <div className={`flex flex-col min-h-screen font-mono items-center pt-40 md:pt-44 justify-center bg-white gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
+                <p>Loading vehicle Data...</p>
+            </div>);
+    }
 
-    // if (isError) {
-    //     return (
-    //         <div className={`flex flex-col min-h-screen items-center pt-40 md:pt-44 justify-center bg-white gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
-    //             <p>Failed to load vehicle Data. Please try again later.</p>
-    //         </div>);
-    // }
+    if (isError) {
+        return (
+            <div className={`flex flex-col min-h-screen font-mono items-center pt-40 md:pt-44 justify-center bg-white gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
+                <p>Failed to load vehicle Data. Please try again later.</p>
+            </div>);
+    }
 
     return (
         <div className='bg-[#FCFBFB]'>

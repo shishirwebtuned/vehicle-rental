@@ -10,15 +10,18 @@ import { vehiclesStaticData } from '@/data/data';
 const OurCars = () => {
     const { data: vehicles, isLoading, isError, isSuccess } = useGetAllVehiclesQuery();
 
-    const vehiclesData = isError || !isSuccess ? vehiclesStaticData : vehicles?.data?.vehicles || [];
+    // const vehiclesData = isError || !isSuccess ? vehiclesStaticData : vehicles?.data?.vehicles || [];
 
-    // if (isLoading) {
-    //     return <p>Loading vehicles...</p>;
-    // }
+    const vehiclesData = vehicles?.data?.vehicles || [];
 
-    // if (isError) {
-    //     return <p>Failed to load vehicles. Please try again later.</p>;
-    // }
+
+    if (isLoading) {
+        return <p className='font-mono'>Loading vehicles...</p>;
+    }
+
+    if (isError) {
+        return <p className='font-mono'>Failed to load vehicles. Please try again later.</p>;
+    }
 
     return (
         <section className={`bg-background h-full py-14 sm:py-16 md:py-20 flex flex-col md:gap-14 gap-12 lg:gap-16 items-center justify-center ${paddingX}`}>

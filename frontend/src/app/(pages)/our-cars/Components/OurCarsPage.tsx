@@ -10,21 +10,23 @@ const OurCarsPage = () => {
 
     const { data: vehicles, isLoading, isError, isSuccess } = useGetAllVehiclesQuery();
 
-    const vehiclesData = isError || !isSuccess ? vehiclesStaticData : vehicles?.data?.vehicles || [];
+    const vehiclesData = vehicles?.data?.vehicles || [];
 
-    // if (isLoading) {
-    //     return (
-    //         <div className={`flex flex-col min-h-screen items-center pt-40 md:pt-44 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
-    //             <p>Loading vehicles...</p>
-    //         </div>);
-    // }
+    // const vehiclesData = isError || !isSuccess ? vehiclesStaticData : vehicles?.data?.vehicles || [];
 
-    // if (isError) {
-    //     return (
-    //         <div className={`flex flex-col min-h-screen items-center pt-40 md:pt-44 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
-    //             <p>Failed to load vehicles. Please try again later.</p>
-    //         </div>);
-    // }
+    if (isLoading) {
+        return (
+            <div className={`flex flex-col min-h-screen items-center font-mono pt-40 md:pt-44 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
+                <p>Loading vehicles...</p>
+            </div>);
+    }
+
+    if (isError) {
+        return (
+            <div className={`flex flex-col min-h-screen items-center font-mono pt-40 md:pt-44 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
+                <p>Failed to load vehicles. Please try again later.</p>
+            </div>);
+    }
 
     return (
         <div className='bg-white'>

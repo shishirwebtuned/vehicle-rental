@@ -11,11 +11,12 @@ const VehicleType = () => {
 
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-    const categoriesData =
-        isError || !isSuccess
-            ? categoriesStaticData
-            : categories?.data?.categories || [];
+    // const categoriesData =
+    //     isError || !isSuccess
+    //         ? categoriesStaticData
+    //         : categories?.data?.categories || [];
 
+    const categoriesData = categories?.data?.categories || [];
 
     return (
         <section className={`bg-background ${paddingX} py-14 sm:py-16 md:py-20`}>
