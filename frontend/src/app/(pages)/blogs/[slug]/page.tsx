@@ -8,6 +8,7 @@ import { useParams } from 'next/navigation';
 import React from 'react';
 import toast from 'react-hot-toast';
 import * as Yup from "yup";
+import { motion } from "framer-motion";
 
 const BlogDetailPage = () => {
     const params = useParams();
@@ -58,7 +59,12 @@ const BlogDetailPage = () => {
                 className={`flex flex-col md:flex-row items-start md:items-center gap-12 pt-14 md:pt-20 justify-center bg-background pb-10 sm:pb-20 md:pb-28 ${paddingX}`}
             >
                 {/* Image */}
-                <div className="w-full md:w-[45%] flex justify-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="w-full md:w-[45%] flex justify-center">
                     <Image
                         src={blog.image}
                         alt={blog.title}
@@ -66,10 +72,15 @@ const BlogDetailPage = () => {
                         height={400}
                         className="object-contain w-full md:h-auto sm:max-h-60 max-h-52 md:max-h-full"
                     />
-                </div>
+                </motion.div>
 
                 {/* Content */}
-                <div className="w-full md:w-[55%] flex flex-col justify-start">
+                <motion.div
+                    initial={{ opacity: 0, x: 80 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="w-full md:w-[55%] flex flex-col justify-start">
                     {/* Title */}
                     <h1 className="text-xl md:text-2xl lg:text-3xl font-merriweather font-bold text-primary md:mb-6 mb-5">
                         {blog.title}
@@ -84,7 +95,7 @@ const BlogDetailPage = () => {
                     <div className="prose max-w-full text-gray-700 text-justify whitespace-pre-line font-nunito lg:text-base md:text-sm text-xs font-medium">
                         {blog.content}
                     </div>
-                </div>
+                </motion.div>
             </div>
 
             <div
