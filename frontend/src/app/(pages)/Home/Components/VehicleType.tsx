@@ -1,7 +1,6 @@
 "use client";
 
 import { paddingX } from '@/constant/constant'
-import { categoriesStaticData } from '@/data/data'
 import { useGetAllCategoriesQuery } from '@/redux/api/rest/query/queryApi';
 import React, { useState } from 'react'
 import { motion } from "framer-motion";

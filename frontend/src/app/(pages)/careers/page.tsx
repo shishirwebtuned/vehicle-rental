@@ -2,7 +2,6 @@
 
 import MasterDialog from "@/components/shared/MasterDialog";
 import { paddingX } from "@/constant/constant";
-import { staticCareersData } from "@/data/data";
 import { useState } from "react";
 import JobApplyForm from "./JobApplyForm";
 import { useGetAllCareersQuery } from "@/redux/api/rest/query/queryApi";
@@ -74,7 +73,7 @@ const page = () => {
                                         <p className="font-semibold text-gray-800 dark:text-gray-100 md:text-sm text-xs lg:text-base">
                                             Requirements:
                                         </p>
-                                        <ul className="mt-2 list-disc list-inside text-gray-700 font-nunito md:text-[13px] text-[11px] lg:text-[15px] space-y-[1px] md:space-y-[3px]">
+                                        <ul className="mt-2 list-disc list-inside text-gray-700 font-nunito md:text-[13px] text-[11px] lg:text-[15px] space-y-px md:space-y-[3px]">
                                             {job.requirements.map((req: string, idx: number) => (
                                                 <li key={idx}>{req}</li>
                                             ))}
@@ -96,7 +95,7 @@ const page = () => {
                             </div>
 
                             <div className="w-full text-center lg:mt-6 md:mt-5 mt-4">
-                                <button onClick={() => handleClick(job.jobName)} className="cursor-pointer rounded-lg border-2 border-primary md:px-5 px-4 py-[6px] md:py-2 md:text-base text-xs lg:text-lg font-nunito font-medium text-black hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">
+                                <button onClick={() => handleClick(job.jobName)} className="cursor-pointer rounded-lg border-2 border-primary md:px-5 px-4 py-1.5 md:py-2 md:text-base text-xs lg:text-lg font-nunito font-medium text-black hover:bg-primary hover:text-white transition-all duration-300 ease-in-out">
                                     Apply Now
                                 </button>
                             </div>

@@ -1,29 +1,14 @@
 import {
-  FaCarSide,
   FaClock,
   FaFacebook,
   FaInstagram,
-  FaMapMarkedAlt,
-  FaPlaneDeparture,
-  FaRegBuilding,
   FaShieldAlt,
   FaViber,
   FaWhatsapp,
 } from "react-icons/fa";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
-import {
-  MdEventAvailable,
-  MdLuggage,
-  MdOutlineAddIcCall,
-  MdTour,
-} from "react-icons/md";
+import { MdOutlineAddIcCall } from "react-icons/md";
 import { FaExpand, FaUserCheck } from "react-icons/fa";
-import { TbBus, TbTrekking } from "react-icons/tb";
-import { IoFastFood } from "react-icons/io5";
-import { IoIosBoat } from "react-icons/io";
-import { LiaMountainSolid } from "react-icons/lia";
-import { GiJungle, GiPathDistance } from "react-icons/gi";
-import { s } from "framer-motion/client";
 
 export const socialLinks = [
   {
@@ -89,69 +74,6 @@ export const howitworksData = [
     title: "Sit, Relax and Start Your Trip",
     description:
       "Start your trip the right way—comfortable, safe, and on time with us.",
-  },
-];
-
-export const categoriesStaticData = [
-  {
-    _id: "68eb90cfa373b13794266561",
-    name: "Sedan",
-    description: "Sedan",
-    createdAt: "2025-10-12T11:28:15.858Z",
-    updatedAt: "2025-10-19T09:54:26.381Z",
-    __v: 0,
-    image: {
-      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760867666/category/tsot8l9q5rdckfso3xbe.png",
-      public_id: "category/tsot8l9q5rdckfso3xbe",
-    },
-  },
-  {
-    _id: "68eb8da9a373b13794266559",
-    name: "Jeep",
-    description: "Jeep",
-    createdAt: "2025-10-12T11:14:49.041Z",
-    updatedAt: "2025-10-19T09:54:39.015Z",
-    __v: 0,
-    image: {
-      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760867678/category/ej3xqoip9ufmm0vuqyf4.png",
-      public_id: "category/ej3xqoip9ufmm0vuqyf4",
-    },
-  },
-  {
-    _id: "68eb7eefa373b13794266544",
-    name: "SUV",
-    description: "a suv",
-    createdAt: "2025-10-12T10:11:59.442Z",
-    updatedAt: "2025-10-19T09:58:45.594Z",
-    __v: 0,
-    image: {
-      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760867925/category/jzbdbwdj78d4kzdujkog.png",
-      public_id: "category/jzbdbwdj78d4kzdujkog",
-    },
-  },
-  {
-    _id: "68eb7ecba373b13794266541",
-    name: "Hiace",
-    description: "Hiace",
-    createdAt: "2025-10-12T10:11:23.559Z",
-    updatedAt: "2025-10-19T09:59:01.056Z",
-    __v: 0,
-    image: {
-      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760867940/category/dszdmqxij7ouaynvpnj1.png",
-      public_id: "category/dszdmqxij7ouaynvpnj1",
-    },
-  },
-  {
-    _id: "68d678147662369ce92d9bf7",
-    name: "Bus",
-    description: "Bus",
-    createdAt: "2025-09-26T11:25:08.629Z",
-    updatedAt: "2025-10-19T09:59:11.441Z",
-    __v: 0,
-    image: {
-      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760867951/category/hmazgbtwboetkbwn5zjn.png",
-      public_id: "category/hmazgbtwboetkbwn5zjn",
-    },
   },
 ];
 
@@ -222,153 +144,6 @@ export const servicesData = [
     description:
       "From hours to months, our flexible car rentals fit your needs—ideal for errands, business, family trips, or long-term use, all at competitive rates.",
     position: "right",
-  },
-];
-
-export const vehiclesStaticData = [
-  {
-    _id: "68ede879c881ebbb89601caf",
-    name: "Jumbo Hiace",
-    brand: "Toyota",
-    vehicleModel: "2016",
-    category: {
-      _id: "68eb7ecba373b13794266541",
-      name: "Hiace",
-      description: "Hiace",
-    },
-    numberPlate: "BA1PA 1453",
-    seats: 14,
-    fuelType: "Diesel",
-    availabilityStatus: true,
-    image: {
-      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760422009/vehicles/ja2ql0v9x1o2afihufix.png",
-      public_id: "vehicles/ja2ql0v9x1o2afihufix",
-    },
-    description:
-      "BYD offers a range of vehicles, including electric SUVs like the ATTO 3, plug-in hybrid SUVs like the Song Plus, and other models such as the Dolphin hatchback and the Seal electric sedan. Key features often include modern tech, safety systems, and eco-friendly materials, with model-specific characteristics such as the ATTO 3's battery capacity and the Song Plus's long hybrid range.  ",
-    createdAt: "2025-10-14T06:06:49.522Z",
-    updatedAt: "2025-10-16T04:53:51.875Z",
-    __v: 0,
-  },
-  {
-    _id: "68ede780c881ebbb89601ca5",
-    name: "Skoda Rapid",
-    brand: "Skoda",
-    vehicleModel: "2017",
-    category: {
-      _id: "68eb90cfa373b13794266561",
-      name: "Sedan",
-      description: "Sedan",
-    },
-    numberPlate: "BA 16CHA 2244",
-    seats: 4,
-    fuelType: "Hybrid",
-    availabilityStatus: false,
-    image: {
-      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760421760/vehicles/voqkajjufdhxg6z3uoos.png",
-      public_id: "vehicles/voqkajjufdhxg6z3uoos",
-    },
-    description:
-      "BYD offers a range of vehicles, including electric SUVs like the ATTO 3, plug-in hybrid SUVs like the Song Plus, and other models such as the Dolphin hatchback and the Seal electric sedan. Key features often include modern tech, safety systems, and eco-friendly materials, with model-specific characteristics such as the ATTO 3's battery capacity and the Song Plus's long hybrid range.  ",
-    createdAt: "2025-10-14T06:02:40.547Z",
-    updatedAt: "2025-10-15T12:12:05.497Z",
-    __v: 0,
-  },
-  {
-    _id: "68ede640c881ebbb89601c9f",
-    name: "Creta",
-    brand: "Hyundai",
-    vehicleModel: "2014",
-    category: {
-      _id: "68eb7eefa373b13794266544",
-      name: "SUV",
-      description: "a suv",
-    },
-    numberPlate: "CAR 914",
-    seats: 4,
-    fuelType: "Petrol",
-    availabilityStatus: true,
-    image: {
-      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760421440/vehicles/odyjk9hvhdaeqfngb73w.png",
-      public_id: "vehicles/odyjk9hvhdaeqfngb73w",
-    },
-    description:
-      "BYD offers a range of vehicles, including electric SUVs like the ATTO 3, plug-in hybrid SUVs like the Song Plus, and other models such as the Dolphin hatchback and the Seal electric sedan. Key features often include modern tech, safety systems, and eco-friendly materials, with model-specific characteristics such as the ATTO 3's battery capacity and the Song Plus's long hybrid range.  ",
-    createdAt: "2025-10-14T05:57:20.886Z",
-    updatedAt: "2025-10-16T05:30:35.480Z",
-    __v: 0,
-  },
-  {
-    _id: "68ede50fc881ebbb89601c93",
-    name: "BYD",
-    brand: "BYD",
-    vehicleModel: "2024",
-    category: {
-      _id: "68eb7eefa373b13794266544",
-      name: "SUV",
-      description: "a suv",
-    },
-    numberPlate: "BA 30CHA 4686",
-    seats: 4,
-    fuelType: "Electric",
-    image: {
-      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760421135/vehicles/uk5vm4nsk0zunicuqmje.png",
-      public_id: "vehicles/uk5vm4nsk0zunicuqmje",
-    },
-    description:
-      "BYD offers a range of vehicles, including electric SUVs like the ATTO 3, plug-in hybrid SUVs like the Song Plus, and other models such as the Dolphin hatchback and the Seal electric sedan. Key features often include modern tech, safety systems, and eco-friendly materials, with model-specific characteristics such as the ATTO 3's battery capacity and the Song Plus's long hybrid range. ",
-    createdAt: "2025-10-14T05:52:15.244Z",
-    updatedAt: "2025-10-15T07:30:28.111Z",
-    __v: 0,
-    availabilityStatus: false,
-  },
-  {
-    _id: "68ede40fc881ebbb89601c8d",
-    name: "MG SUV",
-    brand: "MG",
-    vehicleModel: "2024",
-    category: {
-      _id: "68eb7eefa373b13794266544",
-      name: "SUV",
-      description: "a suv",
-    },
-    numberPlate: "BA1YA 1810",
-    seats: 4,
-    fuelType: "Electric",
-    image: {
-      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760441928/vehicles/d5k3u7n0urseyo1kmaro.png",
-      public_id: "vehicles/d5k3u7n0urseyo1kmaro",
-    },
-    description:
-      "Yes, MG offers a range of electric cars, including models like the MG4 EV, MGS5 EV, and ZS EV, and they also produce hybrid and petrol vehicles. Examples of MG's electric models include the MG4 EV, a fully electric hatchback, and the MGS5 EV, a sophisticated and technologically advanced electric car available in different battery capacities.  ",
-    createdAt: "2025-10-14T05:47:59.990Z",
-    updatedAt: "2025-10-15T07:28:27.596Z",
-    __v: 0,
-    availabilityStatus: true,
-  },
-  {
-    _id: "68ede223c881ebbb89601c81",
-    name: "MG SUV",
-    brand: "MG",
-    vehicleModel: "2024",
-    category: {
-      _id: "68eb7eefa373b13794266544",
-      name: "SUV",
-      description: "a suv",
-    },
-    numberPlate: "BA1YA 1809",
-    seats: 4,
-    fuelType: "Electric",
-    availabilityStatus: true,
-    image: {
-      url: "https://res.cloudinary.com/dz82kaxjs/image/upload/v1760420387/vehicles/y0mq6q4kapn7gkv6ohvg.png",
-      public_id: "vehicles/y0mq6q4kapn7gkv6ohvg",
-    },
-    description:
-      "Yes, MG offers a range of electric cars, including models like the MG4 EV, MGS5 EV, and ZS EV, and they also produce hybrid and petrol vehicles. Examples of MG's electric models include the MG4 EV, a fully electric hatchback, and the MGS5 EV, a sophisticated and technologically advanced electric car available in different battery capacities.  ",
-    createdAt: "2025-10-14T05:39:47.339Z",
-    updatedAt: "2025-10-14T05:39:47.339Z",
-    __v: 0,
   },
 ];
 
@@ -607,54 +382,6 @@ export const footerData = {
     ],
   },
 };
-
-export const staticCareersData = [
-  {
-    _id: "1",
-    jobName: "Social Media Manager",
-    jobField: "Marketing",
-    description:
-      "We are looking for a creative and strategic Social Media Manager to handle our online presence and engage our audience across digital platforms.",
-    requirements: [
-      "Strong understanding of social media platforms (Facebook, Instagram, TikTok, LinkedIn)",
-      "Experience in creating and managing content calendars",
-      "Ability to analyze engagement metrics and optimize campaigns",
-      "Excellent communication and storytelling skills",
-    ],
-    location: "Kathmandu, Nepal",
-    type: "Full-time",
-  },
-  {
-    _id: "2",
-    jobName: "Driver",
-    jobField: "Operations",
-    description:
-      "We are seeking a responsible and experienced Driver to ensure safe, timely, and professional transportation services for our customers.",
-    requirements: [
-      "Valid driving license with clean record",
-      "Knowledge of local routes and traffic regulations",
-      "Punctual, reliable, and customer-oriented",
-      "Ability to maintain vehicle cleanliness and basic upkeep",
-    ],
-    location: "kathmandu, Nepal",
-    type: "Full-time",
-  },
-  {
-    _id: "3",
-    jobName: "Customer Service Representative",
-    jobField: "Support",
-    description:
-      "Join our customer support team to assist clients with inquiries, bookings, and after-service support, ensuring a seamless rental and travel experience.",
-    requirements: [
-      "Strong communication and interpersonal skills",
-      "Ability to handle customer queries professionally and efficiently",
-      "Basic computer and CRM knowledge",
-      "Fluency in English and Nepali preferred",
-    ],
-    location: "Kathmandu, Nepal",
-    type: "Full-time",
-  },
-];
 
 export const missionPoints = [
   "To make vehicle rentals and travel bookings seamless, affordable, and accessible for everyone.",

@@ -4,7 +4,6 @@ import React from 'react'
 import { paddingX } from '@/constant/constant'
 import { useGetAllVehiclesQuery } from '@/redux/api/rest/query/queryApi'
 import VehicleCard from '../../Home/Components/VehicleCard';
-import { vehiclesStaticData } from '@/data/data';
 
 const OurCarsPage = () => {
 

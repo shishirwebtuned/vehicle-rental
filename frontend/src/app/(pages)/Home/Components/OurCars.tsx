@@ -5,7 +5,6 @@ import React from 'react'
 import VehicleCard from './VehicleCard'
 import { useGetAllVehiclesQuery } from '@/redux/api/rest/query/queryApi'
 import Link from 'next/link';
-import { vehiclesStaticData } from '@/data/data';
 
 const OurCars = () => {
     const { data: vehicles, isLoading, isError, isSuccess } = useGetAllVehiclesQuery();
