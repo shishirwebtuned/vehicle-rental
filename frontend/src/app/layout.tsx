@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Merriweather, Nunito } from "next/font/google";
+import { IBM_Plex_Mono, Merriweather, Nunito } from "next/font/google";
 import "./globals.css";
 import { ReduxProvider } from "./provider";
 import { Toaster } from "react-hot-toast";
@@ -7,13 +7,14 @@ import ClientLayout from "@/components/shared/ClientLayout";
 import 'react-phone-input-2/lib/style.css';
 import { WhatsappChat } from "@/components/shared/WhatsappChat";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
 const merriweather = Merriweather({
   variable: "--font-geist-merriw",
+  weight: ["400"],
   subsets: ["latin"],
 });
 
@@ -22,9 +23,10 @@ const nunito = Nunito({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = IBM_Plex_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -167,7 +169,7 @@ export default function RootLayout({
 
       </head>
       <body
-        className={`scroll-smooth ${geistSans.variable} ${nunito.variable} ${merriweather.variable} ${geistMono.variable} antialiased`}
+        className={`scroll-smooth ${nunito.variable} ${merriweather.variable} ${geistMono.variable} antialiased`}
       >
         <ReduxProvider>
           <ClientLayout>
