@@ -55,47 +55,82 @@ const BlogDetailPage = () => {
 
     return (
         <div className="bg-white">
-            <div
-                className={`flex flex-col md:flex-row items-start md:items-center gap-12 pt-14 md:pt-20 justify-center bg-background pb-10 sm:pb-20 md:pb-28 ${paddingX}`}
-            >
-                {/* Image */}
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    className="w-full md:w-[45%] flex justify-center">
-                    <Image
-                        src={blog.image}
-                        alt={blog.title}
-                        width={600}
-                        height={400}
-                        className="object-contain w-full md:h-auto sm:max-h-60 max-h-52 md:max-h-full"
-                    />
-                </motion.div>
+            <div className={`flex flex-col items-center bg-background justify-center pt-16 md:pt-24 pb-10 sm:pb-20 md:pb-28 ${paddingX}`}>
 
-                {/* Content */}
-                <motion.div
-                    initial={{ opacity: 0, x: 80 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    className="w-full md:w-[55%] flex flex-col justify-start">
-                    {/* Title */}
-                    <h1 className="text-xl md:text-2xl lg:text-3xl font-merriweather font-bold text-primary md:mb-6 mb-5">
-                        {blog.title}
-                    </h1>
-
-                    {/* Description */}
-                    <p className="text-gray-800 lg:text-lg md:text-base text-sm mb-2 md:mb-4 font-nunito italic">
-                        {blog.description}
-                    </p>
+                <div
+                    className={`flex flex-col md:flex-row items-start md:items-center gap-12 justify-center `}
+                >
+                    {/* Image */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        className="w-full md:w-[45%] flex justify-center">
+                        <Image
+                            src={blog.image}
+                            alt={blog.title}
+                            width={600}
+                            height={400}
+                            className="object-contain w-full md:h-auto sm:max-h-60 max-h-52 md:max-h-full"
+                        />
+                    </motion.div>
 
                     {/* Content */}
-                    <div className="prose max-w-full text-gray-700 text-justify whitespace-pre-line font-nunito lg:text-base md:text-sm text-xs font-medium">
-                        {blog.content}
+                    <motion.div
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        className="w-full md:w-[55%] flex flex-col justify-start">
+                        {/* Title */}
+                        <h1 className="text-xl md:text-2xl lg:text-3xl font-merriweather font-bold text-primary md:mb-6 mb-5">
+                            {blog.title}
+                        </h1>
+
+                        {/* Description */}
+                        <p className="text-gray-800 whitespace-pre-line lg:text-lg md:text-base text-sm mb-2 md:mb-4 font-nunito italic">
+                            {blog.description}
+                        </p>
+
+                        <p className="text-gray-800 lg:text-base md:text-sm text-end text-xs mb-2 md:mb-4 font-nunito italic mt-1">
+                            By {blog.author}
+                        </p>
+
+                        {/* Content */}
+
+                    </motion.div>
+                </div>
+                <div className="space-y-10 lg:space-y-12">
+                    {/* Blog Content */}
+                    <div className="prose max-w-none text-gray-800 text-justify font-nunito leading-relaxed lg:text-lg md:text-base whitespace-pre-line mt-10 bg-transparent p-4 text-sm">
+                        <h2 className='md:text-xl text-lg lg:text-2xl font-bold font-nunito text-primary tracking-wide'>{blog.content.title}</h2>
+                        <div>
+                            {blog.content.data}
+                        </div>
                     </div>
-                </motion.div>
+
+                    {/* Why Choose Section */}
+                    <div className="bg-primary rounded-2xl p-6 md:p-8 shadow-sm text-white">
+                        <h2 className="text-base md:text-lg lg:text-xl font-bold font-merriweather">
+                            {blog.whyChooseQuestion}
+                        </h2>
+                        <p className=" font-nunito leading-relaxed lg:text-base md:text-sm text-xs whitespace-pre-line">
+                            {blog.whyChooseAnswer}
+                        </p>
+                    </div>
+
+                    {/* Final Thoughts */}
+                    <div className="rounded-2xl p-6 md:p-8 shadow-sm bg-primary text-white">
+                        <h3 className="md:text-lg text-base lg:text-xl font-merriweather font-bold mb-1">
+                            Final Thoughts
+                        </h3>
+                        <p className="font-nunito leading-relaxed lg:text-base md:text-sm text-xs whitespace-pre-line">
+                            {blog.finalThoughts}
+                        </p>
+                    </div>
+                </div>
+
             </div>
 
             <div

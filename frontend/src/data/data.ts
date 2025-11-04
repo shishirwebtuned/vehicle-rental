@@ -181,73 +181,272 @@ export const testimonialsData = [
 export const blogData = [
   {
     id: 1,
-    title: "Top 10 Electric Cars in 2025",
-    slug: "top-10-electric-cars-in-2025",
-    description:
-      "Discover the latest electric cars hitting the market this year, featuring cutting-edge technology and eco-friendly design.",
-    image: "/images/mgBlack.png",
-    content: `
-      The electric vehicle (EV) market in 2025 is more exciting than ever. Automakers around the world are introducing advanced, high-performance EVs designed to meet the needs of both eco-conscious drivers and performance enthusiasts.
+    title: "Top Places to Visit in Kathmandu with a Rental Car",
+    slug: "top-places-to-visit-in-kathmandu-with-a-rental-car",
+    description: `
+      Kathmandu is a city that blends ancient culture, spiritual energy, and modern life all in one. From historic temples and narrow alleys to hilltop viewpoints and local food spots, there’s so much to explore. And the best way to experience it all? By renting a car and driving around at your own pace.
 
-      Here are the top 10 electric cars that are leading the charge:
-      1. Tesla Model 3 Refresh – Improved range, faster acceleration, and futuristic interiors.
-      2. Lucid Air Sapphire – Luxury meets innovation with record-breaking range and comfort.
-      3. Rivian R1S – Perfect for adventurous families who value sustainability.
-      4. Hyundai Ioniq 6 – Sleek design with top-tier efficiency.
-      5. BYD Seal – China’s rising EV powerhouse with great value.
-      6. Porsche Taycan GTS – For drivers who crave performance and precision.
-      7. BMW i4 – Blends luxury and power in a refined electric sedan.
-      8. Kia EV9 – Spacious, futuristic, and family-ready.
-      9. Ford Mustang Mach-E GT – American muscle reinvented for the EV era.
-      10. MG4 EV – Affordable yet stylish EV making waves in the global market.
+      At Grateful Tours and Transportation Service Pvt. Ltd., we make exploring Kathmandu comfortable and convenient. Whether you’re a traveler or a local, renting a car gives you the freedom to go anywhere, anytime - without waiting for taxis or worrying about crowded buses.
 
-      With better battery technology, faster charging, and lower maintenance costs, 2025 marks a major step toward an all-electric future.
     `,
+    image: "/images/mgBlack.png",
+    author:
+      "Grateful Tours and Transportation Service Pvt. Ltd., Gairidhara, Kathmandu",
+    content: {
+      title:
+        " Here are some of the best places to visit in Kathmandu with a rental car:",
+
+      data: `
+        1. Swayambhunath (Monkey Temple)
+        Perched on a hilltop, Swayambhunath offers one of the best panoramic views of Kathmandu Valley. You can drive up in your rental car and enjoy a peaceful walk around the stupa, surrounded by prayer flags and curious monkeys. It’s the perfect blend of spirituality and scenic beauty.
+
+        2. Pashupatinath Temple
+        Pashupatinath is one of the holiest Hindu temples in Nepal, located just a short drive from the city center. Renting a car lets you visit comfortably during morning or evening aarti hours when the atmosphere is truly magical - and taxis are often hard to find.
+
+        3. Boudhanath Stupa
+        Just a 20-minute drive from Gairidhara, Boudhanath is one of the largest stupas in Asia. The area is surrounded by Tibetan monasteries, cozy cafes, and souvenir shops. It’s a great place to relax, meditate, or enjoy a traditional momo lunch after your drive.
+
+        4. Patan Durbar Square
+        A short drive from Kathmandu city, Patan Durbar Square is a UNESCO World Heritage Site known for its ancient temples and detailed Newari craftsmanship. Having your own car makes it easier to explore not just the square but also nearby art galleries and local restaurants at your own pace.
+
+        5. Bhaktapur Durbar Square
+        If you’re in the mood for a little day trip, drive to Bhaktapur - about 45 minutes away. This beautifully preserved medieval town is full of charm, with brick-paved streets, traditional wood carvings, and the famous Juju Dhau (King Curd). Renting a car gives you the flexibility to explore comfortably and head back whenever you wish.
+
+        6. Nagarkot
+        For a peaceful getaway from the city, drive up to Nagarkot. Just 1.5 hours from Kathmandu, it’s one of the best spots for sunrise and sunset views over the Himalayas. With a private car, you can stop at scenic points along the way and truly enjoy the journey, not just the destination.
+
+        7. Chandragiri Hills
+        Located on the outskirts of Kathmandu, Chandragiri offers a perfect mix of adventure and spirituality. Park your car at the base, then take the cable car ride to the top for a stunning mountain view and a visit to the Bhaleshwar Mahadev Temple.
+
+        8. Garden of Dreams & Thamel
+        If you prefer something within the city, visit the Garden of Dreams - a peaceful escape in the middle of busy Kathmandu. After relaxing there, drive over to Thamel for shopping, dining, and nightlife. Having your own car means you can explore freely without worrying about taxi fares or waiting times.
+    `,
+    },
+
+    whyChooseQuestion: `
+          Why Choose Grateful Tours and Transportation Service Pvt. Ltd.?
+          `,
+    whyChooseAnswer: `
+          At Grateful Tours, we’re more than just a car rental company - we’re your travel companion.
+
+          Here’s why travelers and locals trust us:
+
+          1. Well-maintained vehicles (Sedan, SUV, Hiace & more)
+          2. Affordable prices with no hidden charges
+          3. Professional and friendly drivers
+          4. Flexible packages for city and long-distance trips
+          5. Conveniently located in Gairidhara, Kathmandu
+          6. 24/7 customer support for both local and foreign clients
+          `,
+    finalThoughts: `
+          Exploring Kathmandu with a rental car gives you freedom, comfort, and flexibility. You can visit ancient temples, hill stations, or quiet cafe’s - all on your own schedule. With Grateful Tours and Transportation Service Pvt. Ltd., your journey around Kathmandu becomes easier, safer, and more enjoyable.
+
+          So next time you plan to explore the valley, rent a car in Kathmandu and make every trip memorable with us!`,
   },
   {
     id: 2,
-    title: "How to Maintain Your Car for Longevity",
-    slug: "how-to-maintain-your-car-for-longevity",
-    description:
-      "A complete guide to regular car maintenance tips that keep your vehicle running smoothly and efficiently.",
-    image: "/images/mgWhite.png",
-    content: `
-      Keeping your car in top condition not only extends its lifespan but also ensures safety and better performance. Regular maintenance can save you from costly repairs in the long run.
+    title: "Why Renting a Car in Kathmandu is Better Than Using a Taxi",
+    slug: "why-renting-a-car-in-kathmandu-is-better-than-using-a-taxi",
+    description: `
+        Kathmandu is a city full of charm - rich culture, ancient temples, narrow lanes, and stunning hill views. But moving around the valley can be a real challenge if you depend on taxis. Long waits, price bargaining, and inconsistent service often take away from the joy of traveling.
 
-      Here are essential tips for maintaining your vehicle: 
-      - Check your oil regularly: Change it every 5,000–7,000 km or as recommended by your manufacturer.
-      - Inspect tire pressure and alignment: Proper inflation improves mileage and prevents uneven wear.
-      - Replace air filters: Dirty filters reduce engine efficiency.
-      - Keep your battery clean: Corrosion can cause starting issues.
-      - Wash and wax your car: Protects paint and prevents rusting.
-      - Brake inspections: Ensure safe stopping and avoid brake failures.
-      - Use quality fuel and fluids: Keeps the engine running smoothly.
-
-      With consistent care and timely servicing, your car can easily exceed its expected lifespan and retain great resale value.
+        That’s why more people - both locals and tourists - are now choosing car rental services in Kathmandu instead. At Grateful Tours and Transportation Service Pvt. Ltd., we’ve seen how renting a car makes travel smoother, more flexible, and much more comfortable.
     `,
+    image: "/images/mgBlack.png",
+    author:
+      "Grateful Tours and Transportation Service Pvt. Ltd., Gairidhara, Kathmandu",
+    content: {
+      title:
+        "Here are  clear reasons why renting a car in Kathmandu is a better choice than using taxis:",
+      data: `
+
+            1. Freedom to Travel on Your Own Schedule
+            When you rent a car, you decide when to go and where to stop. There’s no waiting for a taxi, no cancellation from apps, and no rush to finish your trip quickly. You can start early, stop for photos, take breaks, and travel at your own pace — complete freedom and flexibility.
+
+            2. More Affordable for Long or Multi-Stop Trips
+            Taxis might look cheaper for a single ride, but if you’re exploring several destinations in one day; like Pashupatinath, Boudha, and Bhaktapur - the total cost adds up fast. Renting a car for the day often costs less than taking multiple taxis, especially if you’re traveling with friends or family and sharing expenses.
+
+            3. Easy Access to Hidden Gems Outside the City
+            Many of Kathmandu’s best experiences - like Nagarkot sunrise, Dhulikhel hill views, or Chandragiri cable car rides, are outside the city center. Some taxis may refuse long routes or charge extra. With a rental car, you can explore these destinations freely and enjoy the scenic drives on your own time.
+
+            4. Comfort, Cleanliness, and Privacy
+            Taxis in Kathmandu can vary a lot in quality. Some are old, cramped, or not well-maintained. With Grateful Tours, you get a clean, air-conditioned, and comfortable car;  perfect for both short city drives and long-distance trips. Plus, you can enjoy your own music, conversations, and quiet time without any interruptions.
+
+            5. No Waiting or Negotiation Hassles
+            Finding a taxi during peak hours, rainy weather, or after events can be stressful. You either end up waiting too long or overpaying. When you rent a car, there’s no waiting or haggling - your vehicle is ready when you are. Simple, reliable, and convenient.
+
+            6. Professional Drivers for a Safer Experience
+            If you prefer not to drive, Grateful Tours offers professional chauffeur services. Our drivers are polite, trained, and familiar with all the major routes and landmarks in and around Kathmandu. You can sit back, relax, and enjoy a smooth ride without worrying about traffic or directions.
+
+            7. Perfect for Business, Tours, and Family Travel
+            Whether you’re here for meetings, sightseeing, or a family holiday, renting a car makes your travel experience easier. Business travelers appreciate the punctuality and privacy, while families love the space and flexibility to make spontaneous stops or detours.
+
+            8. Reliable Service with 24/7 Support
+            At Grateful Tours and Transportation Service Pvt. Ltd., we’re committed to offering dependable service at all times. Our support team is available 24/7 to assist with bookings, route suggestions, and emergencies - making sure your journey across Kathmandu and beyond is smooth and worry-free.
+    `,
+    },
+    whyChooseQuestion: `
+          Why Choose Grateful Tours and Transportation Service Pvt. Ltd.?
+          `,
+    whyChooseAnswer: `
+          We’re proud to be one of Kathmandu’s trusted names in car rental and transport. Our services include:
+
+          1. Wide range of vehicles (Sedan, SUV, Van, Hiace & more)
+          2. Affordable rates with flexible hourly or daily plans
+          3. Chauffeur-driven or self-drive options
+          4. Clean, comfortable, and well-maintained cars
+          5. Conveniently located in Gairidhara, Kathmandu
+          6. 24/7 support for local and international travelers
+          `,
+    finalThoughts: `
+      Kathmandu is best explored at your own pace - and renting a car gives you that freedom. Whether you’re a tourist discovering Nepal’s heritage or a local planning a weekend getaway, a rental car offers comfort, privacy, and control that taxis can’t match.
+
+      With Grateful Tours and Transportation Service Pvt. Ltd., your journey becomes smooth, enjoyable, and completely stress-free.
+
+      So next time you’re in the valley, skip the taxi and rent a car in Kathmandu - travel smart, travel your way.
+      `,
   },
+
   {
     id: 3,
-    title: "Best Road Trips Across Europe",
-    slug: "best-road-trips-across-europe",
-    description:
-      "Plan your next adventure with our list of must-visit European destinations and scenic routes for unforgettable road trips.",
-    image: "/images/mgBlack.png",
-    content: `
-      Europe offers some of the most breathtaking road trip routes in the world. Whether you’re exploring mountains, coastlines, or historic towns, these routes promise unforgettable experiences.
+    title: "What to Check Before Renting a Car in Nepal",
+    slug: "what-to-check-before-renting-a-car-in-nepal",
+    description: `
+      Renting a car in Nepal is one of the best ways to explore the country’s natural beauty and cultural charm. Whether you’re driving through the busy streets of Kathmandu, heading toward Pokhara’s lakeside, or planning a mountain getaway, a rental car gives you freedom, comfort, and flexibility.
 
-      Here are our top picks:
-      1. Amalfi Coast, Italy: Winding coastal roads with views of turquoise seas and charming cliffside villages.
-      2. Ring Road, Iceland: A full-circle route that takes you past waterfalls, glaciers, and volcanic landscapes.
-      3. Romantic Road, Germany: Explore medieval towns like Rothenburg and Neuschwanstein Castle.
-      4. Transfăgărășan Highway, Romania: Known as one of the world’s most beautiful driving roads.
-      5. North Coast 500, Scotland: Rugged coastlines, castles, and remote Highland beauty.
-      6. French Riviera, France: Glamour, sunshine, and seaside towns like Nice and Cannes.
-      7. Basque Country, Spain: A mix of culture, food, and stunning natural landscapes.
+      But before you sign the rental agreement or start the engine, it’s important to make sure you know exactly what you’re getting. At Grateful Tours and Transportation Service Pvt. Ltd., we want every traveler to enjoy a safe, smooth, and hassle-free ride.
 
-      Pack your essentials, set your playlist, and hit the open road — Europe is waiting for your next adventure.
     `,
+    image: "/images/mgBlack.png",
+    author:
+      "Grateful Tours and Transportation Service Pvt. Ltd., Gairidhara, Kathmandu",
+    content: {
+      title:
+        "Here are 8 important things to check before renting a car in Nepal:",
+
+      data: `
+
+    
+          1. Vehicle Condition and Cleanliness
+          Always start by inspecting the car carefully. Check the body for scratches, dents, or damage, and make sure all lights, brakes, and mirrors work properly. Inside, look for cleanliness, seat comfort, and air-conditioning. A quick check helps you avoid any confusion or charges later.
+          Tip: Take photos or a short video of the car before driving off, especially if it’s a self-drive rental.
+
+          2. Documents and Insurance Coverage
+          Make sure the car has all the required legal documents - valid registration, insurance, and road permit. Ask whether the insurance covers accidents, theft, or third-party damage. Reliable companies like Grateful Tours provide full insurance coverage for both vehicles and passengers.
+
+          3. Driver’s License and ID Requirements
+          For self-drive rentals, you’ll need a valid driver’s license.
+          Nepali citizens can use their regular driving license.
+          Foreign visitors must carry an International Driving Permit (IDP) along with their home country license.
+          Always carry a copy of your passport or citizenship ID as well - you may be asked for verification during police checks.
+
+          4. Fuel Policy and Mileage Limits
+          Before you rent, clarify whether the car comes with a full tank and whether you should return it full. Also, ask about mileage limits — some companies charge extra after a certain distance. At Grateful Tours, we provide clear fuel and mileage policies so there are no surprises later.
+
+          5. Emergency Contacts and Support
+          Ask your rental company what happens in case of a breakdown or emergency. A trusted car rental service will provide a 24/7 helpline or roadside assistance number. This ensures you’re never stranded during your trip, whether you’re in Kathmandu or driving toward remote areas.
+
+          6. Pricing Transparency and Hidden Charges
+          Before confirming your booking, review the rental agreement carefully. Some companies add hidden charges for late returns, extra kilometers, or cleaning fees. Choose a company that offers clear, transparent pricing - like Grateful Tours, where you only pay what you’re quoted.
+
+          7. Navigation, GPS, and Accessories
+          If you’re new to Nepal or driving outside the city, GPS navigation is a must. Confirm if the rental car includes a GPS system, phone mount, or charging port. You can also request child seats or Wi-Fi devices if needed. These small details make a big difference during long drives.
+
+          8. Driver Experience and Professionalism
+          If you’re hiring a car with a driver, check their experience and behavior. A polite, knowledgeable driver can make your journey safer and more enjoyable. At Grateful Tours, all our drivers are trained professionals who know Nepal’s routes, culture, and hospitality standards.
+    `,
+    },
+    whyChooseQuestion: `
+          Why Rent with Grateful Tours and Transportation Service Pvt. Ltd.?
+          `,
+    whyChooseAnswer: `
+          We make car rental in Nepal simple, safe, and reliable.
+          Here’s what you can expect from us:
+
+          1. Well-maintained vehicles (Sedan, SUV, Hiace, Van & more)
+          2. Self-drive or chauffeur-driven options
+          3. Affordable pricing with no hidden costs
+          4. Full insurance coverage
+          5. 24/7 roadside assistance
+          6. Located conveniently in Gairidhara, Kathmandu
+
+          `,
+    finalThoughts: `
+      Renting a car gives you the freedom to explore Nepal your way - from city streets to mountain highways. But before you hit the road, always check the vehicle, documents, and terms carefully. A few minutes of inspection can save you a lot of stress later.
+
+      For a safe and reliable experience, trust Grateful Tours and Transportation Service Pvt. Ltd.; your friendly car rental partner in Kathmandu.
+      `,
   },
+
+  // {
+  //   id: 1,
+  //   title: "Top 10 Electric Cars in 2025",
+  //   slug: "top-10-electric-cars-in-2025",
+  //   description:
+  //     "Discover the latest electric cars hitting the market this year, featuring cutting-edge technology and eco-friendly design.",
+  //   image: "/images/mgBlack.png",
+  //   content: `
+  //     The electric vehicle (EV) market in 2025 is more exciting than ever. Automakers around the world are introducing advanced, high-performance EVs designed to meet the needs of both eco-conscious drivers and performance enthusiasts.
+
+  //     Here are the top 10 electric cars that are leading the charge:
+  //     1. Tesla Model 3 Refresh – Improved range, faster acceleration, and futuristic interiors.
+  //     2. Lucid Air Sapphire – Luxury meets innovation with record-breaking range and comfort.
+  //     3. Rivian R1S – Perfect for adventurous families who value sustainability.
+  //     4. Hyundai Ioniq 6 – Sleek design with top-tier efficiency.
+  //     5. BYD Seal – China’s rising EV powerhouse with great value.
+  //     6. Porsche Taycan GTS – For drivers who crave performance and precision.
+  //     7. BMW i4 – Blends luxury and power in a refined electric sedan.
+  //     8. Kia EV9 – Spacious, futuristic, and family-ready.
+  //     9. Ford Mustang Mach-E GT – American muscle reinvented for the EV era.
+  //     10. MG4 EV – Affordable yet stylish EV making waves in the global market.
+
+  //     With better battery technology, faster charging, and lower maintenance costs, 2025 marks a major step toward an all-electric future.
+  //   `,
+  // },
+  // {
+  //   id: 2,
+  //   title: "How to Maintain Your Car for Longevity",
+  //   slug: "how-to-maintain-your-car-for-longevity",
+  //   description:
+  //     "A complete guide to regular car maintenance tips that keep your vehicle running smoothly and efficiently.",
+  //   image: "/images/mgWhite.png",
+  //   content: `
+  //     Keeping your car in top condition not only extends its lifespan but also ensures safety and better performance. Regular maintenance can save you from costly repairs in the long run.
+
+  //     Here are essential tips for maintaining your vehicle:
+  //     - Check your oil regularly: Change it every 5,000–7,000 km or as recommended by your manufacturer.
+  //     - Inspect tire pressure and alignment: Proper inflation improves mileage and prevents uneven wear.
+  //     - Replace air filters: Dirty filters reduce engine efficiency.
+  //     - Keep your battery clean: Corrosion can cause starting issues.
+  //     - Wash and wax your car: Protects paint and prevents rusting.
+  //     - Brake inspections: Ensure safe stopping and avoid brake failures.
+  //     - Use quality fuel and fluids: Keeps the engine running smoothly.
+
+  //     With consistent care and timely servicing, your car can easily exceed its expected lifespan and retain great resale value.
+  //   `,
+  // },
+  // {
+  //   id: 3,
+  //   title: "Best Road Trips Across Europe",
+  //   slug: "best-road-trips-across-europe",
+  //   description:
+  //     "Plan your next adventure with our list of must-visit European destinations and scenic routes for unforgettable road trips.",
+  //   image: "/images/mgBlack.png",
+  //   content: `
+  //     Europe offers some of the most breathtaking road trip routes in the world. Whether you’re exploring mountains, coastlines, or historic towns, these routes promise unforgettable experiences.
+
+  //     Here are our top picks:
+  //     1. Amalfi Coast, Italy: Winding coastal roads with views of turquoise seas and charming cliffside villages.
+  //     2. Ring Road, Iceland: A full-circle route that takes you past waterfalls, glaciers, and volcanic landscapes.
+  //     3. Romantic Road, Germany: Explore medieval towns like Rothenburg and Neuschwanstein Castle.
+  //     4. Transfăgărășan Highway, Romania: Known as one of the world’s most beautiful driving roads.
+  //     5. North Coast 500, Scotland: Rugged coastlines, castles, and remote Highland beauty.
+  //     6. French Riviera, France: Glamour, sunshine, and seaside towns like Nice and Cannes.
+  //     7. Basque Country, Spain: A mix of culture, food, and stunning natural landscapes.
+
+  //     Pack your essentials, set your playlist, and hit the open road — Europe is waiting for your next adventure.
+  //   `,
+  // },
   // {
   //   id: 4,
   //   title: "The Future of Autonomous Vehicles",
