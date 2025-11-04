@@ -190,6 +190,7 @@ export const blogData = [
 
     `,
     image: "/images/chandragiri.jpeg",
+    imageType: "jpeg",
     author:
       "Grateful Tours and Transportation Service Pvt. Ltd., Gairidhara, Kathmandu",
     content: {
@@ -253,6 +254,7 @@ export const blogData = [
         That’s why more people - both locals and tourists - are now choosing car rental services in Kathmandu instead. At Grateful Tours and Transportation Service Pvt. Ltd., we’ve seen how renting a car makes travel smoother, more flexible, and much more comfortable.
     `,
     image: "/images/byd.png",
+    imageType: "png",
     author:
       "Grateful Tours and Transportation Service Pvt. Ltd., Gairidhara, Kathmandu",
     content: {
@@ -318,6 +320,7 @@ export const blogData = [
 
     `,
     image: "/images/landcrusier.png",
+    imageType: "png",
     author:
       "Grateful Tours and Transportation Service Pvt. Ltd., Gairidhara, Kathmandu",
     content: {

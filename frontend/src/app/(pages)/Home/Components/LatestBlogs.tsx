@@ -26,18 +26,24 @@ const LatestBlogs = () => {
                     <motion.div initial={{ y: 50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8, ease: "easeOut" }} key={item.id || index} className="w-full rounded-xl border border-gray-200 bg-white px-5 py-5 blogCard-shadow hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between transition-all duration-300 ease-in-out text-start">
-                        <div className="flex justify-center h-32 sm:h-52 md:h-60 lg:h-64">
+                        transition={{ duration: 0.8, ease: "easeOut" }} key={item.id || index} className="w-full rounded-xl border border-gray-200 bg-white pb-5 blogCard-shadow hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between transition-all duration-300 ease-in-out text-start">
+                        <div className={`rounded-t-xl flex justify-center h-32 sm:h-52 md:h-60 lg:h-64 overflow-hidden ${item.image.toLowerCase().endsWith('.png')
+                            ? 'p-5 bg-linear-to-br from-gray-50 to-gray-100'
+                            : 'p-0'
+                            }`}>
                             <Image
                                 src={item.image}
                                 alt={item.title}
-                                width={400}
-                                height={250}
-                                className="object-contain"
+                                width={1000}
+                                height={1000}
+                                className={`w-full h-full ${item.image.toLowerCase().endsWith('.png')
+                                    ? 'object-contain bg-white bg-linear-to-br from-gray-50 to-gray-100'
+                                    : 'object-cover'
+                                    }`}
                             />
                         </div>
 
-                        <div>
+                        <div className='px-5 pt-5'>
                             <h2 className="mt-4 text-base md:text-lg lg:text-xl font-merriweather font-bold text-primary line-clamp-2">{item.title}</h2>
 
                             <p className="mt-2 font-nunito text-black md:text-sm text-xs lg:text-base line-clamp-4">{item.description}</p>
