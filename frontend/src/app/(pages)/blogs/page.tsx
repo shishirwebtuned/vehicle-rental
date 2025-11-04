@@ -17,7 +17,7 @@ const page = () => {
                 <div className='grid sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 lg:gap-8 sm:gap-6 gap-4 mt-10'>
                     {blogData.map((item, index) => (
                         <div key={item.id || index} className="w-full rounded-xl border border-gray-200 bg-white  blogCard-shadow hover:-translate-y-1 pb-5 hover:shadow-xl flex flex-col justify-between transition-all duration-300 ease-in-out text-start">
-                            <div className={`rounded-t-xl flex justify-center h-32 sm:h-52 md:h-60 lg:h-64 overflow-hidden  ${item.image.toLowerCase().endsWith('.png')
+                            <div className={`rounded-t-xl flex justify-center h-32 sm:h-52 md:h-60 lg:h-64 overflow-hidden ${item.image.toLowerCase().endsWith('.png')
                                 ? 'p-5 bg-linear-to-br from-gray-50 to-gray-100'
                                 : 'p-0'
                                 }`}>
