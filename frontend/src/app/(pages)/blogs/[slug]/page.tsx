@@ -72,7 +72,7 @@ const BlogDetailPage = () => {
                             alt={blog.title}
                             width={600}
                             height={400}
-                            className="object-contain w-full md:h-auto sm:max-h-60 max-h-52 md:max-h-full"
+                            className="object-contain w-full md:h-auto rounded-xl sm:max-h-60 max-h-52 md:max-h-full"
                         />
                     </motion.div>
 

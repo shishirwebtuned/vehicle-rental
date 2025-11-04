@@ -16,18 +16,24 @@ const page = () => {
                 </div>
                 <div className='grid sm:grid-cols-2 grid-cols-1 lg:grid-cols-3 lg:gap-8 sm:gap-6 gap-4 mt-10'>
                     {blogData.map((item, index) => (
-                        <div key={item.id || index} className="w-full rounded-xl border border-gray-200 bg-white px-5 py-5 blogCard-shadow hover:-translate-y-1 hover:shadow-xl flex flex-col justify-between transition-all duration-300 ease-in-out text-start">
-                            <div className="flex justify-center h-32 sm:h-52 md:h-60 lg:h-64">
+                        <div key={item.id || index} className="w-full rounded-xl border border-gray-200 bg-white  blogCard-shadow hover:-translate-y-1 pb-5 hover:shadow-xl flex flex-col justify-between transition-all duration-300 ease-in-out text-start">
+                            <div className={`rounded-t-xl flex justify-center h-32 sm:h-52 md:h-60 lg:h-64 overflow-hidden  ${item.image.toLowerCase().endsWith('.png')
+                                ? 'p-5 bg-linear-to-br from-gray-50 to-gray-100'
+                                : 'p-0'
+                                }`}>
                                 <Image
                                     src={item.image}
                                     alt={item.title}
-                                    width={400}
-                                    height={250}
-                                    className="object-contain"
+                                    width={1000}
+                                    height={1000}
+                                    className={`w-full h-full ${item.image.toLowerCase().endsWith('.png')
+                                        ? 'object-contain bg-white bg-linear-to-br from-gray-50 to-gray-100'
+                                        : 'object-cover'
+                                        }`}
                                 />
                             </div>
 
-                            <div>
+                            <div className='px-5 pt-5'>
                                 <h2 className="mt-4 text-base md:text-lg lg:text-xl font-merriweather font-bold text-primary line-clamp-2">{item.title}</h2>
 
                                 <p className="mt-2 font-nunito text-black md:text-sm text-xs lg:text-base line-clamp-4">{item.description}</p>
