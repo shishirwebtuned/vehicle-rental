@@ -18,7 +18,7 @@ const page = () => {
                     {blogData.map((item, index) => (
                         <div key={item.id || index} className="w-full rounded-xl border border-gray-200 bg-white  blogCard-shadow hover:-translate-y-1 pb-5 hover:shadow-xl flex flex-col justify-between transition-all duration-300 ease-in-out text-start">
                             <div className={`rounded-t-xl flex justify-center h-32 sm:h-52 md:h-60 lg:h-64 overflow-hidden ${item.image.toLowerCase().endsWith('.png')
-                                ? 'p-5 bg-linear-to-br from-gray-50 to-gray-100'
+                                ? 'p-5 bg-linear-to-br from-gray-100 to-gray-200'
                                 : 'p-0'
                                 }`}>
                                 <Image
@@ -27,7 +27,7 @@ const page = () => {
                                     width={1000}
                                     height={1000}
                                     className={`w-full h-full ${item.image.toLowerCase().endsWith('.png')
-                                        ? 'object-contain bg-white bg-linear-to-br from-gray-50 to-gray-100'
+                                        ? 'object-contain bg-white bg-linear-to-br from-gray-100 to-gray-200'
                                         : 'object-cover'
                                         }`}
                                 />
