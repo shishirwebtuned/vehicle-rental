@@ -9,7 +9,7 @@ interface FieldProps {
     label?: string;
     type: string;
     placeholder?: string;
-    icon?: React.ReactNode; // Change icon to ReactNode
+    icon?: React.ReactNode;
     options?: { value: string; label: string }[];
 }
 
@@ -22,6 +22,7 @@ interface MasterFormProps {
     selectStyle?: string;
     buttonStyle?: string;
     buttonMargin?: string;
+    children?: any;
     onClose: () => void;
     initialValues?: Record<string, any>
 }
@@ -36,6 +37,7 @@ const MasterFormDash: React.FC<MasterFormProps> = ({
     buttonStyle,
     buttonMargin,
     onClose,
+    children,
     initialValues
 }) => {
 
@@ -148,7 +150,7 @@ const MasterFormDash: React.FC<MasterFormProps> = ({
                         )}
                     </div>
                 ))}
-
+                {children ? <>{children}</> : null}
                 <div className={`flex justify-center items-center gap-4 ${buttonMargin || "mt-8 md:mt-10"}`}>
                     <button
                         type="button"

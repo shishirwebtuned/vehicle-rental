@@ -149,3 +149,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+.quill-editor .ql-container {
+  min-height: 180px !important;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.quill-editor .ql-toolbar {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.quill-editor .ql-editor {
+  min-height: 140px !important;
+  padding-bottom: 1rem;
+}

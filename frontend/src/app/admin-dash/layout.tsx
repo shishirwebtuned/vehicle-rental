@@ -103,7 +103,7 @@ function DashboardHeader() {
             <span className={`font-bold font-nunito text-lg truncate ${state === "collapsed" ? "hidden" : "inline-block"}`}>
                 Dashboard
             </span>
-            <SidebarTrigger />
+            <SidebarTrigger className="cursor-pointer" />
         </div>
     );
 }

@@ -150,6 +150,32 @@ const authApi = baseApi.injectEndpoints({
         body: formData,
       }),
     }),
+
+    createBlog: builder.mutation({
+      query: (formData: any) => ({
+        url: "/blogs",
+        method: "POST",
+        body: formData,
+      }),
+      invalidatesTags: ["Blogs"],
+    }),
+
+    updateBlog: builder.mutation({
+      query: ({ id, formData }: { id: string; formData: any }) => ({
+        url: `/blogs/${id}`,
+        method: "PUT",
+        body: formData,
+      }),
+      invalidatesTags: ["Blogs", "BlogById"],
+    }),
+
+    deleteBlog: builder.mutation({
+      query: (id: string) => ({
+        url: `/blogs/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Blogs"],
+    }),
   }),
 });
 
@@ -167,4 +193,7 @@ export const {
   useUpdateCareerMutation,
   useDeleteCareerMutation,
   useApplytoJobMutation,
+  useCreateBlogMutation,
+  useUpdateBlogMutation,
+  useDeleteBlogMutation,
 } = authApi;

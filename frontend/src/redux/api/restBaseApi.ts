@@ -30,6 +30,9 @@ export const baseApi = createApi({
     "BookingById",
     "Careers",
     "CareerById",
+    "Blogs",
+    "BlogById",
+    "BlogBySlug",
   ],
   endpoints: () => ({}),
 });

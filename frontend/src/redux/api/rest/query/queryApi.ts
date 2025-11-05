@@ -91,6 +91,30 @@ const queryApi = baseApi.injectEndpoints({
       }),
       providesTags: ["CareerById"],
     }),
+
+    getAllBlogs: builder.query<any, void>({
+      query: () => ({
+        url: "blogs",
+        method: "GET",
+      }),
+      providesTags: ["Blogs"],
+    }),
+
+    getBlogBySlug: builder.query<any, { slug: string }>({
+      query: ({ slug }) => ({
+        url: `blogs/slug/${slug}`,
+        method: "GET",
+      }),
+      providesTags: ["BlogBySlug"],
+    }),
+
+    getBlogById: builder.query<any, { id: string }>({
+      query: ({ id }) => ({
+        url: `blogs/id/${id}`,
+        method: "GET",
+      }),
+      providesTags: ["BlogById"],
+    }),
   }),
   overrideExisting: false,
 });
@@ -107,4 +131,7 @@ export const {
   useGetBookingByIdQuery,
   useGetAllCareersQuery,
   useGetCareerByIdQuery,
+  useGetAllBlogsQuery,
+  useGetBlogByIdQuery,
+  useGetBlogBySlugQuery,
 } = queryApi;

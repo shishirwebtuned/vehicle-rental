@@ -9,6 +9,8 @@ import vehicleRoutes from "./routes/vehicle.routes.js";
 import bookingRoutes from "./routes/booking.routes.js";
 import contactRoutes from "./routes/contact.routes.js";
 import careerRoutes from "./routes/career.routes.js";
+import blogRoutes from "./routes/blog.routes.js";
+
 // import paymentRoutes from "./routes/payment.routes";
 // import orderRoutes from "./routes/order.routes";
 // import shippingRoutes from "./routes/shipping.routes";
@@ -35,6 +37,8 @@ app.use(`${baseApi}/vehicles`, vehicleRoutes);
 app.use(`${baseApi}/booking`, bookingRoutes);
 app.use(`${baseApi}/contact`, contactRoutes);
 app.use(`${baseApi}/careers`, careerRoutes);
+app.use(`${baseApi}/blogs`, blogRoutes);
+
 // app.use(`${baseApi}/payments`, paymentRoutes);
 // app.use(`${baseApi}/order`, orderRoutes);
 // app.use(`${baseApi}/shipping`, shippingRoutes);

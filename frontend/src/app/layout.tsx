@@ -6,6 +6,7 @@ import { Toaster } from "react-hot-toast";
 import ClientLayout from "@/components/shared/ClientLayout";
 import 'react-phone-input-2/lib/style.css';
 import { WhatsappChat } from "@/components/shared/WhatsappChat";
+import 'react-quill/dist/quill.snow.css';
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
