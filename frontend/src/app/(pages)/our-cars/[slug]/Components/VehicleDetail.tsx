@@ -122,11 +122,11 @@ export default function VehicleDetail({ slug }: { slug: string }) {
             <div className={`flex md:flex-row flex-col min-h-screen items-center md:items-start pt-36 md:pt-40 justify-center bg-[#f7f7f7] gap-5 md:gap-5 lg:gap-6 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
 
                 <div className='md:w-2/3 w-full flex flex-col gap-2'>
-                    <div className="w-full h-[40vh] md:h-[60vh] flex justify-center items-center shadow-xs border border-gray-100 bg-white p-4 rounded-md">
+                    <div className={`w-full h-[40vh] md:h-[60vh] flex justify-center items-center shadow-xs border border-gray-100 bg-white rounded-md ${vehicleData?.image?.url.toLowerCase().endsWith('.png') ? "p-4" : "p-0"}`}>
                         <img
                             src={vehicleData?.image?.url}
                             alt={vehicleData?.name}
-                            className="object-contain w-full h-full rounded-lg"
+                            className={` w-full h-full rounded-lg ${vehicleData?.image?.url.toLowerCase().endsWith('.png') ? "object-contain" : "object-cover"}`}
                         />
                     </div>
                     <div className="bg-white rounded-md shadow-xs border border-gray-100 p-3 w-full font-nunito mt-1 md:hidden block">

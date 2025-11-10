@@ -7,6 +7,7 @@ import { BsFillFuelPumpFill } from 'react-icons/bs';
 import { FaCar, FaUsers } from "react-icons/fa";
 import { BiSolidDollarCircle } from "react-icons/bi";
 import { SiGoogleearthengine } from "react-icons/si";
+import Image from 'next/image';
 
 
 const VehicleCard: React.FC<VehicleCardProps> = ({
@@ -23,11 +24,13 @@ const VehicleCard: React.FC<VehicleCardProps> = ({
 
     return (
         <div className="bg-[#E1E49E] rounded-lg shadow-md overflow-hidden flex flex-col transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
-            <div className="flex justify-center items-center w-full md:h-52 h-40 sm:h-44 lg:h-60 p-4">
+            <div className={`flex justify-center items-center w-full overflow-hidden md:h-52 h-40 sm:h-44 lg:h-60 ${vehicle?.image?.url.toLowerCase().endsWith('.png') ? "p-4" : "p-0"}`}>
                 <img
                     src={vehicle.image?.url}
                     alt={vehicle.name}
-                    className="object-contain w-full h-full"
+                    width={1000}
+                    height={1000}
+                    className={` w-full h-full ${vehicle?.image?.url.toLowerCase().endsWith('.png') ? "object-contain" : "object-cover"}`}
                 />
             </div>
 
