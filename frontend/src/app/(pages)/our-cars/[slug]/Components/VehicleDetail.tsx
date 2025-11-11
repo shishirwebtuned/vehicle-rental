@@ -378,6 +378,8 @@ export default function VehicleDetail({ slug }: { slug: string }) {
             <MasterDialog open={dialogOpen} title='Enquiry Form' onClose={() => setDialogOpen(false)}
             >
                 <EnquiryForm
+                    vehicleName={vehicleData?.name || ""}
+                    vehicleNumberPlate={vehicleData?.numberPlate || ""}
                     vehicleId={vehicleData?._id || ""}
                     onSubmitSuccess={() => setDialogOpen(false)}
                 />

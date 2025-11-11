@@ -84,14 +84,19 @@ const Footer = () => {
                     <p className="font-semibold">
                         © 2025 Grateful Tours & Transportation Pvt. Ltd || All Rights Reserved.
                     </p>
-                    <a
-                        href="/terms-and-conditions"
-                        className="text-primary font-semibold hover:underline"
-                    >
-                        Terms & Conditions
-                    </a>
+                    <p>
+                        <span>Developed By </span>
+                        <a
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            href="https://webtunedstudio.com.np"
+                            className="font-semibold text-primary hover:underline"
+                        >
+                            Web Tuned Studio
+                        </a>
+                    </p>
                 </div>
-                <p>
+                {/* <p>
                     <span>Developed By </span>
                     <a
                         target="_blank"
@@ -101,7 +106,7 @@ const Footer = () => {
                     >
                         Web Tuned Studio
                     </a>
-                </p>
+                </p> */}
 
             </div>
         </footer>

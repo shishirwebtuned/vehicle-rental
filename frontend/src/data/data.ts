@@ -554,7 +554,7 @@ export const footerData = {
       { label: "Our Rates", href: "/files/rates.pdf", target: "_blank" },
       { label: "Blogs", href: "/blogs" },
       { label: "Careers", href: "/careers" },
-      { label: "Partner With Us", href: "/partner" },
+      { label: "Terms & Conditions", href: "/terms-and-conditions" },
       { label: "Privacy Policy", href: "/privacy-policy" },
     ],
   },

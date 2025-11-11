@@ -10,10 +10,12 @@ import PhoneInput from "react-phone-input-2";
 
 interface EnquiryFormProps {
     vehicleId: string | number;
+    vehicleName: string;
+    vehicleNumberPlate: string;
     onSubmitSuccess?: () => void;
 }
 
-const EnquiryForm: React.FC<EnquiryFormProps> = ({ vehicleId, onSubmitSuccess }) => {
+const EnquiryForm: React.FC<EnquiryFormProps> = ({ vehicleId, vehicleName, vehicleNumberPlate, onSubmitSuccess }) => {
 
     const [createBooking] = useCreateBookingMutation();
 
@@ -36,14 +38,44 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ vehicleId, onSubmitSuccess })
                 const searchData = carSearchData ? JSON.parse(carSearchData) : {};
 
                 const bookingData = {
-                    vehicle: vehicleId,
+                    vehicle: {
+                        id: vehicleId,
+                        name: vehicleName,
+                        numberPlate: vehicleNumberPlate
+                    },
                     ...searchData,
                     ...values,
                 };
 
                 console.log("Combined Booking Data:", bookingData);
 
-                await createBooking(bookingData).unwrap();
+                // await createBooking(bookingData).unwrap();
+
+                const message = `
+                *New Booking Enquiry*
+
+                *Vehicle Details*
+                Name: ${bookingData.vehicle.name || "N/A"}
+                Number Plate: ${bookingData.vehicle.numberPlate || "N/A"}
+
+                *Customer Information*
+                Name: ${bookingData.name || "N/A"}
+                Email: ${bookingData.email || "N/A"}
+                Phone: ${bookingData.phone || "N/A"}
+
+                *Trip Details*
+                Pickup Location: ${bookingData.pickupLocation || "N/A"}
+                Drop Location: ${bookingData.dropoffLocation || "N/A"}
+                Pickup Date: ${bookingData.pickupDate || "N/A"}
+                Return Date: ${bookingData.dropoffDate || "N/A"}
+                `;
+
+                const whatsappNumber = "9779810520079";
+
+                const encodedMessage = encodeURIComponent(message);
+
+                window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
+
 
                 resetForm();
                 toast.success("Booking enquiry sent successfully.");
