@@ -6,7 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqData = [
     { question: "How to book a car?", answer: "Go to 'Our Cars' and select your vehicle. Fill out the booking form." },
-    { question: "What are your operating hours?", answer: "We operate from 8 AM to 8 PM, Monday to Sunday." },
+    {
+        question: "What are your operating hours?",
+        answer: "We operate 24/7, offering continuous support and service to meet your travel needs at any hour."
+    },
     { question: "Do you provide airport transfers?", answer: "Yes! We provide airport pick-up and drop services." },
 ];
 

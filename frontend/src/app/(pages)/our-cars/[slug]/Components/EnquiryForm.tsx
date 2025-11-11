@@ -70,7 +70,14 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ vehicleId, vehicleName, vehic
                 Return Date: ${bookingData.dropoffDate || "N/A"}
                 `;
 
-                const whatsappNumber = "9779810520079";
+                const whatsappNumber = "9779801170674";
+
+                try {
+                    await navigator.clipboard.writeText(message);
+                    toast.success("Message copied to clipboard!");
+                } catch (err) {
+                    console.error("Clipboard error:", err);
+                }
 
                 const encodedMessage = encodeURIComponent(message);
 

@@ -18,7 +18,7 @@ const RentandDrive = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.9, ease: "easeOut" }}
                 >
-                    <img src="/images/scorp.png" alt='' className='lg:-translate-y-20 md:w-[80%] sm:w-[60%] w-[70%] object-contain' />
+                    <img src="/images/scorpio.png" alt='' className='lg:-translate-y-20 md:w-[80%] sm:w-[60%] w-[70%] object-contain' />
                 </motion.div>
 
                 <motion.div
@@ -29,15 +29,13 @@ const RentandDrive = () => {
                     transition={{ duration: 0.9, ease: "easeOut" }}
                 >
                     <h3 className="w-full text-background font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold leading-snug">
-                        Rent{" "}
-                        <span className="text-black font-bold">and</span>{" "}
-                        Drive{" "}
-                        <span className="text-black font-bold">a Car Today!</span>
+                        Drive the <span className="text-black font-bold">Luxury You Deserve</span>
                     </h3>
 
                     <p className="max-w-3xl text-center mx-auto lg:text-lg md:text-base font-nunito text-sm text-white">
-                        If you are looking to rent, we have perfect car waiting for you. Browse our extensive collection and get behind the wheel with ease.
+                        Choose from an exclusive fleet ranging from SUVs to luxury cars like Mercedes, BMW, and Audi. We can arrange any vehicle upon request — for travel that matches your style.
                     </p>
+
 
                     <div className='flex flex-row gap-4 font-nunito md:text-base text-sm lg:text-lg w-full items-center justify-center'>
                         <button onClick={() => router.push("/our-cars")} className='bg-background text-primary border-2 rounded-md shadow-sm border-background hover:text-white hover:bg-primary px-6 py-3 transition-all ease-in-out duration-300 cursor-pointer'>

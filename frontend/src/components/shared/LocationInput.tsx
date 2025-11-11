@@ -66,7 +66,7 @@ const LocationInput: React.FC<LocationInputProps> = ({ label, name, formik, clas
             )}
 
             {formik.touched[name] && formik.errors[name] && (
-                <p className="text-red-500 text-[10px] mt-1">{formik.errors[name] as string}</p>
+                <p className="text-red-500 text-sm mt-1">{formik.errors[name] as string}</p>
             )}
         </div>
     );

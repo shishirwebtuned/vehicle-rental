@@ -524,6 +524,16 @@ export const faqData = [
     answer:
       "To rent a car, you will need a valid government-issued ID, a valid driver's license, and a payment method for the booking. For international travelers, an additional passport or international driving permit may be required.",
   },
+  {
+    question: "Are drivers available with the car rental?",
+    answer:
+      "Yes, we provide professional and experienced drivers upon request. Whether you prefer to sit back and relax or need local guidance, our drivers ensure a safe and stress-free travel experience.",
+  },
+  {
+    question: "Are your drivers licensed and experienced?",
+    answer:
+      "Absolutely. All our drivers are fully licensed, trained, and experienced in both city and long-distance travel. They prioritize passenger comfort, punctuality, and safety at all times.",
+  },
 ];
 
 export const footerData = {
@@ -613,6 +623,7 @@ export const services = [
     icon: "FaPlaneDeparture",
     answer:
       "Choose Grateful Tours for Airport Transfers because we guarantee punctuality, comfort, and professionalism. Our real-time flight monitoring, courteous drivers, and spotless vehicles ensure a seamless and stress-free start or end to your journey.",
+    image: "/images/services.jpg",
   },
   {
     id: 2,
@@ -625,6 +636,7 @@ export const services = [
     icon: "MdTour",
     answer:
       "Grateful Tours offers the best Valley Sightseeing experience with expert local guides, comfortable vehicles, and flexible itineraries — ensuring you see not just landmarks, but the heart of Nepalese culture.",
+    image: "/images/chandragiri.jpeg",
   },
   {
     id: 3,
@@ -637,6 +649,7 @@ export const services = [
     icon: "FaMapMarkedAlt",
     answer:
       "With Grateful Tours, explore Nepal your way. We combine expert guidance, safety, and flexible itineraries to give you a deeper, more personal connection with Nepal’s landscapes and cultures.",
+    image: "/images/services2.jpg",
   },
   {
     id: 4,
@@ -649,6 +662,7 @@ export const services = [
     icon: "FaRegBuilding",
     answer:
       "Choose Grateful Tours for short-term rentals because we combine reliability, punctuality, and professionalism — ideal for businesses needing flexible, top-quality transportation on demand.",
+    image: "/images/chandragiri.jpeg",
   },
   {
     id: 5,
@@ -661,6 +675,7 @@ export const services = [
     icon: "GiPathDistance",
     answer:
       "Grateful Tours stands out for long-term rentals with its reliable fleet, transparent pricing, and dedicated support — perfect for companies and individuals seeking stability and trust.",
+    image: "/images/chandragiri.jpeg",
   },
   {
     id: 6,
@@ -673,6 +688,7 @@ export const services = [
     icon: "MdTour",
     answer:
       "Choose Grateful Tours for India and Bhutan trips because we manage every detail — from visas to vehicles — ensuring a seamless, safe, and culturally immersive cross-border adventure.",
+    image: "/images/bhutan.jpg",
   },
   {
     id: 7,
@@ -685,6 +701,7 @@ export const services = [
     icon: "GiJungle",
     answer:
       "Grateful Tours makes your safari safe and memorable with expert guides, reliable vehicles, and a strong focus on wildlife conservation and traveler comfort.",
+    image: "/images/jungleSafari.jpg",
   },
   {
     id: 8,
@@ -697,6 +714,7 @@ export const services = [
     icon: "LiaMountainSolid",
     answer:
       "Trust Grateful Tours for Mountain Flight Transfers — we ensure on-time arrivals, comfort, and total coordination with your flight schedule for a worry-free Himalayan adventure.",
+    image: "/images/mountainFlight.jpg",
   },
   {
     id: 9,
@@ -709,6 +727,7 @@ export const services = [
     icon: "IoIosBoat",
     answer:
       "Grateful Tours ensures your rafting adventure starts and ends smoothly — with reliable transfers, safety-focused drivers, and complete comfort for your adrenaline-filled day.",
+    image: "/images/rafting.jpg",
   },
   {
     id: 10,
@@ -721,6 +740,7 @@ export const services = [
     icon: "TbTrekking",
     answer:
       "Grateful Tours offers punctual, safe, and comfortable transfers to trekking trailheads — ensuring your journey to the mountains begins and ends hassle-free.",
+    image: "/images/trekking.jpg",
   },
   {
     id: 11,
@@ -733,6 +753,7 @@ export const services = [
     icon: "MdEventAvailable",
     answer:
       "Choose Grateful Tours for cultural events because we combine comfort, reliability, and local knowledge — helping you experience Nepal’s art and heritage without any travel worries.",
+    image: "/images/culture.jpg",
   },
   {
     id: 12,
@@ -745,6 +766,7 @@ export const services = [
     icon: "MdLuggage",
     answer:
       "Grateful Tours ensures safe, punctual, and secure luggage transfers — letting you travel light and worry-free with full confidence in our handling and delivery.",
+    image: "/images/luggage.jpg",
   },
   {
     id: 13,
@@ -757,6 +779,7 @@ export const services = [
     icon: "IoFastFood",
     answer:
       "Grateful Tours provides reliable, clean, and on-time dinner transfers so you can focus on your evening — not on traffic or parking.",
+    image: "/images/food.jpg",
   },
   {
     id: 14,
@@ -769,6 +792,7 @@ export const services = [
     icon: "TbBus",
     answer:
       "Grateful Tours simplifies your intercity travel with secure ticketing, real-time assistance, and reliable partnerships with trusted bus operators.",
+    image: "/images/tourist.jpg",
   },
   {
     id: 15,
@@ -781,5 +805,6 @@ export const services = [
     icon: "FaCarSide",
     answer:
       "Choose Grateful Tours in Pokhara for flexible, safe, and comfortable vehicle rentals backed by local expertise and exceptional service quality.",
+    image: "/images/pokhara.jpg",
   },
 ];

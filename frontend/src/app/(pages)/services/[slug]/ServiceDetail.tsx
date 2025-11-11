@@ -31,6 +31,7 @@ type ServiceClientProps = {
         content: string;
         icon: string;
         answer: string;
+        image: string;
     };
 };
 
@@ -54,7 +55,7 @@ const ServiceDetail = ({ service }: ServiceClientProps) => {
                     className="w-full md:w-1/2"
                 >
                     <div className="bg-gray-50 rounded-2xl shadow-md p-2 md:p-3">
-                        {service.id % 2 === 0 ? (
+                        {/* {service.id % 2 === 0 ? (
                             <img
                                 src="/images/services2.jpg"
                                 alt={service.title}
@@ -66,7 +67,14 @@ const ServiceDetail = ({ service }: ServiceClientProps) => {
                                 alt={service.title}
                                 className="rounded-xl shadow-lg object-cover w-full h-auto md:h-[380px]"
                             />
-                        )}
+                        )} */}
+
+                        <img
+                            src={service.image}
+                            alt={service.title}
+                            className="rounded-xl shadow-lg object-cover w-full h-auto md:h-[380px]"
+                        />
+
 
                     </div>
                 </motion.div>

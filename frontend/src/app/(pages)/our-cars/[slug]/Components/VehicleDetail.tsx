@@ -259,9 +259,9 @@ export default function VehicleDetail({ slug }: { slug: string }) {
                                     labeltextSize='text-sm md:text-base'
                                     className="w-full bg-[#F2F7F6] px-3 py-2 rounded-lg focus:outline-none text-sm md:text-base focus:ring focus:ring-yellow-400"
                                 />
-                                {formik.touched.pickupLocation && formik.errors.pickupLocation && (
+                                {/* {formik.touched.pickupLocation && formik.errors.pickupLocation && (
                                     <p className="text-red-500 text-sm mt-1">{formik.errors.pickupLocation}</p>
-                                )}
+                                )} */}
 
                                 {/* Pickup Date */}
                                 <div className="flex flex-col">
@@ -306,9 +306,9 @@ export default function VehicleDetail({ slug }: { slug: string }) {
                                     labeltextSize='text-sm md:text-base'
                                     className="w-full bg-[#F2F7F6] px-3 py-2 rounded-lg focus:outline-none focus:ring text-sm md:text-base focus:ring-yellow-400"
                                 />
-                                {formik.touched.dropoffLocation && formik.errors.dropoffLocation && (
+                                {/* {formik.touched.dropoffLocation && formik.errors.dropoffLocation && (
                                     <p className="text-red-500 text-sm mt-1">{formik.errors.dropoffLocation}</p>
-                                )}
+                                )} */}
 
 
                                 {/* Dropoff Date */}
