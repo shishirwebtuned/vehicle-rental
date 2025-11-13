@@ -319,7 +319,7 @@ export const blogData = [
       But before you sign the rental agreement or start the engine, it’s important to make sure you know exactly what you’re getting. At Grateful Tours and Transportation Service Pvt. Ltd., we want every traveler to enjoy a safe, smooth, and hassle-free ride.
 
     `,
-    image: "/images/landcrusier.png",
+    image: "/images/landcruiser1.png",
     imageType: "png",
     author:
       "Grateful Tours and Transportation Service Pvt. Ltd., Gairidhara, Kathmandu",

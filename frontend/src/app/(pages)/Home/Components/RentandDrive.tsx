@@ -18,7 +18,7 @@ const RentandDrive = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.9, ease: "easeOut" }}
                 >
-                    <img src="/images/scorpio.png" alt='' className='lg:-translate-y-20 md:w-[80%] sm:w-[60%] w-[70%] object-contain' />
+                    <img src="/images/landcruiser1.png" alt='' className='lg:-translate-y-20 md:w-[80%] sm:w-[60%] w-[70%] object-contain' />
                 </motion.div>
 
                 <motion.div

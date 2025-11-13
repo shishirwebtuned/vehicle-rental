@@ -47,9 +47,9 @@ const ExploreService = () => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <img
-                            src="/images/landcrusier.png"
+                            src="/images/scorpio.png"
                             alt="Car"
-                            className="w-full max-w-xs sm:max-w-sm md:max-w-lg scale-x-[-1]"
+                            className="w-full max-w-xs sm:max-w-sm md:max-w-lg "
                         />
                     </motion.div>
 
