@@ -1,10 +1,12 @@
 import { paddingX } from "@/constant/constant";
 import { socialLinks } from "@/data/data";
+import useViberLink from "@/hooks/useViberLink";
 import React from "react";
 import { IoMdMail } from "react-icons/io";
 import { MdCall } from "react-icons/md";
 
 const Topbar = () => {
+    const openViber = useViberLink();
     return (
         <div className="w-full font-sans border-b border-gray-200 bg-gray-50">
             <div
@@ -34,21 +36,40 @@ const Topbar = () => {
                 </div>
 
                 <div className="flex items-center gap-2 md:gap-3">
-                    {socialLinks.map(({ id, src, alt, href, hover }) => (
-                        <a
-                            key={id}
-                            href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`transition ${hover}`}
-                        >
-                            <img
-                                src={src}
-                                alt={alt}
-                                className="md:w-6 md:h-6 sm:w-5 sm:h-5 w-4 h-4 object-contain"
-                            />
-                        </a>
-                    ))}
+                    {socialLinks.map(({ id, src, alt, href, hover }) => {
+                        if (href === "viber") {
+                            return (
+                                <div
+                                    key={id}
+                                    onClick={() => openViber("+9779801170674")}
+                                    className={`cursor-pointer transition ${hover}`}
+                                >
+                                    <img
+                                        src={src}
+                                        alt={alt}
+                                        className="md:w-6 md:h-6 sm:w-5 sm:h-5 w-4 h-4 object-contain"
+                                    />
+                                </div>
+                            );
+                        }
+
+                        return (
+                            <a
+                                key={id}
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`transition ${hover}`}
+                            >
+                                <img
+                                    src={src}
+                                    alt={alt}
+                                    className="md:w-6 md:h-6 sm:w-5 sm:h-5 w-4 h-4 object-contain"
+                                />
+                            </a>
+                        );
+                    })}
+
                 </div>
             </div>
         </div>

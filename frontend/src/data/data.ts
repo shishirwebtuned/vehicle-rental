@@ -22,7 +22,7 @@ export const socialLinks = [
     id: 2,
     src: "/icons/viber.png",
     alt: "Viber",
-    href: "viber://chat?number=%2B9779801170674",
+    href: "viber",
     hover: "hover:opacity-80",
   },
   {
@@ -36,7 +36,7 @@ export const socialLinks = [
     id: 4,
     src: "/icons/instagram.png",
     alt: "Instagram",
-    href: "https://instagram.com/yourprofile",
+    href: "https://www.instagram.com/gratefultoursandtransportation/",
     hover: "hover:opacity-80",
   },
 ];
@@ -543,9 +543,12 @@ export const footerData = {
       "Est. in 2010, we have been providing great services. Your trusted partner for safe, reliable, and comfortable journeys across Nepal, bringing you closer to the beauty and culture of every destination.",
     socials: [
       { icon: FaFacebook, link: "https://www.facebook.com/gratefultours/" },
-      { icon: FaInstagram, link: "#" },
+      {
+        icon: FaInstagram,
+        link: "https://www.instagram.com/gratefultoursandtransportation/",
+      },
       { icon: FaWhatsapp, link: "https://wa.me/9779801170674" },
-      { icon: FaViber, link: "viber://chat?number=%2B9779801170674" },
+      { icon: FaViber, link: "viber" },
     ],
   },
   quickLinks: {

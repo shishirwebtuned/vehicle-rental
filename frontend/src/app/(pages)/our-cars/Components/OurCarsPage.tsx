@@ -15,21 +15,21 @@ const OurCarsPage = () => {
 
     if (isLoading) {
         return (
-            <div className={`flex flex-col min-h-screen items-center font-mono pt-40 md:pt-44 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
+            <div className={`flex flex-col min-h-screen items-center font-mono pt-32 md:pt-36 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 text-lg md:text-xl lg:text-2xl ${paddingX}`}>
                 <p>Loading vehicles...</p>
             </div>);
     }
 
     if (isError) {
         return (
-            <div className={`flex flex-col min-h-screen items-center font-mono pt-40 md:pt-44 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
+            <div className={`flex flex-col min-h-screen items-center font-mono pt-32 md:pt-36 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 text-lg md:text-xl lg:text-2xl ${paddingX}`}>
                 <p>Failed to load vehicles. Please try again later.</p>
             </div>);
     }
 
     return (
         <div className='bg-white'>
-            <div className={`flex flex-col min-h-screen items-center pt-16 md:pt-20 justify-center bg-background gap-8 md:gap-12 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
+            <div className={`flex flex-col min-h-screen items-center pt-10 md:pt-12 justify-center bg-background gap-8 md:gap-10 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
                 <div className="text-center">
                     <h2 className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold">
                         Our <span className="text-primary">Cars</span>

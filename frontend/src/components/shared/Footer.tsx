@@ -1,7 +1,10 @@
 import { paddingX } from "@/constant/constant";
 import { footerData } from "@/data/data";
+import useViberLink from "@/hooks/useViberLink";
 
 const Footer = () => {
+    const openViber = useViberLink();
+
     return (
         <footer
             className={`bg-[#103951] text-gray-80 ${paddingX}`}
@@ -13,17 +16,32 @@ const Footer = () => {
                         {footerData.about.description}
                     </p>
                     <div className="flex space-x-4 text-white lg:text-2xl md:text-xl text-lg sm:justify-start justify-center">
-                        {footerData.about.socials.map((social, index) => (
-                            <a
-                                key={index}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href={social.link}
-                                className="hover:text-sky-800 transition"
-                            >
-                                <social.icon />
-                            </a>
-                        ))}
+                        {footerData.about.socials.map((social, index) => {
+                            // VIBER HANDLING
+                            if (social.link === "viber") {
+                                return (
+                                    <button
+                                        key={index}
+                                        onClick={() => openViber("+9779801170674")}
+                                        className="hover:text-sky-800 transition cursor-pointer"
+                                    >
+                                        <social.icon />
+                                    </button>
+                                );
+                            }
+
+                            return (
+                                <a
+                                    key={index}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href={social.link}
+                                    className="hover:text-sky-800 transition cursor-pointer"
+                                >
+                                    <social.icon />
+                                </a>
+                            );
+                        })}
                     </div>
                 </div>
 
