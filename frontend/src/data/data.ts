@@ -718,29 +718,29 @@ export const services = [
   },
   {
     id: 9,
-    title: "Rafting Point Drive",
-    slug: "rafting-point-drive",
+    title: "Rafting & Trekking Point Drive",
+    slug: "rafting-and-trekking-point-drive",
     description:
-      "Safe and timely transfers to popular rafting spots like Trishuli and Bhotekoshi rivers.",
+      "Safe, reliable, and comfortable transfers to Nepal’s popular rafting and trekking destinations.",
     content:
-      "Our Rafting Point Drive ensures safe, punctual, and comfortable transportation to the most popular white-water rafting destinations in Nepal, such as the Trishuli and Bhotekoshi rivers. We provide vehicles suited for group travel and rugged roads, ensuring that adventurers arrive ready for the thrill of the rapids. Drivers are experienced, familiar with routes and seasonal conditions, and prioritize safety throughout the journey. This service is ideal for day trips, extended rafting excursions, or adventure packages. By choosing our Rafting Point Drive, travelers can focus entirely on the rafting experience, confident that their transportation is fully managed, safe, and reliable, enhancing the overall enjoyment of their adventure.",
+      "Our Rafting & Trekking Point Drive service provides dependable and comfortable transportation to Nepal’s most thrilling adventure spots — from white-water rafting points like Trishuli and Bhotekoshi rivers to iconic trekking trailheads in Pokhara, Lukla, and Syabrubesi. We offer well-maintained vehicles suitable for groups and rugged terrains, ensuring every journey is safe, punctual, and hassle-free. Our experienced drivers are familiar with local routes, weather, and terrain, guaranteeing smooth coordination with your adventure plans. Whether it’s the rush of the rapids or the calm of the mountains, we make sure you get there comfortably, safely, and on time.",
     icon: "IoIosBoat",
     answer:
-      "Grateful Tours ensures your rafting adventure starts and ends smoothly — with reliable transfers, safety-focused drivers, and complete comfort for your adrenaline-filled day.",
+      "Grateful Tours provides smooth, safe, and punctual transfers for both rafting and trekking journeys — so your adventure starts and ends stress-free.",
     image: "/images/rafting.jpg",
   },
   {
     id: 10,
-    title: "Trekking Point Drive",
-    slug: "trekking-point-drive",
+    title: "Vehicle Booking and Transportation for Weddings",
+    slug: "vehicle-booking-and-transporttion-for-weddings",
     description:
-      "Reliable vehicle service to and from trekking trailheads such as Pokhara, Lukla, or Syabrubesi.",
+      "Elegant and reliable vehicle services for weddings, receptions, and special events across Nepal.",
     content:
-      "Our Trekking Point Drive service provides dependable transportation to the starting points of some of Nepal’s most famous trekking trails, including Pokhara, Lukla, Syabrubesi, and other remote regions. Vehicles are well-maintained, safe, and comfortable, ensuring a smooth start and finish to your trekking adventure. Our drivers are experienced with local terrain and understand the importance of timely arrivals to coordinate with trekking schedules. This service is suitable for solo trekkers, groups, and organized trekking tours. By using our service, trekkers can avoid the stress of navigating unfamiliar roads, ensure luggage transport if required, and focus entirely on the trekking experience, enjoying the scenic journey with convenience and safety guaranteed.",
-    icon: "TbTrekking",
+      "Our Wedding & Event Transportation service ensures that your special day runs smoothly and in style. We provide a wide range of well-maintained vehicles — from luxurious cars for the bride and groom to spacious vans and buses for guests and family members. Each vehicle is clean, comfortable, and driven by professional chauffeurs who prioritize punctuality, courtesy, and safety. Whether it’s a wedding ceremony, reception, or any celebratory event, our team coordinates every transfer with care and precision. We also offer customizable decoration options for bridal cars to match your event’s theme. With Grateful Tours, you can relax and focus on creating memories while we take care of every ride — on time, elegant, and stress-free.",
+    icon: "FaCar",
     answer:
-      "Grateful Tours offers punctual, safe, and comfortable transfers to trekking trailheads — ensuring your journey to the mountains begins and ends hassle-free.",
-    image: "/images/trekking.jpg",
+      "Grateful Tours delivers elegant, timely, and comfortable transportation for weddings and special events — ensuring every journey is memorable and worry-free.",
+    image: "/images/wedding.jpg",
   },
   {
     id: 11,

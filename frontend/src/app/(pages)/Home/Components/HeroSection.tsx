@@ -112,7 +112,11 @@ const HeroSection = () => {
         },
         validationSchema,
         onSubmit: (values) => {
-            localStorage.setItem("carSearchData", JSON.stringify(values));
+            const payload = {
+                data: values,
+                expiry: Date.now() + 2 * 60 * 60 * 1000
+            };
+            localStorage.setItem("carSearchData", JSON.stringify(payload));
             router.push("/our-cars");
         },
     });

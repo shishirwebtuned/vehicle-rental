@@ -34,10 +34,21 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ vehicleId, vehicleName, vehic
         }),
         onSubmit: async (values, { resetForm }) => {
             try {
-                const carSearchData = localStorage.getItem("carSearchData");
-                const searchData = carSearchData ? JSON.parse(carSearchData) : {};
+                let searchData: Record<string, any> = {};
 
-                const bookingData = {
+                const carSearchData = localStorage.getItem("carSearchData");
+
+                if (carSearchData) {
+                    const parsed = JSON.parse(carSearchData);
+
+                    if (parsed.expiry && Date.now() < parsed.expiry) {
+                        searchData = parsed.data;
+                    } else {
+                        localStorage.removeItem("carSearchData");
+                    }
+                }
+
+                const bookingData: Record<string, any> = {
                     vehicle: {
                         id: vehicleId,
                         name: vehicleName,

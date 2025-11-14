@@ -24,7 +24,7 @@ const VehicleCard: React.FC<VehicleCardProps> = ({
 
     return (
         <div className="bg-[#E1E49E] rounded-lg shadow-md overflow-hidden flex flex-col transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
-            <div className={`flex justify-center items-center w-full overflow-hidden md:h-52 h-40 sm:h-44 lg:h-60 ${vehicle?.image?.url.toLowerCase().endsWith('.png') ? "p-4" : "p-0"}`}>
+            <div className={`flex justify-center items-center w-full overflow-hidden md:h-60 h-48 sm:h-56 lg:h-72 ${vehicle?.image?.url.toLowerCase().endsWith('.png') ? "p-4" : "p-0"}`}>
                 <img
                     src={vehicle.image?.url}
                     alt={vehicle.name}
@@ -35,11 +35,11 @@ const VehicleCard: React.FC<VehicleCardProps> = ({
             </div>
 
             <div className="bg-primary text-white text-center font-nunito lg:px-5 lg:py-5 md:px-4 md:py-4 px-3 py-3 flex flex-col justify-between flex-1">
-                <h3 className="md:text-lg text-base lg:text-xl font-bold mb-2 md:mb-2">
+                <h3 className="md:text-lg text-base lg:text-xl font-bold mb-1 md:mb-1">
                     {vehicle.name} - {vehicle.numberPlate}
                 </h3>
 
-                <div className='mb-4 flex flex-row items-center justify-center text-base md:text-lg text-yellow-200 font-semibold'>
+                <div className='mb-2 flex flex-row items-center justify-center text-base md:text-lg text-yellow-200 font-semibold'>
                     <span className="">
                         Brand: {vehicle.brand}
                     </span>
@@ -48,7 +48,7 @@ const VehicleCard: React.FC<VehicleCardProps> = ({
                     </span> */}
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 text-xs md:text-sm lg:text-base text-left mb-4  md:mb-5 lg:mb-6">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-3 text-xs md:text-sm lg:text-base text-left mb-3 md:mb-3 lg:mb-4">
                     <div className="flex items-center gap-2">
                         <FaCar />
                         <span>Type: {vehicle.category.name}</span>

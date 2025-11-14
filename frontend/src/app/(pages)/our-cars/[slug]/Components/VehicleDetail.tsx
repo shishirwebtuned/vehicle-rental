@@ -33,8 +33,15 @@ export default function VehicleDetail({ slug }: { slug: string }) {
     // Load data from localStorage if present
     useEffect(() => {
         const storedData = localStorage.getItem("carSearchData");
+
         if (storedData) {
-            setInitialData(JSON.parse(storedData));
+            const parsed = JSON.parse(storedData);
+
+            if (parsed.expiry && Date.now() < parsed.expiry) {
+                setInitialData(parsed.data);
+            } else {
+                localStorage.removeItem("carSearchData");
+            }
         }
     }, []);
 
@@ -90,7 +97,11 @@ export default function VehicleDetail({ slug }: { slug: string }) {
         initialValues: initialData,
         validationSchema,
         onSubmit: (values) => {
-            localStorage.setItem("carSearchData", JSON.stringify(values));
+            const payload = {
+                data: values,
+                expiry: Date.now() + 2 * 60 * 60 * 1000
+            };
+            localStorage.setItem("carSearchData", JSON.stringify(payload));
             setDialogOpen(true);
 
         },
@@ -122,7 +133,7 @@ export default function VehicleDetail({ slug }: { slug: string }) {
             <div className={`flex md:flex-row flex-col min-h-screen items-center md:items-start pt-36 md:pt-40 justify-center bg-[#f7f7f7] gap-5 md:gap-5 lg:gap-6 pb-12 sm:pb-20 md:pb-28 ${paddingX}`}>
 
                 <div className='md:w-2/3 w-full flex flex-col gap-2'>
-                    <div className={`w-full h-[40vh] md:h-[60vh] flex justify-center items-center shadow-xs border border-gray-100 bg-white rounded-md ${vehicleData?.image?.url.toLowerCase().endsWith('.png') ? "p-4" : "p-0"}`}>
+                    <div className={`w-full h-[30vh] md:h-[65vh] flex justify-center items-center shadow-xs border border-gray-100 bg-white rounded-md ${vehicleData?.image?.url.toLowerCase().endsWith('.png') ? "p-4" : "p-0"}`}>
                         <img
                             src={vehicleData?.image?.url}
                             alt={vehicleData?.name}

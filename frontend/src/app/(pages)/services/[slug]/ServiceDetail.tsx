@@ -17,7 +17,7 @@ const iconMap: any = {
     MdTour: require('react-icons/md').MdTour,
     LiaMountainSolid: require('react-icons/lia').LiaMountainSolid,
     TbBus: require('react-icons/tb').TbBus,
-    TbTrekking: require('react-icons/tb').TbTrekking,
+    FaCar: require('react-icons/fa').FaCar,
     IoIosBoat: require('react-icons/io').IoIosBoat,
     IoFastFood: require('react-icons/io5').IoFastFood,
     FaCarSide: require('react-icons/fa6').FaCarSide,
