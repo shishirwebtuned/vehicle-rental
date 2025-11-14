@@ -626,7 +626,7 @@ export const services = [
     icon: "FaPlaneDeparture",
     answer:
       "Choose Grateful Tours for Airport Transfers because we guarantee punctuality, comfort, and professionalism. Our real-time flight monitoring, courteous drivers, and spotless vehicles ensure a seamless and stress-free start or end to your journey.",
-    image: "/images/airport.jpg",
+    image: "/images/airport1.jpg",
   },
   {
     id: 2,
