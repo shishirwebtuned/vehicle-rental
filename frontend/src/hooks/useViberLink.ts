@@ -1,16 +1,9 @@
 export default function useViberLink() {
-  const openViber = (phone = "9779801170674") => {
-    const cleanNumber = phone.replace("+", "");
+  const openViber = (phone = "+9779801170674") => {
+    const encodedPhone = encodeURIComponent(phone);
 
-    const encoded = encodeURIComponent(cleanNumber);
-
-    const mobileURI = `viber://chat?number=${cleanNumber}`;
-    const desktopURI = `viber://chat?number=${encoded}`;
+    const viberURI = `viber://chat?number=${encodedPhone}`;
     const fallbackURL = "https://www.viber.com/download/";
-
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    const viberLink = isMobile ? mobileURI : desktopURI;
 
     let shouldFallback = true;
 
@@ -20,7 +13,7 @@ export default function useViberLink() {
 
     window.addEventListener("blur", onBlur, { once: true });
 
-    window.location.href = viberLink;
+    window.location.href = viberURI;
 
     setTimeout(() => {
       if (shouldFallback) {
