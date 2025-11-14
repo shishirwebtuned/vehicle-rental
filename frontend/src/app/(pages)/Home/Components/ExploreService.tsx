@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const ExploreService = () => {
     return (
         <div
-            className="relative "
+            className="relative"
         // style={{ backgroundImage: "url('/images/mgbg.avif')" }}
         // style={{ backgroundImage: "url('/images/toyota1.jpg')" }}
         >
@@ -21,7 +21,7 @@ const ExploreService = () => {
             <div className="fixed inset-0 -z-10 bg-black/40"></div>
 
             {/* Foreground Content */}
-            <section className="flex items-center justify-center h-[70dvh] py-20 sm:py-24 md:py-28">
+            <section className="flex items-center justify-center h-[100dvh] md:h-[70dvh] py-20 sm:py-24 md:py-28">
             </section>
 
 
