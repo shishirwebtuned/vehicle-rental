@@ -1,8 +1,10 @@
 export default function useViberLink() {
-  const openViber = (phone = "+9779801170674") => {
-    const encoded = encodeURIComponent(phone);
+  const openViber = (phone = "9779801170674") => {
+    const cleanNumber = phone.replace("+", "");
 
-    const mobileURI = `viber://add?number=${encoded}`;
+    const encoded = encodeURIComponent(cleanNumber);
+
+    const mobileURI = `viber://chat?number=${cleanNumber}`;
     const desktopURI = `viber://chat?number=${encoded}`;
     const fallbackURL = "https://www.viber.com/download/";
 
