@@ -8,23 +8,22 @@ import { motion } from "framer-motion";
 const ExploreService = () => {
     return (
         <div
-            className="relative bg-fixed bg-center bg-cover"
-            // style={{ backgroundImage: "url('/images/mgbg.avif')" }}
-            style={{ backgroundImage: "url('/images/toyota1.jpg')" }}
+            className="relative "
+        // style={{ backgroundImage: "url('/images/mgbg.avif')" }}
+        // style={{ backgroundImage: "url('/images/toyota1.jpg')" }}
         >
-            <section className={`flex items-center justify-center h-[70dvh] bg-black/40 py-20 sm:py-24 md:py-28`}>
-                {/* <div className="text-white text-center px-6 space-y-8">
-                    <h2 className="font-merriweather md:text-3xl text-2xl lg:text-4xl text-center font-bold">
-                        <span className="text-primary">Drive </span> in Comfort. <span className="text-primary">Rent</span> Today, Ride Away!
-                    </h2>
-                    <p className="max-w-3xl mx-auto lg:text-lg md:text-base font-nunito text-sm">
-                        Fast, easy, and reliable car rentals at great rates. Clean, well-maintained vehicles ready when you are — perfect for trips, errands, or getaways.
-                    </p>
-                    <div>
-                        <CustomButton text='Book Now' />
-                    </div>
-                </div> */}
+            <div
+                className="fixed inset-0 -z-10 bg-cover bg-center"
+                style={{ backgroundImage: "url('/images/toyota1.jpg')" }}
+            ></div>
+
+            {/* Dark transparent overlay */}
+            <div className="fixed inset-0 -z-10 bg-black/40"></div>
+
+            {/* Foreground Content */}
+            <section className="flex items-center justify-center h-[70dvh] py-20 sm:py-24 md:py-28">
             </section>
+
 
             <section className={`bg-background h-full py-14 sm:py-16 md:py-20 flex flex-col md:gap-14 gap-12 lg:gap-16 items-center justify-center ${paddingX}`}>
                 <motion.div
