@@ -29,7 +29,7 @@ const page = () => {
                         </div>
 
                         <img
-                            src="/images/hyundaicreta.jpg"
+                            src="/images/hyundaicreta.webp"
                             alt="About Us"
                             className="relative z-10 max-w-[85%] md:max-w-[80%] h-auto object-cover rounded-2xl drop-shadow-2xl transform transition-all duration-500 ease-out hover:scale-105"
                         />

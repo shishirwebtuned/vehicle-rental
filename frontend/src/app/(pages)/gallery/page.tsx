@@ -4,7 +4,7 @@ import { paddingX } from "@/constant/constant";
 
 const page = () => {
     // Generate image paths dynamically
-    const images = Array.from({ length: 23 }, (_, i) => `/images/gallery/gallery${i + 1}.jpg`);
+    const images = Array.from({ length: 23 }, (_, i) => `/images/gallery/gallery${i + 1}.webp`);
 
     return (
         <div className="bg-white">

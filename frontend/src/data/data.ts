@@ -13,28 +13,28 @@ import { FaExpand, FaUserCheck } from "react-icons/fa";
 export const socialLinks = [
   {
     id: 1,
-    src: "/icons/social.png",
+    src: "/icons/social.webp",
     alt: "WhatsApp",
     href: "https://wa.me/9779801170674",
     hover: "hover:opacity-80",
   },
   {
     id: 2,
-    src: "/icons/viber.png",
+    src: "/icons/viber.webp",
     alt: "Viber",
     href: "viber",
     hover: "hover:opacity-80",
   },
   {
     id: 3,
-    src: "/icons/facebook.png",
+    src: "/icons/facebook.webp",
     alt: "Facebook",
     href: "https://www.facebook.com/gratefultours/",
     hover: "hover:opacity-80",
   },
   {
     id: 4,
-    src: "/icons/instagram.png",
+    src: "/icons/instagram.webp",
     alt: "Instagram",
     href: "https://www.instagram.com/gratefultoursandtransportation/",
     hover: "hover:opacity-80",
@@ -626,7 +626,7 @@ export const services = [
     icon: "FaPlaneDeparture",
     answer:
       "Choose Grateful Tours for Airport Transfers because we guarantee punctuality, comfort, and professionalism. Our real-time flight monitoring, courteous drivers, and spotless vehicles ensure a seamless and stress-free start or end to your journey.",
-    image: "/images/airport1.jpg",
+    image: "/images/airport1.webp",
   },
   {
     id: 2,
@@ -639,7 +639,7 @@ export const services = [
     icon: "MdTour",
     answer:
       "Grateful Tours offers the best Valley Sightseeing experience with expert local guides, comfortable vehicles, and flexible itineraries — ensuring you see not just landmarks, but the heart of Nepalese culture.",
-    image: "/images/chandragiri.jpeg",
+    image: "/images/chandragiri.webp",
   },
   {
     id: 3,
@@ -652,7 +652,7 @@ export const services = [
     icon: "FaMapMarkedAlt",
     answer:
       "With Grateful Tours, explore Nepal your way. We combine expert guidance, safety, and flexible itineraries to give you a deeper, more personal connection with Nepal’s landscapes and cultures.",
-    image: "/images/services2.jpg",
+    image: "/images/services2.webp",
   },
   {
     id: 4,
@@ -665,7 +665,7 @@ export const services = [
     icon: "FaRegBuilding",
     answer:
       "Choose Grateful Tours for short-term rentals because we combine reliability, punctuality, and professionalism — ideal for businesses needing flexible, top-quality transportation on demand.",
-    image: "/images/chandragiri.jpeg",
+    image: "/images/chandragiri.webp",
   },
   {
     id: 5,
@@ -678,7 +678,7 @@ export const services = [
     icon: "GiPathDistance",
     answer:
       "Grateful Tours stands out for long-term rentals with its reliable fleet, transparent pricing, and dedicated support — perfect for companies and individuals seeking stability and trust.",
-    image: "/images/chandragiri.jpeg",
+    image: "/images/chandragiri.webp",
   },
   {
     id: 6,
@@ -691,7 +691,7 @@ export const services = [
     icon: "MdTour",
     answer:
       "Choose Grateful Tours for India and Bhutan trips because we manage every detail — from visas to vehicles — ensuring a seamless, safe, and culturally immersive cross-border adventure.",
-    image: "/images/bhutan.jpg",
+    image: "/images/bhutan.webp",
   },
   {
     id: 7,
@@ -704,7 +704,7 @@ export const services = [
     icon: "GiJungle",
     answer:
       "Grateful Tours makes your safari safe and memorable with expert guides, reliable vehicles, and a strong focus on wildlife conservation and traveler comfort.",
-    image: "/images/jungleSafari.jpg",
+    image: "/images/jungleSafari.webp",
   },
   {
     id: 8,
@@ -717,7 +717,7 @@ export const services = [
     icon: "LiaMountainSolid",
     answer:
       "Trust Grateful Tours for Mountain Flight Transfers — we ensure on-time arrivals, comfort, and total coordination with your flight schedule for a worry-free Himalayan adventure.",
-    image: "/images/mountainFlight.jpg",
+    image: "/images/mountainFlight.webp",
   },
   {
     id: 9,
@@ -730,7 +730,7 @@ export const services = [
     icon: "IoIosBoat",
     answer:
       "Grateful Tours provides smooth, safe, and punctual transfers for both rafting and trekking journeys — so your adventure starts and ends stress-free.",
-    image: "/images/rafting.jpg",
+    image: "/images/rafting.webp",
   },
   {
     id: 10,
@@ -743,7 +743,7 @@ export const services = [
     icon: "FaCar",
     answer:
       "Grateful Tours delivers elegant, timely, and comfortable transportation for weddings and special events — ensuring every journey is memorable and worry-free.",
-    image: "/images/wedding.jpg",
+    image: "/images/wedding.webp",
   },
   {
     id: 11,
@@ -756,7 +756,7 @@ export const services = [
     icon: "MdEventAvailable",
     answer:
       "Choose Grateful Tours for cultural events because we combine comfort, reliability, and local knowledge — helping you experience Nepal’s art and heritage without any travel worries.",
-    image: "/images/culture.jpg",
+    image: "/images/culture.webp",
   },
   {
     id: 12,
@@ -769,7 +769,7 @@ export const services = [
     icon: "MdLuggage",
     answer:
       "Grateful Tours ensures safe, punctual, and secure luggage transfers — letting you travel light and worry-free with full confidence in our handling and delivery.",
-    image: "/images/luggage.jpg",
+    image: "/images/luggage.webp",
   },
   {
     id: 13,
@@ -782,7 +782,7 @@ export const services = [
     icon: "IoFastFood",
     answer:
       "Grateful Tours provides reliable, clean, and on-time dinner transfers so you can focus on your evening — not on traffic or parking.",
-    image: "/images/food.jpg",
+    image: "/images/food.webp",
   },
   {
     id: 14,
@@ -795,7 +795,7 @@ export const services = [
     icon: "TbBus",
     answer:
       "Grateful Tours simplifies your intercity travel with secure ticketing, real-time assistance, and reliable partnerships with trusted bus operators.",
-    image: "/images/tourist.jpg",
+    image: "/images/tourist.webp",
   },
   {
     id: 15,
@@ -808,6 +808,6 @@ export const services = [
     icon: "FaCarSide",
     answer:
       "Choose Grateful Tours in Pokhara for flexible, safe, and comfortable vehicle rentals backed by local expertise and exceptional service quality.",
-    image: "/images/pokhara.jpg",
+    image: "/images/pokhara.webp",
   },
 ];

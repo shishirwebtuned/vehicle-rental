@@ -1,9 +1,9 @@
 "use client";
 
 import { paddingX } from '@/constant/constant'
-import { servicesData } from '@/data/data'
 import React from 'react'
 import { motion } from "framer-motion";
+import { servicesData } from '@/data/data';
 
 const ExploreService = () => {
     return (
@@ -14,7 +14,7 @@ const ExploreService = () => {
         >
             <div
                 className="fixed inset-0 -z-10 bg-cover bg-center"
-                style={{ backgroundImage: "url('/images/toyota1.jpg')" }}
+                style={{ backgroundImage: "url('/images/toyota1.webp')" }}
             ></div>
 
             {/* Dark transparent overlay */}

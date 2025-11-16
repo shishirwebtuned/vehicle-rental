@@ -12,7 +12,7 @@ const HowItWorks = () => {
     return (
         <div
             className="relative bg-fixed bg-center bg-cover"
-            style={{ backgroundImage: "url('/images/mg1.jpg')" }}
+            style={{ backgroundImage: "url('/images/mg1.webp')" }}
         >
             {/* First Section*/}
             <section className={`bg-background ${paddingX} py-14 sm:py-16 md:py-20`}>

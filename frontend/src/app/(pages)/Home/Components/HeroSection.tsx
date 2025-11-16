@@ -124,7 +124,7 @@ const HeroSection = () => {
     return (
         <div
             className="text-white pt-40 md:pt-32 h-full pb-12 md:pb-4 md:h-[90dvh] bg-cover bg-center"
-            style={{ backgroundImage: "url(/images/background.jpg)" }}
+            style={{ backgroundImage: "url(/images/background.webp)" }}
         >
             <div className="w-full h-full flex flex-col items-center justify-center px-4">
                 <motion.h1

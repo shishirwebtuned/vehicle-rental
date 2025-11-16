@@ -3,17 +3,17 @@ import Image from "next/image";
 import React from "react";
 
 const images = [
-    "/images/marquee/mglogo.png",
-    "/images/marquee/bydlogo.png",
-    "/images/marquee/ashoklogo.png",
-    "/images/marquee/higerlogo.png",
-    "/images/marquee/hyundailogo.png",
+    "/images/marquee/mglogo.webp",
+    "/images/marquee/bydlogo.webp",
+    "/images/marquee/ashoklogo.webp",
+    "/images/marquee/higerlogo.webp",
+    "/images/marquee/hyundailogo.webp",
     "/images/marquee/mahindralogo.webp",
-    "/images/marquee/nissanlogo.png",
-    "/images/marquee/skodalogo.png",
+    "/images/marquee/nissanlogo.webp",
+    "/images/marquee/skodalogo.webp",
     "/images/marquee/suzukilogo.jpg",
-    "/images/marquee/tatalogo.png",
-    "/images/marquee/toyotalogo.png",
+    "/images/marquee/tatalogo.webp",
+    "/images/marquee/toyotalogo.webp",
 ];
 
 const VehicleMarquee = () => {
