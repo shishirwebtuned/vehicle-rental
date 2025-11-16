@@ -11,7 +11,7 @@ const images = [
     "/images/marquee/mahindralogo.webp",
     "/images/marquee/nissanlogo.webp",
     "/images/marquee/skodalogo.webp",
-    "/images/marquee/suzukilogo.jpg",
+    "/images/marquee/suzukilogo.webp",
     "/images/marquee/tatalogo.webp",
     "/images/marquee/toyotalogo.webp",
 ];

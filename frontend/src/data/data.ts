@@ -189,7 +189,7 @@ export const blogData = [
       At Grateful Tours and Transportation Service Pvt. Ltd., we make exploring Kathmandu comfortable and convenient. Whether you’re a traveler or a local, renting a car gives you the freedom to go anywhere, anytime - without waiting for taxis or worrying about crowded buses.
 
     `,
-    image: "/images/chandragiri.jpeg",
+    image: "/images/chandragiri.webp",
     imageType: "jpeg",
     author:
       "Grateful Tours and Transportation Service Pvt. Ltd., Gairidhara, Kathmandu",
