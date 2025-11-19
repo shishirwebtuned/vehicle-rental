@@ -58,9 +58,20 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ vehicleId, vehicleName, vehic
                     ...values,
                 };
 
+                const backendBookingData = {
+                    vehicle: String(vehicleId),
+                    pickupLocation: searchData.pickupLocation || "",
+                    pickupDate: searchData.pickupDate ? new Date(searchData.pickupDate) : new Date(),
+                    pickupTime: searchData.pickupTime || "",
+                    dropoffLocation: searchData.dropoffLocation || "",
+                    dropoffDate: searchData.dropoffDate ? new Date(searchData.dropoffDate) : new Date(),
+                    dropoffTime: searchData.dropoffTime || "",
+                    ...values,
+                };
+
                 console.log("Combined Booking Data:", bookingData);
 
-                // await createBooking(bookingData).unwrap();
+                await createBooking(backendBookingData).unwrap();
 
                 const message = `
                 *New Booking Enquiry*

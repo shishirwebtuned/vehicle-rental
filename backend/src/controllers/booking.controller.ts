@@ -59,7 +59,7 @@ export const createBooking = catchAsync(async (req, res) => {
     "name brand vehicleModel numberPlate"
   );
 
-  notifyBookingEmails(populatedBooking);
+  // notifyBookingEmails(populatedBooking);
 
   sendResponse(res, {
     success: true,
