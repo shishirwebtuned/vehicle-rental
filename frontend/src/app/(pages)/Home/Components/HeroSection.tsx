@@ -165,8 +165,11 @@ const HeroSection = () => {
                                             value={formik.values[field.id as keyof typeof formik.values]}
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
-                                            min={new Date().toISOString().split("T")[0]}
-
+                                            min={
+                                                new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+                                                    .toISOString()
+                                                    .split("T")[0]
+                                            }
                                             className="w-full px-3 bg-white py-2 focus:outline-none focus:ring focus:ring-primary lg:text-base md:text-sm text-xs"
                                         />
 

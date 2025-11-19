@@ -284,7 +284,9 @@ export default function VehicleDetail({ slug }: { slug: string }) {
                                         value={formik.values.pickupDate}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
-                                        min={new Date().toISOString().split("T")[0]}
+                                        min={new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+                                            .toISOString()
+                                            .split("T")[0]}
                                         className="bg-[#F2F7F6] px-3 py-2 rounded-lg focus:outline-none focus:ring focus:ring-yellow-400 text-sm md:text-base"
                                     />
                                     {formik.touched.pickupDate && formik.errors.pickupDate && (
@@ -332,11 +334,16 @@ export default function VehicleDetail({ slug }: { slug: string }) {
                                         value={formik.values.dropoffDate}
                                         onChange={formik.handleChange}
                                         onBlur={formik.handleBlur}
-                                        min={
-                                            formik.values.pickupDate
-                                                ? formik.values.pickupDate
-                                                : new Date().toISOString().split("T")[0]
-                                        }
+                                        // min={
+                                        //     formik.values.pickupDate
+                                        //         ? formik.values.pickupDate
+                                        //         : new Date().toISOString().split("T")[0]
+                                        // }
+                                        min={formik.values.pickupDate
+                                            ? formik.values.pickupDate
+                                            : new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+                                                .toISOString()
+                                                .split("T")[0]}
                                         className="bg-[#F2F7F6] px-3 py-2 rounded-lg focus:outline-none focus:ring focus:ring-yellow-400 text-sm md:text-base"
                                     />
                                     {formik.touched.dropoffDate && formik.errors.dropoffDate && (
